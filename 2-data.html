@@ -1,0 +1,851 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <title>Data processing with Python</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=792, user-scalable=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="https://shwr.me/shower/themes/ribbon/styles/styles.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        
+    </style>
+</head>
+<body class="shower list">
+
+    <header class="caption">
+        <h1>Data processing with Python</h1>
+        <p><a href="https:&#x2F;&#x2F;as.susu.ru">Alexander Sapozhnikov, Tatyana Vasilyeva</a>, </p>
+    </header>
+
+      <section class="slide  title clear">
+    <div>
+      <h2 id="data-processing-with-python">Data processing with Python</h2>
+<figure>
+    <img class="cover" src="images/baumpython-cropped.jpg" alt="Python">
+    <figcaption class="copyright right white">
+        © Mike Wesemann
+    </figcaption>
+</figure>
+    </div>
+  </section>
+  <section class="slide  clear">
+    <div>
+      <h2 class="shout shrink">Part 2</h2>
+    </div>
+  </section>
+  <section class="slide ">
+    <div>
+      <h2 id="part-2">Part 2</h2>
+<ul>
+<li>Data types</li>
+<li>Objects</li>
+<li>Variables</li>
+<li>Control flow and loops</li>
+</ul>
+
+    </div>
+  </section>
+  <section class="slide ">
+    <div>
+      <h2 id="documentation">Documentation</h2>
+<ul>
+<li><code>help()</code></li>
+</ul>
+
+    </div>
+  </section>
+  <section class="slide ">
+    <div>
+      <h2 id="navigate-through-help-page">Navigate through help page</h2>
+<ul>
+<li><mark>Enter ↲</mark> or <mark>↓</mark> arrow — next line</li>
+<li><mark>↑</mark> arrow — previous line</li>
+<li><mark>space</mark> — next page</li>
+<li><mark>g</mark> — scroll to top</li>
+<li><mark>G</mark> — scroll to bottom</li>
+<li><mark>q</mark> — quit from help</li>
+</ul>
+
+    </div>
+  </section>
+  <section class="slide ">
+    <div>
+      <h2 id="documentation">Documentation</h2>
+<ul>
+<li><code>help()</code></li>
+<li><a href="https://docs.python.org">docs.python.org</a></li>
+<li>cheat.sh<ul>
+<li><a href="http://cheat.sh/python">cheat.sh/python</a> — how to run<ul>
+<li><a href="http://cheat.sh/python/:list">cheat.sh/python/:list</a> — list of pages</li>
+<li><a href="http://cheat.sh/python/:learn">cheat.sh/python/:learn</a> — learn Python — comprehensive page</li>
+<li><a href="http://cheat.sh/python/~keyword">cheat.sh/python/~keyword</a> — search in pages for <mark>keyword</mark></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+    </div>
+  </section>
+  <section class="slide ">
+    <div>
+      <h2 id="interactive-programming-environments">Interactive programming environments</h2>
+<ul>
+<li><a href="https://repl.it/">repl.it</a></li>
+<li><a href="http://pythonfiddle.com/">pythonfiddle.com</a></li>
+</ul>
+
+    </div>
+  </section>
+  <section class="slide  black clear">
+    <div>
+      <p><img class="cover" src="images/repl-hello-world.png" alt="repl.it"></p>
+
+    </div>
+  </section>
+  <section class="slide ">
+    <div>
+      <h2 id="syntax-peculiarities">Syntax peculiarities</h2>
+<p>No semicolon <mark>;</mark> after single statement</p>
+<pre><code>counter = 42
+</code></pre>
+    </div>
+  </section>
+  <section class="slide ">
+    <div>
+      <h2 id="syntax-peculiarities">Syntax peculiarities</h2>
+<p>Colon and indent instead of curly braces for blocks</p>
+<pre>
+<code>for fruit in basket<mark class="important">:</mark></code>
+<code><mark>    </mark># four spaces is recommended</code>
+<code><mark>    </mark>print(fruit)</code>
+</pre>
+    </div>
+  </section>
+  <section class="slide ">
+    <div>
+      <h2 id="syntax-peculiarities">Syntax peculiarities</h2>
+<p>Colon and indent instead of curly braces for blocks</p>
+<pre>
+<code>for fruit in basket<mark>:</mark></code>
+<code><mark class="important">    </mark># four spaces is recommended</code>
+<code><mark class="important">    </mark>print(fruit)</code>
+</pre>
+    </div>
+  </section>
+  <section class="slide ">
+    <div>
+      <h2 class="shout">Python is case sensitive</h2>
+    </div>
+  </section>
+  <section class="slide ">
+    <div>
+      <h2 id="python-is-case-sensitive">Python is case sensitive</h2>
+<pre style="font-size:600%;margin-top:.5em">
+<code>A ≠ a</code>
+</pre>
+    </div>
+  </section>
+  <section class="slide ">
+    <div>
+      <h2 id="interactive-mode">Interactive mode</h2>
+<pre>
+<code><mark>&gt;&gt;&gt;</mark></code>
+<code>↑ prompt</code>
+</pre>
+    </div>
+  </section>
+  <section class="slide ">
+    <div>
+      <h2 id="interactive-mode">Interactive mode</h2>
+<pre>
+<code>&gt;&gt;&gt; <mark>42 + 24</mark></code>
+<code>our input ↑</code>
+</pre>
+    </div>
+  </section>
+  <section class="slide ">
+    <div>
+      <h2 id="interactive-mode">Interactive mode</h2>
+<pre>
+<code>&gt;&gt;&gt; 42 + 24</code>
+<code><mark>66</mark> ← result</code>
+</pre>
+    </div>
+  </section>
+  <section class="slide ">
+    <div>
+      <h2 id="oops">Oops</h2>
+<pre>
+<code>&gt;&gt;&gt; 42 + 'e'</code>
+<code class="mark">Traceback (most recent call last):</code>
+<code class="mark">  File "<stdin>", line 1, in &lt;module&gt;</code>
+<code class="mark">TypeError: unsupported operand type(s) for +: 'int' and 'str'</code>
+<code>↑ error messages</code>
+</pre>
+    </div>
+  </section>
+  <section class="slide ">
+    <div>
+      <h2 class="shout">Data types</h2>
+    </div>
+  </section>
+  <section class="slide ">
+    <div>
+      <h2 id="built-in-data-types">Built-in data types</h2>
+<ul>
+<li>int, float, complex</li>
+<li>bool</li>
+<li>list, tuple, dict, set, range, zip</li>
+<li>str</li>
+</ul>
+<p>See also <a href="https://docs.python.org/3.7/library/stdtypes.html">docs.python.org/3.7/library/stdtypes</a></p>
+
+    </div>
+  </section>
+  <section class="slide ">
+    <div>
+      <h2 id="built-in-data-types">Built-in data types</h2>
+<ul>
+<li><strong>int</strong>eger, <strong>float</strong>, <strong>complex</strong> — <em>numeric</em></li>
+<li><strong>bool</strong>ean — <em>logical</em></li>
+<li><strong>list</strong>, <strong>tuple</strong>, <strong>dict</strong>ionary, <strong>set</strong>, <strong>range</strong>, <strong>zip</strong> — <em>structures</em></li>
+<li><strong>str</strong>ing — <em>chain of characters</em></li>
+</ul>
+<p>See also <a href="https://docs.python.org/3.7/library/stdtypes.html">docs.python.org/3.7/library/stdtypes</a></p>
+
+    </div>
+  </section>
+  <section class="slide ">
+    <div>
+      <h2 id="detect-mark-type-mark-of-data">Detect <mark>type</mark> of data</h2>
+<pre>
+<code class="mark">&gt;&gt;&gt; type(42)</code>
+<code>&lt;class 'int'&gt;</code>
+</pre>
+    </div>
+  </section>
+  <section class="slide ">
+    <div>
+      <h2 id="detect-type-of-data">Detect type of data</h2>
+<pre>
+<code>&gt;&gt;&gt; type(42)</code>
+<code>&lt;class 'int'&gt;</code>
+<code class="mark">&gt;&gt;&gt; type(3.14)</code>
+<code>&lt;class 'float'&gt;</code>
+</pre>
+    </div>
+  </section>
+  <section class="slide ">
+    <div>
+      <h2 id="detect-type-of-data">Detect type of data</h2>
+<pre>
+<code>&gt;&gt;&gt; type(42)</code>
+<code>&lt;class 'int'&gt;</code>
+<code>&gt;&gt;&gt; type(3.14)</code>
+<code>&lt;class 'float'&gt;</code>
+<code class="mark">&gt;&gt;&gt; type('3.14')</code>
+<code>&lt;class 'str'&gt;</code>
+</pre>
+    </div>
+  </section>
+  <section class="slide ">
+    <div>
+      <h2 id="int">int</h2>
+<p>integer number</p>
+<pre><code>&gt;&gt;&gt; type(42)
+&lt;class &#39;int&#39;&gt;
+</code></pre>
+    </div>
+  </section>
+  <section class="slide ">
+    <div>
+      <h2 id="underscores-for-long-numbers">Underscores for long numbers</h2>
+<pre>
+<code class="next">&gt;&gt;&gt; 4_294_967_296     <span class="comment"># 2<sup>32</sup></span></code>
+<code class="next">4294967296</code>
+<code class="next">&gt;&gt;&gt; +7_800_775_00_00  <span class="comment"># even phone numbers</span></code>
+<code class="next">78007750000</code>
+</pre>
+    </div>
+  </section>
+  <section class="slide ">
+    <div>
+      <h2 id="int-can-use-various-bases">int can use various bases</h2>
+<pre>
+<code class="next">&gt;&gt;&gt; 0xC0FFEE  <span class="comment"># hexadecimal</span></code>
+<code class="next">12648430</code>
+<code class="next">&gt;&gt;&gt; 0o777     <span class="comment"># octal</span></code>
+<code class="next">511</code>
+<code class="next">&gt;&gt;&gt; 0b1111    <span class="comment"># binary</span></code>
+<code class="next">15</code>
+</pre>
+    </div>
+  </section>
+  <section class="slide ">
+    <div>
+      <h2 id="float">float</h2>
+<p>Floating point number</p>
+<pre>
+<code class="next">&gt;&gt;&gt; 3.1415926</code>
+<code class="next">3.1415926</code>
+<code class="next">&gt;&gt;&gt; 9.</code>
+<code class="next">9.0</code>
+<code class="next">&gt;&gt;&gt; 3e8</code>
+<code class="next">300000000.0</code>
+</pre>
+    </div>
+  </section>
+  <section class="slide ">
+    <div>
+      <h2 id="float">float</h2>
+<p><code>3e8</code> = 3 × 10<sup>8</sup> = 300000000.0 <em class="comment"># light speed, meters per second</em></p>
+<p><code>125e-3</code> = 125 × 10<sup>−3</sup> = 0.125</p>
+<pre>
+<code class="next">&gt;&gt;&gt; 6.022e23 <span class="comment"># Avogadro constant, mol<sup>−1</sup></span></code>
+<code class="next">6.022e+23</code>
+</pre>
+    </div>
+  </section>
+  <section class="slide ">
+    <div>
+      <h2 id="change-type">Change type</h2>
+<p>Use name of type as function to convert data</p>
+<pre>
+<code class="next">&gt;&gt;&gt; int(3.1415926)</code>
+<code class="next">3</code>
+<code class="next">&gt;&gt;&gt; float(42)</code>
+<code class="next">42.0</code>
+</pre>
+    </div>
+  </section>
+  <section class="slide ">
+    <div>
+      <h2 id="implicit-type-changing">Implicit type changing</h2>
+<pre>
+<code class="next">&gt;&gt;&gt; 3. + 2</code>
+<code class="next">5.0</code>
+<code class="next">&gt;&gt;&gt; 3 + 2.</code>
+<code class="next">5.0</code>
+</pre>
+    </div>
+  </section>
+  <section class="slide ">
+    <div>
+      <h2 id="str">str</h2>
+<p><strong>string</strong> is the sequence of characters</p>
+<p><img src="images/str.png" alt="string"></p>
+
+    </div>
+  </section>
+  <section class="slide ">
+    <div>
+      <h2 id="individual-characters-are-accessible">Individual characters are accessible</h2>
+<p><img src="images/str-i.png" alt="string with highlighted i"></p>
+<pre><code>&gt;&gt;&gt; &#39;some&#39;[3]
+&#39;e&#39;
+</code></pre>
+    </div>
+  </section>
+  <section class="slide ">
+    <div>
+      <h2 id="as-well-as-whole-string">as well as whole string</h2>
+<p><img src="images/str-string.png" alt="highlighted string"></p>
+<pre><code>&gt;&gt;&gt; &#39;some&#39;.upper()
+&#39;SOME&#39;
+</code></pre>
+    </div>
+  </section>
+  <section class="slide ">
+    <div>
+      <h2 id="string-subtypes">String subtypes</h2>
+<pre><code>&gt;&gt;&gt; &#39;Generic&#39; or &quot;common&quot;
+&#39;Generic&#39;
+</code></pre>
+    </div>
+  </section>
+  <section class="slide ">
+    <div>
+      <h2 id="special-characters">Special characters</h2>
+<pre><code>&gt;&gt;&gt; &#39;B letter \x42&#39;
+&#39;B letter B&#39;
+&gt;&gt;&gt; &quot;\x53ame behavior with double quotation marks&quot;
+&#39;Same behavior with double quotation marks&#39;
+&gt;&gt;&gt; &#39;Unicode: питон — это змея 🐍 蛇&#39;
+&#39;Unicode: питон — это змея 🐍 蛇&#39;
+</code></pre>
+    </div>
+  </section>
+  <section class="slide ">
+    <div>
+      <h2 id="special-characters">Special characters</h2>
+<p>C-like notation</p>
+<ul>
+<li><code>\n</code> — new line (LF — line feed)</li>
+<li><code>\r</code> — carriage return (CR)</li>
+<li><code>\xNN</code> — character having hexadecimal ASCII code <var>NN</var></li>
+</ul>
+
+    </div>
+  </section>
+  <section class="slide -">
+    <div>
+      <h2 id="use-triple-delimiters-to-make-multiple-lines">Use &quot;&quot;&quot;triple delimiters&quot;&quot;&quot; to make multiple lines</h2>
+<pre><code>&gt;&gt;&gt; &quot;&quot;&quot;
+... Multiline strings
+... often used as comments
+... &quot;&quot;&quot;
+&#39;\nMultiline strings\noften used as comments\n&#39;
+</code></pre>
+    </div>
+  </section>
+  <section class="slide -">
+    <div>
+      <h2 id="-triple-delimiters-">&#39;&#39;&#39;Triple delimiters&#39;&#39;&#39;</h2>
+<pre><code>&gt;&gt;&gt; &#39;&#39;&#39;
+... These strings can contain
+... &#39;single&#39; or &quot;double&quot; quotation marks
+... &#39;&#39;&#39;
+&#39;\nThese strings can contain\n\&#39;single\&#39; or &quot;double&quot; quotation marks\n&#39;
+</code></pre>
+    </div>
+  </section>
+  <section class="slide ">
+    <div>
+      <h2 id="special-characters">Special characters</h2>
+<p>C-like notation</p>
+<ul>
+<li><code>\n</code> — new line (LF — line feed)</li>
+<li><code>\r</code> — carriage return (CR)</li>
+<li><code>\xNN</code> — character having hexadecimal ASCII code <var>NN</var></li>
+</ul>
+<pre><code>&gt;&gt;&gt; &#39;\xAB&#39;
+&#39;«&#39;
+</code></pre>
+    </div>
+  </section>
+  <section class="slide ">
+    <div>
+      <h2 id="special-characters">Special characters</h2>
+<p>What about small Russian letter “ef”? Its hexadecimal code is 444.</p>
+<pre><code>&gt;&gt;&gt; &#39;\x444&#39;
+&#39;D4&#39;
+</code></pre>
+    </div>
+  </section>
+  <section class="slide ">
+    <div>
+      <h2 id="special-characters">Special characters</h2>
+<p>What about small Russian letter “ef”? Its hexadecimal code is 444.</p>
+<pre>
+<code>&gt;&gt;&gt; '<mark>\x44</mark>4'</code>
+<code>'D4'</code>
+</pre>
+    </div>
+  </section>
+  <section class="slide ">
+    <div>
+      <h2 id="unicode-characters">Unicode characters</h2>
+<pre><code>&gt;&gt;&gt; &#39;\u444&#39;
+  File &quot;&lt;stdin&gt;&quot;, line 1
+SyntaxError: (unicode error) &#39;unicodeescape&#39; codec can&#39;t decode bytes in position 0-4: truncated \uXXXX escape
+&gt;&gt;&gt; &#39;\u0444&#39;
+&#39;ф&#39;
+&gt;&gt;&gt; &#39;\x01f41b&#39;
+&#39;ὁb&#39;
+</code></pre>
+    </div>
+  </section>
+  <section class="slide ">
+    <div>
+      <h2 id="unicode-characters-above-u-ffff">Unicode characters above U+FFFF</h2>
+<pre><code>&gt;&gt;&gt; &#39;\U1f41b&#39;
+  File &quot;&lt;stdin&gt;&quot;, line 1
+SyntaxError: (unicode error) &#39;unicodeescape&#39; codec can&#39;t decode bytes in position 0-6: truncated \UXXXXXXXX escape
+&gt;&gt;&gt; &#39;\U0001f41b&#39;
+&#39;🐛&#39;
+</code></pre>
+    </div>
+  </section>
+  <section class="slide ">
+    <div>
+      <h2 id="unicode-strings-u-">Unicode strings — u&#39;&#39;</h2>
+<ul>
+<li><mark>Same as generic string — Python 3</mark></li>
+<li>Different subtype — Python 2</li>
+</ul>
+<pre><code>&gt;&gt;&gt; u&#39;日&#39;
+&#39;日&#39;
+
+</code></pre>
+    </div>
+  </section>
+  <section class="slide ">
+    <div>
+      <h2 id="byte-strings-b-">Byte strings — b&#39;&#39;</h2>
+<ul>
+<li><mark>ASCII only — Python 3</mark></li>
+<li>Same as generic string which treats as byte sequence — Python 2</li>
+</ul>
+<pre><code>&gt;&gt;&gt; b&#39;Byte&#39;
+b&#39;Byte&#39;
+&gt;&gt;&gt; b&#39;Жи-ши&#39;
+  File &quot;&lt;stdin&gt;&quot;, line 1
+SyntaxError: bytes can only contain ASCII literal characters.
+</code></pre>
+    </div>
+  </section>
+  <section class="slide ">
+    <div>
+      <h2 id="escape-backslash">Escape backslash</h2>
+<p>Just double it</p>
+<pre><code>&gt;&gt;&gt; print(&#39;\\back&#39;)
+\back
+</code></pre>
+    </div>
+  </section>
+  <section class="slide ">
+    <div>
+      <h2 id="raw-strings-r-">Raw strings — r&#39;&#39;</h2>
+<p>There are no special characters</p>
+<pre><code>&gt;&gt;&gt; r&#39;\back\slash&#39;
+&#39;\\back\\slash&#39;
+</code></pre>
+    </div>
+  </section>
+  <section class="slide ">
+    <div>
+      <h2 id="raw-strings">Raw strings</h2>
+<p>There are no special characters</p>
+<pre><code>&gt;&gt;&gt; r&#39;\back\slash&#39;
+&#39;\\back\\slash&#39;
+&gt;&gt;&gt; r&#39;^\S+ome\regular\expr\e\s\Sio\n{7}&#39;
+&#39;^\\S+ome\\regular\\expr\\e\\s\\Sio\\n{7}&#39;
+</code></pre><p>See also <a href="https://docs.python.org/3.7/library/re.html">re — Regular expression operations</a></p>
+
+    </div>
+  </section>
+  <section class="slide ">
+    <div>
+      <h2 id="raw-strings">Raw strings</h2>
+<p>There are no special characters</p>
+<pre><code>&gt;&gt;&gt; r&#39;\back\slash&#39;
+&#39;\\back\\slash&#39;
+&gt;&gt;&gt; r&#39;^\S+ome\regular\expr\e\s\Sio\n{7}&#39;
+&#39;^\\S+ome\\regular\\expr\\e\\s\\Sio\\n{7}&#39;
+&gt;&gt;&gt; r&#39;C:\Windows\system32\drivers\hosts.txt&#39;
+&#39;C:\\Windows\\system32\\drivers\\hosts.txt&#39;
+</code></pre>
+    </div>
+  </section>
+  <section class="slide ">
+    <div>
+      <h2 id="raw-strings-with-triple-delimiters">Raw strings with triple delimiters</h2>
+<pre><code>&gt;&gt;&gt; r&#39;&#39;&#39;
+... TenorI = \context Voice = TenorI {
+...     \global
+...     \dynamicUp \stemUp \slurUp \tieUp
+...     \tempo Moderato
+... &#39;&#39;&#39;
+&#39;\nTenorI = \\context Voice = TenorI {\n    \\global\n    \\dynamicUp \\stemUp \\slurUp \\tieUp\n    \\tempo Moderato\n&#39;
+</code></pre>
+    </div>
+  </section>
+  <section class="slide  clear">
+    <div>
+      <p><img alt="Frescobaldi" src="images/frescobaldi.png" class="cover"></p>
+
+    </div>
+  </section>
+  <section class="slide ">
+    <div>
+      <h2 id="format-strings-f-">Format strings — f&#39;&#39;</h2>
+<pre><code>&gt;&gt;&gt; pi = 3.14159265358
+&gt;&gt;&gt; f&#39;π is {pi}&#39;
+&#39;π is 3.14159265358&#39;
+</code></pre><p>Since 2015 — Python 3.6. See also <a href="https://realpython.com/python-f-strings/">realpython.com/python-f-strings</a></p>
+
+    </div>
+  </section>
+  <section class="slide ">
+    <div>
+      <h2 id="concatenate-strings-with-">Concatenate strings with +</h2>
+<pre><code>&gt;&gt;&gt; &#39;head &#39; + &#39;and&#39; + &#39; tail&#39;
+&#39;head and tail&#39;
+</code></pre>
+    </div>
+  </section>
+  <section class="slide ">
+    <div>
+      <h2 id="concatenate-strings-with-">Concatenate strings with +</h2>
+<pre><code>&gt;&gt;&gt; 3 + &#39; is three&#39;
+Traceback (most recent call last):
+  File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;
+TypeError: unsupported operand type(s) for +: &#39;int&#39; and &#39;str&#39;
+&gt;&gt;&gt; str(3) + &#39; is three&#39;
+&#39;3 is three&#39;
+</code></pre>
+    </div>
+  </section>
+  <section class="slide ">
+    <div>
+      <h2 id="list">list</h2>
+
+    </div>
+  </section>
+  <section class="slide ">
+    <div>
+      <h2 id="tuple">tuple</h2>
+
+    </div>
+  </section>
+  <section class="slide ">
+    <div>
+      <h2 id="dict">dict</h2>
+
+    </div>
+  </section>
+  <section class="slide ">
+    <div>
+      <h2 id="set">set</h2>
+
+    </div>
+  </section>
+  <section class="slide ">
+    <div>
+      <h2 id="range">range</h2>
+
+    </div>
+  </section>
+  <section class="slide ">
+    <div>
+      <h2 id="bool">bool</h2>
+
+    </div>
+  </section>
+  <section class="slide ">
+    <div>
+      <h2 id="range">Range</h2>
+<pre><code>&gt;&gt;&gt; teen = range(13, 20)
+</code></pre><p>Mathematically, <var>t</var> = [13, 20)</p>
+
+    </div>
+  </section>
+  <section class="slide ">
+    <div>
+      <h2 id="range">Range</h2>
+<pre><code>&gt;&gt;&gt; teen = range(13, 20)
+</code></pre><p>Mathematically, <var>t</var> = <mark>[</mark>13, 20<mark class="important">)</mark></p>
+<p>include 13 and <mark>exclude</mark> 20</p>
+
+    </div>
+  </section>
+  <section class="slide ">
+    <div>
+      <h2 id="print-range">Print range</h2>
+<pre><code>&gt;&gt;&gt; teen = range(13, 20)
+&gt;&gt;&gt; teen
+range(13, 20)
+</code></pre>
+    </div>
+  </section>
+  <section class="slide ">
+    <div>
+      <h2 id="print-range">Print range</h2>
+<pre><code>&gt;&gt;&gt; for age in teen: print(age, end=&#39;, &#39;)
+...
+13, 14, 15, 16, 17, 18, 19,
+</code></pre>
+    </div>
+  </section>
+  <section class="slide ">
+    <div>
+      <h2 id="range-with-step">Range with step</h2>
+<pre><code>&gt;&gt;&gt; for item in range(0, 100, 9): print(item, end=&#39;, &#39;)
+...
+0, 9, 18, 27, 36, 45, 54, 63, 72, 81, 90, 99,
+</code></pre>
+    </div>
+  </section>
+  <section class="slide ">
+    <div>
+      <h2 id="range-with-negative-step">Range with negative step</h2>
+<pre><code>&gt;&gt;&gt; for item in range(3, 0, -1): print(item, end=&#39;, &#39;)
+...
+3, 2, 1,
+</code></pre>
+    </div>
+  </section>
+  <section class="slide ">
+    <div>
+      <h2 id="range-with-negative-step">Range with negative step</h2>
+<pre><code>&gt;&gt;&gt; for item in range(3, 0, -1): print(item, end=&#39;, &#39;)
+...
+3, 2, 1,
+</code></pre><div class="spotlight" style="
+    --spotlight-radius: 50%;
+    --spotlight-opacity: 0.2;
+    --spotlight-size: 256px;
+    --spotlight-top: 0px;
+    --spotlight-left: -256px;
+"></div>
+
+<h3 id="no-zero-here">No zero here</h3>
+
+    </div>
+  </section>
+  <section class="slide ">
+    <div>
+      <h2 class="shout">Variables</h2>
+    </div>
+  </section>
+  <section class="slide ">
+    <div>
+      <h2 id="variables">Variables</h2>
+<h3 id="assigning">Assigning</h3>
+<pre><code>name = &#39;value&#39;
+</code></pre><p><img src="images/var-name-value.dot.svg" alt="name → value"></p>
+
+    </div>
+  </section>
+  <section class="slide ">
+    <div>
+      <h2 id="assign-a-new-value">Assign a new value</h2>
+<pre><code>name = &#39;value&#39;
+name = 42
+</code></pre><p><img src="images/var-name-42.dot.svg" alt="name → value"></p>
+
+    </div>
+  </section>
+  <section class="slide ">
+    <div>
+      <h2 id="variable-naming">Variable naming</h2>
+<blockquote>
+<p>There are only two hard things in Computer Science:<br>
+cache invalidation and naming things.</p>
+</blockquote>
+
+    </div>
+  </section>
+  <section class="slide ">
+    <div>
+      <h2 id="variable-naming">Variable naming</h2>
+<p>Available characters are:</p>
+<ul>
+<li>Small and capital Latin letters <strong>a</strong> to <strong>z</strong> and <strong>A</strong> to <strong>Z</strong></li>
+<li>Digits (not in first position)</li>
+<li>Underscore <code>_</code></li>
+</ul>
+<pre><code>&gt;&gt;&gt; theSun_and_8_planets = &#39;solar&#39;
+</code></pre>
+    </div>
+  </section>
+  <section class="slide ">
+    <div>
+      <h2 id="variable-naming">Variable naming</h2>
+<p>Python 3 allows to use some non-ASCII letters but <mark>it’s a wrong way</mark></p>
+<pre><code>&gt;&gt;&gt; Öl = &#39;Barrel.&#39;
+&gt;&gt;&gt; print(Öl * 3)
+Barrel.Barrel.Barrel.
+&gt;&gt;&gt; Ø = 0
+&gt;&gt;&gt; Ж = 8
+&gt;&gt;&gt; Зима = &#39;Winter&#39;
+</code></pre>
+    </div>
+  </section>
+  <section class="slide ">
+    <div>
+      <h2 id="don-t-do-that">Don’t do that</h2>
+<pre><code>&gt;&gt;&gt; ქ = &#39;khar&#39;
+&gt;&gt;&gt; ձ = &#39;ja&#39;
+&gt;&gt;&gt; ж = &#39;zhe&#39;
+&gt;&gt;&gt; ξ = &#39;xi&#39;
+&gt;&gt;&gt; ש = &#39;shin&#39;
+&gt;&gt;&gt; ش = &#39;sheen&#39;
+</code></pre>
+    </div>
+  </section>
+  <section class="slide ">
+    <div>
+      <h2 id="don-t-do-that">Don’t do that</h2>
+<pre><code>&gt;&gt;&gt; o = &#39;Latin&#39;
+&gt;&gt;&gt; ο = &#39;Greek&#39;
+&gt;&gt;&gt; о = &#39;Cyrillic&#39;
+&gt;&gt;&gt; օ = &#39;Armenian&#39;
+&gt;&gt;&gt; ჿ = &#39;Georgian&#39;
+&gt;&gt;&gt; print(o, ο, о, օ, ჿ)
+Latin Greek Cyrillic Armenian Georgian
+</code></pre>
+    </div>
+  </section>
+  <section class="slide ">
+    <div>
+      <h2 id="non-letters-are-forbidden">Non-letters are forbidden</h2>
+<pre><code>&gt;&gt;&gt; × = &#39;multiply&#39;
+  File &quot;&lt;stdin&gt;&quot;, line 1
+    × = &#39;multiply&#39;
+    ^
+</code></pre>
+    </div>
+  </section>
+  <section class="slide ">
+    <div>
+      <h2 id="non-letters-are-forbidden">Non-letters are forbidden</h2>
+<pre><code>&gt;&gt;&gt; ⼤ = &#39;big&#39;
+  File &quot;&lt;stdin&gt;&quot;, line 1
+    ⼤ = &#39;big&#39;
+    ^
+SyntaxError: invalid character in identifier
+</code></pre>
+    </div>
+  </section>
+  <section class="slide ">
+    <div>
+      <h2 class="shout">Objects and classes</h2>
+    </div>
+  </section>
+  <section class="slide ">
+    <div>
+      <p>##</p>
+
+    </div>
+  </section>
+  <section class="slide ">
+    <div>
+      <h2 id="control-flow-and-loops">Control flow and loops</h2>
+<ul>
+<li>for</li>
+<li>while</li>
+</ul>
+
+    </div>
+  </section>
+  <section class="slide ">
+    <div>
+      <h2 id="-mark-for-mark-loop"><mark>for</mark> loop</h2>
+
+    </div>
+  </section>
+  <section class="slide author-slide">
+    <div>
+      <div class="author">
+  <h1 class="name">Alexander Sapozhnikov, Tatyana Vasilyeva</h1>
+    <h3 class="twitter">
+      <a href="http://twitter.com/@shoorick77">@shoorick77</a>
+    </h3>
+    <h3 class="url">
+      <a href="https://as.susu.ru">https://as.susu.ru</a>
+    </h3>
+</div>
+
+    </div>
+  </section>
+
+
+    <div class="progress"><div></div></div>
+
+    <script src="https://shwr.me/shower/shower.js"></script>
+</body>
+</html>

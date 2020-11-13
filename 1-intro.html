@@ -1,0 +1,335 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Data extraction with Python</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=792, user-scalable=no">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	
+	<link rel="stylesheet" href="http://shwr.me/shower/themes/ribbon/styles/screen.css">
+	<style type="text/css">
+	    
+	</style>
+</head>
+<body class="list">
+	<header class="caption">
+		<h1>Data extraction with Python</h1>
+	</header>
+
+	  <section class="slide"><div>
+    <h2>Data extraction with Python</h2>
+  </div></section>
+  <section class="slide"><div>
+    <p><figure>
+    <img class="cover" src="images/baumpython-cropped.jpg" alt="Python">
+    <figcaption class="copyright right white">
+        © Mike Wesemann
+    </figcaption>
+</figure></p>
+  </div></section>
+  <section class="slide"><div>
+    <p><figure>
+    <img class="cover" src="images/Python_logo_and_wordmark.svg.png" alt="Python">
+</figure></p>
+  </div></section>
+  <section class="slide"><div>
+    <h2>Why Python?</h2>
+
+<ul>
+<li>Quite simple</li>
+<li>but powerful</li>
+<li>Popular</li>
+</ul>
+  </div></section>
+  <section class="slide"><div>
+    <h2>How to run standalone Python interpreter</h2>
+
+<ul>
+<li>Windows
+<ul><li>Windows 10 — see WSL — Windows Subsystem for Linux</li>
+<li>or see python.org → <a href="https://www.python.org/downloads/">Downloads</a></li></ul></li>
+<li>UNIX like systems (macOS, Linux) — already installed</li>
+</ul>
+  </div></section>
+  <section class="slide"><div>
+    <h2>Which version should we use?</h2>
+
+<ul>
+<li>2 — obsolete</li>
+<li><mark><strong>3</strong> — current</mark></li>
+</ul>
+  </div></section>
+  <section class="slide"><div>
+    <h2>Let's try to launch Python in terminal</h2>
+
+<pre>
+<code class="mark">$ python</code>
+<code>Python 2.7.16 (default, Oct 10 2019, 22:02:15)</code>
+<code>[GCC 8.3.0] on linux2</code>
+<code>Type "help", "copyright", "credits" or "license" for more information.</code>
+<code>&gt;&gt;&gt;</code>
+</pre>
+  </div></section>
+  <section class="slide"><div>
+    <h2>Oops! Wrong version here</h2>
+
+<pre>
+<code class="mark">$ python</code>
+<code>Python <mark class="important">2.7.16</mark> (default, Oct 10 2019, 22:02:15)</code>
+<code>[GCC 8.3.0] on linux2</code>
+<code>Type "help", "copyright", "credits" or "license" for more information.</code>
+<code>&gt;&gt;&gt;</code>
+</pre>
+  </div></section>
+  <section class="slide"><div>
+    <h2>There's a prompt</h2>
+
+<pre>
+<code class="mark">$ python</code>
+<code>Python <mark>2.7.16</mark> (default, Oct 10 2019, 22:02:15)</code>
+<code>[GCC 8.3.0] on linux2</code>
+<code>Type "help", "copyright", "credits" or "license" for more information.</code>
+<code><mark class="important">&gt;&gt;&gt;</mark></code>
+</pre>
+  </div></section>
+  <section class="slide"><div>
+    <h2>How to exit?</h2>
+
+<pre>
+<code><mark>&gt;&gt;&gt;</mark> quit</code>
+<code>Use quit() or Ctrl-D (i.e. EOF) to exit</code>
+<code><mark>&gt;&gt;&gt;</mark> exit</code>
+<code>Use exit() or Ctrl-D (i.e. EOF) to exit</code>
+</pre>
+  </div></section>
+  <section class="slide"><div>
+    <h2>How to exit?</h2>
+
+<ul>
+<li>Press <mark>Ctrl+D</mark></li>
+<li>or <mark>Ctrl+Z</mark> on Windows</li>
+</ul>
+  </div></section>
+  <section class="slide"><div>
+    <h2>Let's try again</h2>
+
+<pre>
+<code class="mark">$ python3</code>
+<code>Python <mark class="important">3.7.3</mark> (default, Jul 25 2020, 13:03:44)</code>
+<code>[GCC 8.3.0] on linux</code>
+<code>Type "help", "copyright", "credits" or "license" for more information.</code>
+<code>&gt;&gt;&gt;</code>
+</pre>
+  </div></section>
+  <section class="slide"><div>
+    <h2>Type something</h2>
+
+<pre>
+<code class="mark">&gt;&gt;&gt; help</code>
+<code>Type help() for interactive help, or help(object) for help about object.</code>
+</pre>
+  </div></section>
+  <section class="slide"><div>
+    <h2>Get help</h2>
+
+<pre>
+<code class="mark">&gt;&gt;&gt; help()</code>
+<code>Welcome to Python 3.7's help utility!</code>
+<code> </code>
+<code>If this is your first time using Python, you should definitely check out</code>
+<code>the tutorial on the Internet at <a href="https://docs.python.org/3.7/tutorial/">https://docs.python.org/3.7/tutorial/</a>.</code>
+<code> </code>
+<code>Enter the name of any module, keyword, or topic to get help on writing</code>
+</pre>
+  </div></section>
+  <section class="slide"><div>
+    <h2>Return from <code>help()</code> — press Ctrl+D</h2>
+
+<pre>
+<code class="mark">help&gt;</code>
+<code>You are now leaving help and returning to the Python interpreter.</code>
+<code>If you want to ask for help on a particular object directly from the</code>
+<code>interpreter, you can type "help(object)".  Executing "help('string')"</code>
+<code>has the same effect as typing a particular string at the help> prompt.</code>
+<code class="mark">&gt;&gt;&gt;</code>
+</pre>
+  </div></section>
+  <section class="slide"><div>
+    <h2>Type more</h2>
+
+<pre>
+<code class="mark">&gt;&gt;&gt; 2*2</code>
+<code>4</code>
+</pre>
+  </div></section>
+  <section class="slide"><div>
+    <h2>Type more</h2>
+
+<pre>
+<code>&gt;&gt;&gt; 2*2</code>
+<code>4</code>
+<code class="mark">&gt;&gt;&gt; 2*4+(3/5)**2</code>
+<code>8.36</code>
+</pre>
+  </div></section>
+  <section class="slide"><div>
+    <h2>REPL</h2>
+
+<h3><a href="https://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop">Read–eval–print loop</a></h3>
+  </div></section>
+  <section class="slide"><div>
+    <h2>Get help</h2>
+
+<pre>
+<code class="mark">&gt;&gt;&gt; help(*)</code>
+<code>  File "<stdin>", line 1</code>
+<code>    help(*)</code>
+<code>          ^</code>
+<code><mark class="important">SyntaxError: invalid syntax</mark></code>
+</pre>
+  </div></section>
+  <section class="slide"><div>
+    <h2><code>help()</code> expects string</h2>
+
+<p>String must be enclosed with quotation marks</p>
+
+<pre>
+<code><mark>'</mark>string<mark>'</mark></code>
+<code><mark>"</mark>string<mark>"</mark></code>
+</pre>
+  </div></section>
+  <section class="slide"><div>
+    <h2>Get help again</h2>
+
+<pre>
+<code class="mark">&gt;&gt;&gt; help('*')</code>
+<code>Operator precedence</code>
+<code>*******************</code>
+<code> </code>
+<code>The following table summarizes the operator precedence in Python, from</code>
+<code>[ <em>skipped</em> ]</code>
+<code>:</code>
+</pre>
+  </div></section>
+  <section class="slide"><div>
+    <h2>Navigate through help page</h2>
+
+<ul>
+<li><mark>Enter ↲</mark> or <mark>↓</mark> arrow — next line</li>
+<li><mark>↑</mark> arrow — previous line</li>
+<li><mark>space</mark> — next page</li>
+<li><mark>g</mark> — scroll to top</li>
+<li><mark>G</mark> — scroll to bottom</li>
+<li><mark>q</mark> — quit from help</li>
+</ul>
+  </div></section>
+  <section class="slide"><div>
+    <h2>Some program</h2>
+
+<pre>
+<code class="mark">&gt;&gt;&gt; counter = 42</code>
+<code class="mark">&gt;&gt;&gt; print("I've already wrote", counter, 'programs')</code>
+<code>I've already wrote 42 programs</code>
+</pre>
+  </div></section>
+  <section class="slide"><div>
+    <h2>Save our program to file</h2>
+
+<p>Now we can execute it</p>
+
+<pre>
+<code class="mark">$ python3 program-counter.py</code>
+<code>I've already wrote 42 programs</code>
+</pre>
+  </div></section>
+  <section class="slide"><div>
+    <h2>Use .py extension</h2>
+
+<pre>
+<code>$ python3 program-counter<mark>.py</mark></code>
+<code>I've already wrote 42 programs</code>
+</pre>
+  </div></section>
+  <section class="slide"><div>
+    <h2>Alternative way</h2>
+
+<p>Search for Python interpreter</p>
+
+<pre>
+<code class="mark">$ which python3</code>
+<code>/usr/bin/python3</code>
+</pre>
+  </div></section>
+  <section class="slide"><div>
+    <h2>Alternative way</h2>
+
+<p>Add <mark>shebang</mark> line as first line of your file</p>
+
+<pre>
+<code><mark>#!</mark>/usr/bin/python3</code>
+<code>counter = 42</code>
+<code>print("I've already wrote", counter, 'programs')</code>
+</pre>
+  </div></section>
+  <section class="slide"><div>
+    <h2>Alternative way</h2>
+
+<p>Make your program executable</p>
+
+<pre>
+<code class="mark">$ chmod +x program-counter.py</code>
+</pre>
+
+<p>Now you can run it</p>
+
+<pre>
+<code class="mark">$ ./program-counter.py</code>
+<code>I've already wrote 42 programs</code>
+</pre>
+  </div></section>
+  <section class="slide"><div>
+    <h2>Editors and IDE</h2>
+  </div></section>
+  <section class="slide"><div>
+    <h2>Interactive programming environment</h2>
+
+<h3><a href="https://repl.it/">repl.it</a></h3>
+  </div></section>
+  <section class="slide"><div>
+    <h2>Basic syntax</h2>
+  </div></section>
+  <section class="slide"><div>
+    <h2>Error messages</h2>
+  </div></section>
+  <section class="slide"><div>
+    <h2>Libraries overview</h2>
+  </div></section>
+  <section class="slide"><div>
+    <h2>Further reading</h2>
+
+<ul>
+<li><code>help()</code></li>
+<li>docs.python.org</li>
+<li>pypi.org</li>
+<li>realpython.com</li>
+<li>cheat.sh</li>
+</ul>
+  </div></section>
+  <section class="slide"><div>
+    <div class="author">
+  <h1 class="name">Alexander Sapozhnikov</h1>
+  <h3 class="twitter">
+    <a href="http://twitter.com/@shoorick77" tabindex="-1">@shoorick77</a>
+  </h3>
+  <h3 class="url">
+    <a href="https://as.susu.ru" tabindex="-1">https://as.susu.ru</a>
+  </h3>
+</div>
+
+  </div></section>
+
+
+	<div class="progress"><div></div></div>
+	<script src="http://shwr.me/shower/shower.min.js"></script>
+</body>
+</html>

@@ -1,5 +1,6 @@
 title: Data extraction with Python
 output: 1-intro.html
+theme: /home/as/wrk/seminar/cleaver-ribbon
 author:
   name: "Alexander Sapozhnikov"
   twitter: "@shoorick77"

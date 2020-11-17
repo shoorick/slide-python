@@ -68,7 +68,7 @@ Colon and indent instead of curly braces for blocks
 
 <pre>
 <code>for fruit in basket<mark class="important">:</mark></code>
-<code><mark>    </mark># four spaces is recommended</code>
+<code><mark>    </mark><span class="comment"># four spaces is recommended</span></code>
 <code><mark>    </mark>print(fruit)</code>
 </pre>
 --
@@ -78,7 +78,7 @@ Colon and indent instead of curly braces for blocks
 
 <pre>
 <code>for fruit in basket<mark>:</mark></code>
-<code><mark class="important">    </mark># four spaces is recommended</code>
+<code><mark class="important">    </mark><span class="comment"># four spaces is recommended</span></code>
 <code><mark class="important">    </mark>print(fruit)</code>
 </pre>
 --
@@ -441,7 +441,7 @@ is_relaxed = cat<mark>.sleep()</mark>
   </div>
 </div>
 --
-## Use dot <mark class="important">.</mark> to call properties and methods
+## Use dot <mark class="orange">.</mark> to call properties and methods
 
 <div class="columns four">
   <div>
@@ -462,10 +462,10 @@ is_relaxed = cat<mark>.sleep()</mark>
   <div>
     <h3>`cat` is an Object</h3>
     <pre>
-      <code>height = cat<mark class="important">.</mark>size
+      <code>height = cat<mark class="orange">.</mark>size
 
-result = cat<mark class="important">.</mark>run<mark>(42)</mark>
-is_relaxed = cat<mark class="important">.</mark>sleep<mark>()</mark>
+result = cat<mark class="orange">.</mark>run<mark class="green">(42)</mark>
+is_relaxed = cat<mark class="orange">.</mark>sleep<mark class="green">()</mark>
       </code>
     </pre>
   </div>
@@ -695,9 +695,9 @@ Floating point number
 Use name of type as function to convert data
 
 <pre>
-<code class="next">&gt;&gt;&gt; int(3.1415926)</code>
+<code class="next">&gt;&gt;&gt; <mark class="orange">int</mark>(3.1415926)</code>
 <code class="next">3</code>
-<code class="next">&gt;&gt;&gt; float(42)</code>
+<code class="next">&gt;&gt;&gt; <mark class="green">float</mark>(42)</code>
 <code class="next">42.0</code>
 </pre>
 
@@ -722,8 +722,8 @@ __string__ is the sequence of characters
 <img src="images/str-i.png" alt="string with highlighted i">
 
 ```
->>> 'some'[3]
-'e'
+>>> 'string'[3]
+'i'
 ```
 --
 ## as well as whole string
@@ -731,8 +731,17 @@ __string__ is the sequence of characters
 <img src="images/str-string.png" alt="highlighted string">
 
 ```
->>> 'some'.upper()
-'SOME'
+>>> 'string'.upper()
+'STRING'
+```
+--
+## String parts are strings too
+
+<img src="images/str-i.png" alt="string with highlighted i">
+
+```
+>>> 'string'[3].upper()
+'I'
 ```
 --
 ## String subtypes

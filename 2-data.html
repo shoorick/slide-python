@@ -118,7 +118,7 @@
 <p>Colon and indent instead of curly braces for blocks</p>
 <pre>
 <code>for fruit in basket<mark class="important">:</mark></code>
-<code><mark>    </mark># four spaces is recommended</code>
+<code><mark>    </mark><span class="comment"># four spaces is recommended</span></code>
 <code><mark>    </mark>print(fruit)</code>
 </pre>
     </div>
@@ -129,7 +129,7 @@
 <p>Colon and indent instead of curly braces for blocks</p>
 <pre>
 <code>for fruit in basket<mark>:</mark></code>
-<code><mark class="important">    </mark># four spaces is recommended</code>
+<code><mark class="important">    </mark><span class="comment"># four spaces is recommended</span></code>
 <code><mark class="important">    </mark>print(fruit)</code>
 </pre>
     </div>
@@ -536,7 +536,7 @@ is_relaxed = cat<mark>.sleep()</mark>
   </section>
   <section class="slide ">
     <div>
-      <h2 id="use-dot-mark-class-important-mark-to-call-properties-and-methods">Use dot <mark class="important">.</mark> to call properties and methods</h2>
+      <h2 id="use-dot-mark-class-orange-mark-to-call-properties-and-methods">Use dot <mark class="orange">.</mark> to call properties and methods</h2>
 <div class="columns four">
   <div>
     <h3>Properties</h3>
@@ -556,10 +556,10 @@ is_relaxed = cat<mark>.sleep()</mark>
   <div>
     <h3><code>cat</code> is an Object</h3>
     <pre>
-      <code>height = cat<mark class="important">.</mark>size
+      <code>height = cat<mark class="orange">.</mark>size
 
-result = cat<mark class="important">.</mark>run<mark>(42)</mark>
-is_relaxed = cat<mark class="important">.</mark>sleep<mark>()</mark>
+result = cat<mark class="orange">.</mark>run<mark class="green">(42)</mark>
+is_relaxed = cat<mark class="orange">.</mark>sleep<mark class="green">()</mark>
       </code>
     </pre>
   </div>
@@ -831,9 +831,9 @@ False
       <h2 id="change-type">Change type</h2>
 <p>Use name of type as function to convert data</p>
 <pre>
-<code class="next">&gt;&gt;&gt; int(3.1415926)</code>
+<code class="next">&gt;&gt;&gt; <mark class="orange">int</mark>(3.1415926)</code>
 <code class="next">3</code>
-<code class="next">&gt;&gt;&gt; float(42)</code>
+<code class="next">&gt;&gt;&gt; <mark class="green">float</mark>(42)</code>
 <code class="next">42.0</code>
 </pre>
     </div>
@@ -861,8 +861,8 @@ False
     <div>
       <h2 id="individual-characters-are-accessible">Individual characters are accessible</h2>
 <p><img src="images/str-i.png" alt="string with highlighted i"></p>
-<pre><code>&gt;&gt;&gt; &#39;some&#39;[3]
-&#39;e&#39;
+<pre><code>&gt;&gt;&gt; &#39;string&#39;[3]
+&#39;i&#39;
 </code></pre>
     </div>
   </section>
@@ -870,8 +870,17 @@ False
     <div>
       <h2 id="as-well-as-whole-string">as well as whole string</h2>
 <p><img src="images/str-string.png" alt="highlighted string"></p>
-<pre><code>&gt;&gt;&gt; &#39;some&#39;.upper()
-&#39;SOME&#39;
+<pre><code>&gt;&gt;&gt; &#39;string&#39;.upper()
+&#39;STRING&#39;
+</code></pre>
+    </div>
+  </section>
+  <section class="slide ">
+    <div>
+      <h2 id="string-parts-are-strings-too">String parts are strings too</h2>
+<p><img src="images/str-i.png" alt="string with highlighted i"></p>
+<pre><code>&gt;&gt;&gt; &#39;string&#39;[3].upper()
+&#39;I&#39;
 </code></pre>
     </div>
   </section>

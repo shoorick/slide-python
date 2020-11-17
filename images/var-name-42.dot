@@ -1,0 +1,11 @@
+digraph G {
+    graph [ rankdir=LR ]
+    node [ shape=box, fontname="PT Mono", fontsize=32 ]
+
+    name [ shape=cds, style=filled, fillcolor=wheat ]
+    name -> 42
+
+    "'value'" [ fontcolor=grey, color=grey ]
+    none -> "'value'" [ style=invis ]
+    none [ style=invis ]
+}

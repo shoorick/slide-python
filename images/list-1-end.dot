@@ -1,0 +1,21 @@
+digraph G {
+    node [ shape=box, style=filled, fillcolor=white, fontname="PT Mono", fontsize=32 ]
+
+    list [
+        shape=none
+        label=<<table border="0" cellspacing="0" cellpadding="5">
+            <tr>
+                <td port="p0" border="1">1</td>
+                <td port="p1" border="1" bgcolor="yellow">2</td>
+                <td port="p2" border="1" bgcolor="yellow">3</td>
+                <td port="p3" border="1" bgcolor="yellow">5</td>
+                <td port="p4" border="1" bgcolor="yellow">7</td>
+                <td port="p5" border="1" bgcolor="yellow">11</td>
+            </tr>
+        </table>>
+    ]
+
+    include -> list:p1
+
+    include [ label="1:", fillcolor=yellow ]
+}

@@ -1,0 +1,5 @@
+digraph G {
+    node [ shape=box, fontname="PT Mono", fontsize=32 ]
+
+    string [ shape=record, label="1|2|3|5|7|11|'numbers'" ]
+}

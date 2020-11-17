@@ -1,0 +1,44 @@
+digraph G {
+    node [ shape=box, style=filled, fillcolor=white, fontname="PT Mono", fontsize=32 ]
+
+    list [
+        shape=none
+        label=<<table border="0" cellspacing="0" cellpadding="5">
+            <tr>
+                <td></td>
+                <td><font color="#999999" point-size="16">0</font></td>
+                <td><font color="#999999" point-size="16">1</font></td>
+                <td><font color="#999999" point-size="16">2</font></td>
+                <td><font color="#999999" point-size="16">3</font></td>
+                <td><font color="#999999" point-size="16">4</font></td>
+                <td><font color="#999999" point-size="16">5</font></td>
+                <td><font color="#999999" point-size="16">6</font></td>
+            </tr>
+            <tr>
+                <td><font color="#999999" point-size="16">0</font></td>
+                <td border="1">A</td>
+                <td border="1">l</td>
+                <td border="1">i</td>
+                <td border="1">c</td>
+                <td border="1">e</td>
+            </tr>
+            <tr>
+                <td><font color="#999999" point-size="16">1</font></td>
+                <td border="1">B</td>
+                <td border="1">o</td>
+                <td border="1">b</td>
+            </tr>
+            <tr>
+                <td><font color="#999999" point-size="16">2</font></td>
+                <td border="1">C</td>
+                <td border="1">h</td>
+                <td border="1">a</td>
+                <td border="1">r</td>
+                <td border="1">l</td>
+                <td border="1">i</td>
+                <td border="1">e</td>
+            </tr>
+        </table>>
+    ]
+
+}

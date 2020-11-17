@@ -1,0 +1,6 @@
+digraph G {
+    node [ shape=box, fontname="PT Mono", fontsize=32 ]
+    { s t r i n g } -> string
+
+    string [ style=filled, fillcolor=yellow ]
+}

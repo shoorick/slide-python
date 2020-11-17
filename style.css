@@ -1,0 +1,29 @@
+.shower {
+    --color-green:  #d0faa2;
+    --color-orange: #fae3a2;
+}
+
+section.title div h2 {
+    margin: 380px 0 0;
+    text-align: center;
+    color: white;
+    font-size: 80px;
+    text-shadow: black 0 0 20px, black 0 0 40px;
+}
+
+var {
+    font-family: 'PT Serif',serif;
+    font-style: italic;
+}
+
+.slide p .comment {
+    color: #999
+}
+
+.slide mark.green {
+    background-color: var(--color-green);
+}
+
+.slide mark.orange {
+    background-color: var(--color-orange);
+}

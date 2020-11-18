@@ -38,46 +38,283 @@
   <section class="slide ">
     <div>
       <h2 id="part-3">Part 3</h2>
+<h3 id="control-flow-and-loops">Control flow and loops</h3>
 <ul>
-<li>Control flow and loops</li>
+<li>Conditional statement</li>
+<li>Loops and iterators</li>
+</ul>
+<p>See also <a href="https://docs.python.org/3.7/tutorial/controlflow.html">docs.python.org / Tutorial / More Control Flow Tools</a></p>
+
+    </div>
+  </section>
+  <section class="slide ">
+    <div>
+      <h2 id="conditional-statement">Conditional statement</h2>
+<p>Colon and indent instead of curly braces for blocks</p>
+<pre>
+<code>if (x &lt; 5)<mark>:</mark>
+<mark>    </mark><span class="comment"># four spaces is recommended</span>
+<mark>    </mark>print(x)</code>
+</pre>
+    </div>
+  </section>
+  <section class="slide ">
+    <div>
+      <h2 id="conditional-statement">Conditional statement</h2>
+<p>Parentheses around condition aren’t necessary</p>
+<pre>
+<code>if <mark> </mark>x &lt; 5<mark> </mark>:
+    <span class="comment"># omit parentheses</span>
+    print(x)</code>
+</pre>
+    </div>
+  </section>
+  <section class="slide ">
+    <div>
+      <h2 id="conditional-statement">Conditional statement</h2>
+<p>Parentheses around condition aren’t necessary</p>
+<pre>
+<code>if <mark>x &lt; 5</mark> and <mark>y &gt; 7</mark>:
+    <span class="comment"># omit parentheses when possible</span>
+    print(x)</code>
+</pre>
+    </div>
+  </section>
+  <section class="slide ">
+    <div>
+      <h2 id="else">Else</h2>
+<pre>
+<code>if x &lt; 5:
+    print(x)
+<mark>else:</mark>
+    <span class="comment"># otherwise</span>
+    print(something_else)
+</code>
+</pre>
+    </div>
+  </section>
+  <section class="slide ">
+    <div>
+      <h2 id="else-if-elif">else if → elif</h2>
+<pre>
+<code>if x &lt; 5:
+    print('Few')
+<mark class="green">elif</mark> x &gt; 9:
+    <span class="comment"># second condition</span>
+    print('Many')
+else:
+    print(something_else)
+</code>
+</pre>
+    </div>
+  </section>
+  <section class="slide ">
+    <div>
+      <h2 id="else-if-elif">else if → elif</h2>
+<pre>
+<code>if x &lt; 5<mark>:</mark>
+    print('Few')
+elif x &gt; 9<mark>:</mark>
+    <span class="comment"># second condition</span>
+    print('Much')
+else<mark>:</mark>
+    print(something_else)
+</code>
+</pre>
+    </div>
+  </section>
+  <section class="slide ">
+    <div>
+      <h2 id="else-if-elif">else if → elif</h2>
+<div class="two columns">
+<div>
+<pre>
+<code>if x &lt; 5<mark>:</mark>
+    print(&#39;Few&#39;)
+<mark class="green">elif</mark> x &gt; 9<mark>:</mark>
+    print(&#39;Much&#39;)
+<mark class="green">elif</mark> x &gt; 7<mark>:</mark>
+    print(&#39;Not so much&#39;)
+<mark class="green">elif</mark> z == 42<mark>:</mark>
+</code>
+</pre>
+</div><div>
+<br><br>
+as many <code><mark class="green">elif</mark></code>s
+<br>as you wish
+</div></div>
+    </div>
+  </section>
+  <section class="slide ">
+    <div>
+      <h2 id="-is-not-a-comparison-operator"><code>=</code> is not a comparison operator</h2>
+<pre>
+<code>&gt;&gt;&gt; if z <mark class="important">=</mark> 7:
+  File "<stdin>", line 1
+    if z = 7:
+         ^
+SyntaxError: invalid syntax
+</code>
+</pre>
+    </div>
+  </section>
+  <section class="slide ">
+    <div>
+      <h2 id="-and-"><code>=</code> and <code>==</code></h2>
+<h3 id="assignment">Assignment</h3>
+<pre>
+<code>z <mark class="orange">=</mark> 7
+</code>
+</pre>
+
+<h3 id="comparison">Comparison</h3>
+<pre>
+<code>if z <mark class="green">==</mark> 42:
+    <span class="comment">print(z)</span>
+</code>
+</pre>
+    </div>
+  </section>
+  <section class="slide ">
+    <div>
+      <h2 id="loops">Loops</h2>
+<ul>
+<li>for</li>
+<li>while</li>
+<li>with</li>
 </ul>
 
     </div>
   </section>
   <section class="slide ">
     <div>
-      <h2 id="control-flow-and-loops">Control flow and loops</h2>
-<ul>
-<li>for</li>
-<li>while</li>
-</ul>
+      <h2 id="assignment-with-if-else">Assignment with if/else</h2>
+<div class="two columns">
+<div>
+&nbsp;
+<pre><code>if x &lt; 5:
+    <mark>z</mark> = &#39;Few&#39;
+else:
+    <mark>z</mark> = &#39;Many&#39;
+</code></pre></div>
+</div>
+    </div>
+  </section>
+  <section class="slide ">
+    <div>
+      <h2 id="assignment-with-if-else">Assignment with if/else</h2>
+<div class="two columns">
+<div>
 
+<strong>instead of</strong>
+
+<pre><code>if x &lt; 5:
+    <mark>z</mark> = &#39;Few&#39;
+else:
+    <mark>z</mark> = &#39;Many&#39;
+</code></pre>
+</div><div>
+
+<strong>write</strong>
+
+<div><pre><code><mark>z</mark> = &#39;Few&#39; if x &lt; 5 else &#39;Many&#39;</code>
+</pre>
+</div>
+</div>
     </div>
   </section>
   <section class="slide ">
     <div>
       <h2 id="-mark-for-mark-loop"><mark>for</mark> loop</h2>
-
-    </div>
-  </section>
-  <section class="slide ">
-    <div>
-      
-    </div>
-  </section>
-  <section class="slide ">
-    <div>
-      <h2 id="zip">zip</h2>
-<pre><code>&gt;&gt;&gt; colors = [&#39;red&#39;, &#39;orange&#39;, &#39;yellow&#39;]
-&gt;&gt;&gt; people = [&#39;Alice&#39;, &#39;Bob&#39;, &#39;Charlie&#39;]
-&gt;&gt;&gt; fruits = [&#39;apple&#39;, &#39;banana&#39;, &#39;cucumber&#39;]
+<pre><code>
+for <mark class="orange">item</mark> in <mark class="green">sequence</mark>:
+    <span class="comment"># do something</span>
 </code></pre>
     </div>
   </section>
   <section class="slide ">
     <div>
-      <h2 id="enumerate">enumerate</h2>
+      <h2 id="iterate-through-list">Iterate through list</h2>
+<pre><code>
+people = ['Alice', 'Bob', 'Charlie']
+for <mark class="orange">person</mark> in <mark class="green">people</mark>:
+    print(person)
+</code></pre>
+    </div>
+  </section>
+  <section class="slide ">
+    <div>
+      <h2 id="iterate-over-range">Iterate over range</h2>
+<pre><code>
+teen = range(13, 20)
+for <mark class="orange">age</mark> in <mark class="green">teen</mark>:
+    print(f'Age is {age}')
+</code></pre>
+    </div>
+  </section>
+  <section class="slide ">
+    <div>
+      <h2 id="iterate-over-range">Iterate over range</h2>
+<pre><code>
+teen = range(13, 20)
+for <mark class="orange">age</mark> in <mark class="green">teen</mark>:
+    print(f'Age is {age}')
 
+for <mark class="orange">i</mark> in <mark class="green">range(10)</mark>:
+    do_something() <span class="comment"># ten times</span>
+</code></pre>
+    </div>
+  </section>
+  <section class="slide ">
+    <div>
+      <h2 id="counter-name">Counter name</h2>
+<p><code>i</code>, <code>j</code>, <code>k</code> (and <code>x</code>, <code>y</code>, <code>z</code>) are good names for counter variables</p>
+<pre><code>
+for <mark class="orange">x</mark> in width:
+    for <mark>y</mark> in height:
+        for <mark class="green">z</mark> in depth:
+            do_something(<mark class="orange">x</mark>, <mark>y</mark>, <mark class="green">z</mark>)
+</code></pre>
+    </div>
+  </section>
+  <section class="slide ">
+    <div>
+      <h2 id="how-to-iterate-over-several-sequences-simultaneously-">How to iterate over several sequences simultaneously?</h2>
+<pre><code>
+<mark class="orange">colors</mark> = ['red',   'orange', 'yellow'  ]
+<mark>people</mark> = ['Alice', 'Bob',    'Charlie' ]
+<mark class="green">fruits</mark> = ['apple', 'banana', 'cucumber']
+</code></pre>
+    </div>
+  </section>
+  <section class="slide ">
+    <div>
+      <h2 id="how-to-iterate-over-several-sequences-simultaneously-">How to iterate over several sequences simultaneously?</h2>
+<pre><code>
+colors = [<mark class="blue">'red',  </mark> 'orange', 'yellow'  ]
+people = [<mark class="blue">'Alice',</mark> 'Bob',    'Charlie' ]
+fruits = [<mark class="blue">'apple',</mark> 'banana', 'cucumber']
+</code></pre>
+    </div>
+  </section>
+  <section class="slide ">
+    <div>
+      <h2 id="how-to-iterate-over-several-sequences-simultaneously-">How to iterate over several sequences simultaneously?</h2>
+<pre><code>
+colors = ['red',   <mark class="blue">'orange',</mark> 'yellow'  ]
+people = ['Alice', <mark class="blue">'Bob',   </mark> 'Charlie' ]
+fruits = ['apple', <mark class="blue">'banana',</mark> 'cucumber']
+</code></pre>
+    </div>
+  </section>
+  <section class="slide ">
+    <div>
+      <h2 id="how-to-iterate-over-several-sequences-simultaneously-">How to iterate over several sequences simultaneously?</h2>
+<pre><code>
+colors = ['red',   'orange', <mark class="blue">'yellow'  </mark>]
+people = ['Alice', 'Bob',    <mark class="blue">'Charlie' </mark>]
+fruits = ['apple', 'banana', <mark class="blue">'cucumber'</mark>]
+</code></pre>
     </div>
   </section>
   <section class="slide ">
@@ -90,6 +327,77 @@
 Alice has red apple
 <mark>Bob</mark> has <mark class="orange">orange</mark> <mark class="green">banana</mark>
 Charlie</mark> has yellow cucumber
+</code></pre>
+    </div>
+  </section>
+  <section class="slide ">
+    <div>
+      <h2 id="how-to-enumerate-items-">How to enumerate items?</h2>
+<ol>
+<li>First</li>
+<li>Second</li>
+<li>Third</li>
+<li>Fourth</li>
+<li>Fifth</li>
+</ol>
+
+    </div>
+  </section>
+  <section class="slide ">
+    <div>
+      <h2 id="example-chemical-elements">Example: chemical elements</h2>
+<pre><code>&gt;&gt;&gt; stuff = [&#39;hydrogen&#39;, &#39;helium&#39;, &#39;lithium&#39;]
+</code></pre><p><img src="images/periodic-table.dot.svg" alt="name → value"></p>
+
+    </div>
+  </section>
+  <section class="slide ">
+    <div>
+      <h2 id="classic-way">Classic way</h2>
+<pre><code>&gt;&gt;&gt; stuff = [&#39;hydrogen&#39;, &#39;helium&#39;, &#39;lithium&#39;]
+&gt;&gt;&gt; for i in range(len(stuff)):
+...     print(i + 1, stuff[i])
+...
+1 hydrogen
+2 helium
+3 lithium
+</code></pre>
+    </div>
+  </section>
+  <section class="slide ">
+    <div>
+      <h2 id="use-zip-and-range-for-numbering">Use zip and range for numbering</h2>
+<pre><code>&gt;&gt;&gt; for number, name in zip(range(1, len(stuff) + 1), stuff):
+...     print(number, name)
+...
+1 hydrogen
+2 helium
+3 lithium
+</code></pre>
+    </div>
+  </section>
+  <section class="slide ">
+    <div>
+      <h2 id="enumerate">enumerate</h2>
+<pre><code>&gt;&gt;&gt; for number, name in enumerate(stuff):
+...     print(number, name)
+...
+0 hydrogen
+1 helium
+2 lithium
+</code></pre>
+    </div>
+  </section>
+  <section class="slide ">
+    <div>
+      <h2 id="enumerate">enumerate</h2>
+<pre>
+<code>&gt;&gt;&gt; for number, name in enumerate(stuff, <mark>start=1</mark>):
+...     print(number, name)
+...
+<mark>1</mark> hydrogen
+<mark>2</mark> helium
+<mark>3</mark> lithium
 </code></pre>
     </div>
   </section>

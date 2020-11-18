@@ -1,4 +1,5 @@
 .shower {
+    --color-light-blue:   #c0daf5;
     --color-green:  #d0faa2;
     --color-orange: #fae3a2;
 }
@@ -18,6 +19,10 @@ var {
 
 .slide p .comment {
     color: #999
+}
+
+.slide mark.blue {
+    background-color: var(--color-light-blue);
 }
 
 .slide mark.green {

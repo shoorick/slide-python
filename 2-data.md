@@ -768,6 +768,91 @@ __string__ is the sequence of characters
 'I'
 ```
 --
+## Methods of `str`
+<div class="two columns">
+  <div>
+    <ul>
+      <li>**capitalize**() → string</li>
+      <li>**center**(width[, fillchar]) → string</li>
+      <li>**count**(sub[, start[, end]]) → int</li>
+      <li>**decode**([encoding[,errors]]) → object</li>
+      <li>**encode**([encoding[,errors]]) → object</li>
+    </ul>
+  </div>
+  <div>
+    <ul>
+      <li>**endswith**(suffix[, start[, end]]) → bool</li>
+      <li>**expandtabs**([tabsize]) → string</li>
+      <li>**find**(sub [,start [,end]]) → int</li>
+      <li>**format**(\*args, \**kwargs) → string</li>
+      <li>**index**(sub [,start [,end]]) → int</li>
+    </ul>
+  </div>
+</div>
+--
+## Methods of `str`
+<div class="two columns">
+  <div>
+    <ul>
+      <li>**isalnum**() → bool</li>
+      <li>**isalpha**() → bool</li>
+      <li>**isdigit**() → bool</li>
+      <li>**islower**() → bool</li>
+      <li>**isspace**() → bool</li>
+      <li>**istitle**() → bool</li>
+      <li>**isupper**() → bool</li>
+    </ul>
+  </div>
+  <div>
+    <ul>
+      <li>**join**(iterable) → string</li>
+      <li>**just**(width[, fillchar]) → string</li>
+      <li>**lower**() → string</li>
+      <li>**lstrip**([chars]) → string or unicode</li>
+      <li>**partition**(sep) → (head, sep, tail)</li>
+      <li>**replace**(old, new[, count]) → string</li>
+      <li>**rfind**(sub [,start [,end]]) → int</li>
+    </ul>
+  </div>
+</div>
+--
+## Methods of `str`
+<div class="two columns">
+  <div>
+    <ul>
+      <li>**rindex**(sub [,start [,end]]) → int</li>
+      <li>**rjust**(width[, fillchar]) → string</li>
+      <li>**rpartition**(sep) → (head, sep, tail)</li>
+      <li>**rsplit**([sep [,maxsplit]]) → list of strings</li>
+      <li>**rstrip**([chars]) → string or unicode</li>
+    </ul>
+  </div>
+  <div>
+    <ul>
+      <li>**split**([sep [,maxsplit]]) → list of strings</li>
+      <li>**splitlines**(keepends=False) → list of strings</li>
+      <li>**startswith**(prefix[, start[, end]]) → bool</li>
+      <li>**strip**([chars]) → string or unicode</li>
+    </ul>
+  </div>
+</div>
+--
+## Methods of `str`
+<div class="two columns">
+  <div>
+    <ul>
+      <li>**swapcase**() → string</li>
+      <li>**title**() → string</li>
+      <li>**translate**(table [,deletechars]) → string</li>
+      <li>**upper**() → string</li>
+      <li>**zfill**(width) → string
+    </ul>
+  </div>
+  <div>
+    <h3 style="font-size:2em">38 methods!</h3>
+  </div>
+</div>
+--
 ## String subtypes
 
 ```
@@ -981,7 +1066,7 @@ TypeError: unsupported operand type(s) for +: 'int' and 'str'
 --
 ## list
 
-List is a sequence of values
+**List** is a sequence of values
 
 ![list](images/list.dot.svg)
 
@@ -1042,7 +1127,7 @@ Index of item is an **offset** from left edge of list
 7
 ```
 --
-## Slice — first:last
+## Slice — `first:last`
 
 ![list](images/list-1-4.dot.svg)
 
@@ -1051,7 +1136,7 @@ Index of item is an **offset** from left edge of list
 [2, 3, 5]
 ```
 --
-## Slice — first: without right bound
+## Slice — `first:` without right bound
 
 ![list](images/list-1-end.dot.svg)
 
@@ -1061,7 +1146,7 @@ Index of item is an **offset** from left edge of list
 ```
 
 --
-## Slice — :last without left bound
+## Slice — `:last` without left bound
 
 ![list](images/list-begin-3.dot.svg)
 
@@ -1071,7 +1156,7 @@ Index of item is an **offset** from left edge of list
 ```
 
 --
-## Slice — ::step after second semicolon
+## Slice — `::step` after second semicolon
 
 ![list](images/list-step-2.dot.svg)
 
@@ -1080,7 +1165,7 @@ Index of item is an **offset** from left edge of list
 [2, 5, 11]
 ```
 --
-## Without bounds but with ::step
+## Without bounds but with `::step`
 
 ![list](images/list-step-2-unbounded.dot.svg)
 
@@ -1261,16 +1346,6 @@ Use parentheses to make a tuple
 ```
 
 --
-## Make an empty dict
-
-<pre>
-<code>&gt;&gt;&gt; empty = dict()  <span class="comment"># possible but ugly</span>
-&gt;&gt;&gt; empty
-{}
-
-&gt;&gt;&gt; hollow = {}     <span class="comment"># better</span>
-</code></pre>
---
 ## Change values and add new ones
 
 ```
@@ -1280,6 +1355,16 @@ Use parentheses to make a tuple
 'yellow apple came from Normandy'
 ```
 
+--
+## Make an empty dict
+
+<pre>
+<code>&gt;&gt;&gt; empty = dict()  <span class="comment"># possible but ugly</span>
+&gt;&gt;&gt; empty
+{}
+
+&gt;&gt;&gt; hollow = {}     <span class="comment"># better</span>
+</code></pre>
 --
 ## set
 
@@ -1302,12 +1387,26 @@ True
 ## Methods of set
 
 ```
->>> dir(es)
+>>> dir(set)
 ['__and__', '__class__', '__contains__', '__delattr__', '__dir__',
 'add', 'clear', 'copy', 'difference', 'difference_update',
 'discard', 'intersection', 'intersection_update', 'isdisjoint',
 'issubset', 'issuperset', 'pop', 'remove', 'symmetric_difference',
 'symmetric_difference_update', 'union', 'update']
+```
+[docs.python.org / Built-in Types #set](https://docs.python.org/3.7/library/stdtypes.html#set)
+--
+## Methods of set
+
+```
+>>> help(set)
+ |  add(...)
+ |      Add an element to a set.
+ |      This has no effect if the element is already present.
+ |
+ |  clear(...)
+ |      Remove all elements from this set.
+
 ```
 [docs.python.org / Built-in Types #set](https://docs.python.org/3.7/library/stdtypes.html#set)
 --
@@ -1345,7 +1444,8 @@ TypeError: 'set' object is not subscriptable
 --
 ## range
 
-**Range** is the sequence of monotonically uniformly changing integers:
+**Range** is the sequence of monotonically uniformly changing integers —
+_arithmetic progression:_
 
 * 4, 5, 6, 7, 8, ...
 * 10, 9, 8, 7, 6, 5, 4, 3, 2, 1

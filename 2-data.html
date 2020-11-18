@@ -915,6 +915,103 @@ False
   </section>
   <section class="slide hidden ">
     <div>
+      <h2 id="methods-of-str">Methods of <code>str</code></h2>
+<div class="two columns">
+  <div>
+    <ul>
+      <li><strong>capitalize</strong>() → string</li>
+      <li><strong>center</strong>(width[, fillchar]) → string</li>
+      <li><strong>count</strong>(sub[, start[, end]]) → int</li>
+      <li><strong>decode</strong>([encoding[,errors]]) → object</li>
+      <li><strong>encode</strong>([encoding[,errors]]) → object</li>
+    </ul>
+  </div>
+  <div>
+    <ul>
+      <li><strong>endswith</strong>(suffix[, start[, end]]) → bool</li>
+      <li><strong>expandtabs</strong>([tabsize]) → string</li>
+      <li><strong>find</strong>(sub [,start [,end]]) → int</li>
+      <li><strong>format</strong>(*args, **kwargs) → string</li>
+      <li><strong>index</strong>(sub [,start [,end]]) → int</li>
+    </ul>
+  </div>
+</div>
+    </div>
+  </section>
+  <section class="slide hidden ">
+    <div>
+      <h2 id="methods-of-str">Methods of <code>str</code></h2>
+<div class="two columns">
+  <div>
+    <ul>
+      <li><strong>isalnum</strong>() → bool</li>
+      <li><strong>isalpha</strong>() → bool</li>
+      <li><strong>isdigit</strong>() → bool</li>
+      <li><strong>islower</strong>() → bool</li>
+      <li><strong>isspace</strong>() → bool</li>
+      <li><strong>istitle</strong>() → bool</li>
+      <li><strong>isupper</strong>() → bool</li>
+    </ul>
+  </div>
+  <div>
+    <ul>
+      <li><strong>join</strong>(iterable) → string</li>
+      <li><strong>just</strong>(width[, fillchar]) → string</li>
+      <li><strong>lower</strong>() → string</li>
+      <li><strong>lstrip</strong>([chars]) → string or unicode</li>
+      <li><strong>partition</strong>(sep) → (head, sep, tail)</li>
+      <li><strong>replace</strong>(old, new[, count]) → string</li>
+      <li><strong>rfind</strong>(sub [,start [,end]]) → int</li>
+    </ul>
+  </div>
+</div>
+    </div>
+  </section>
+  <section class="slide hidden ">
+    <div>
+      <h2 id="methods-of-str">Methods of <code>str</code></h2>
+<div class="two columns">
+  <div>
+    <ul>
+      <li><strong>rindex</strong>(sub [,start [,end]]) → int</li>
+      <li><strong>rjust</strong>(width[, fillchar]) → string</li>
+      <li><strong>rpartition</strong>(sep) → (head, sep, tail)</li>
+      <li><strong>rsplit</strong>([sep [,maxsplit]]) → list of strings</li>
+      <li><strong>rstrip</strong>([chars]) → string or unicode</li>
+    </ul>
+  </div>
+  <div>
+    <ul>
+      <li><strong>split</strong>([sep [,maxsplit]]) → list of strings</li>
+      <li><strong>splitlines</strong>(keepends=False) → list of strings</li>
+      <li><strong>startswith</strong>(prefix[, start[, end]]) → bool</li>
+      <li><strong>strip</strong>([chars]) → string or unicode</li>
+    </ul>
+  </div>
+</div>
+    </div>
+  </section>
+  <section class="slide hidden ">
+    <div>
+      <h2 id="methods-of-str">Methods of <code>str</code></h2>
+<div class="two columns">
+  <div>
+    <ul>
+      <li><strong>swapcase</strong>() → string</li>
+      <li><strong>title</strong>() → string</li>
+      <li><strong>translate</strong>(table [,deletechars]) → string</li>
+      <li><strong>upper</strong>() → string</li>
+      <li><strong>zfill</strong>(width) → string
+    </ul>
+  </div>
+  <div>
+    <h3 style="font-size:2em">38 methods!</h3>
+  </div>
+</div>
+    </div>
+  </section>
+  <section class="slide hidden ">
+    <div>
       <h2 id="string-subtypes">String subtypes</h2>
 <pre><code>&gt;&gt;&gt; &#39;Generic&#39; or &quot;common&quot;
 &#39;Generic&#39;
@@ -1147,7 +1244,7 @@ TypeError: unsupported operand type(s) for +: &#39;int&#39; and &#39;str&#39;
   <section class="slide hidden ">
     <div>
       <h2 id="list">list</h2>
-<p>List is a sequence of values</p>
+<p><strong>List</strong> is a sequence of values</p>
 <p><img src="images/list.dot.svg" alt="list"></p>
 
     </div>
@@ -1207,7 +1304,7 @@ TypeError: unsupported operand type(s) for +: &#39;int&#39; and &#39;str&#39;
   </section>
   <section class="slide hidden ">
     <div>
-      <h2 id="slice-first-last">Slice — first:last</h2>
+      <h2 id="slice-first-last">Slice — <code>first:last</code></h2>
 <p><img src="images/list-1-4.dot.svg" alt="list"></p>
 <pre><code>&gt;&gt;&gt; prime_numbers[1:4]
 [2, 3, 5]
@@ -1216,7 +1313,7 @@ TypeError: unsupported operand type(s) for +: &#39;int&#39; and &#39;str&#39;
   </section>
   <section class="slide hidden ">
     <div>
-      <h2 id="slice-first-without-right-bound">Slice — first: without right bound</h2>
+      <h2 id="slice-first-without-right-bound">Slice — <code>first:</code> without right bound</h2>
 <p><img src="images/list-1-end.dot.svg" alt="list"></p>
 <pre><code>&gt;&gt;&gt; prime_numbers[1:]
 [2, 3, 5, 7, 11]
@@ -1225,7 +1322,7 @@ TypeError: unsupported operand type(s) for +: &#39;int&#39; and &#39;str&#39;
   </section>
   <section class="slide hidden ">
     <div>
-      <h2 id="slice-last-without-left-bound">Slice — :last without left bound</h2>
+      <h2 id="slice-last-without-left-bound">Slice — <code>:last</code> without left bound</h2>
 <p><img src="images/list-begin-3.dot.svg" alt="list"></p>
 <pre><code>&gt;&gt;&gt; prime_numbers[:3]
 [1, 2, 3]
@@ -1234,7 +1331,7 @@ TypeError: unsupported operand type(s) for +: &#39;int&#39; and &#39;str&#39;
   </section>
   <section class="slide hidden ">
     <div>
-      <h2 id="slice-step-after-second-semicolon">Slice — ::step after second semicolon</h2>
+      <h2 id="slice-step-after-second-semicolon">Slice — <code>::step</code> after second semicolon</h2>
 <p><img src="images/list-step-2.dot.svg" alt="list"></p>
 <pre><code>&gt;&gt;&gt; prime_numbers[1:6:2]
 [2, 5, 11]
@@ -1243,7 +1340,7 @@ TypeError: unsupported operand type(s) for +: &#39;int&#39; and &#39;str&#39;
   </section>
   <section class="slide hidden ">
     <div>
-      <h2 id="without-bounds-but-with-step">Without bounds but with ::step</h2>
+      <h2 id="without-bounds-but-with-step">Without bounds but with <code>::step</code></h2>
 <p><img src="images/list-step-2-unbounded.dot.svg" alt="list"></p>
 <pre><code>&gt;&gt;&gt; prime_numbers[::2]
 [1, 3, 7]
@@ -1436,6 +1533,16 @@ TypeError: &#39;tuple&#39; object does not support item assignment
   </section>
   <section class="slide hidden ">
     <div>
+      <h2 id="change-values-and-add-new-ones">Change values and add new ones</h2>
+<pre><code>&gt;&gt;&gt; apple[&#39;color&#39;] = &#39;yellow&#39;
+&gt;&gt;&gt; apple[&#39;origin&#39;] = &#39;Normandy&#39;
+&gt;&gt;&gt; f&quot;{apple[&#39;color&#39;]} apple came from {apple[&#39;origin&#39;]}&quot;
+&#39;yellow apple came from Normandy&#39;
+</code></pre>
+    </div>
+  </section>
+  <section class="slide hidden ">
+    <div>
       <h2 id="make-an-empty-dict">Make an empty dict</h2>
 <pre>
 <code>&gt;&gt;&gt; empty = dict()  <span class="comment"># possible but ugly</span>
@@ -1443,16 +1550,6 @@ TypeError: &#39;tuple&#39; object does not support item assignment
 {}
 
 &gt;&gt;&gt; hollow = {}     <span class="comment"># better</span>
-</code></pre>
-    </div>
-  </section>
-  <section class="slide hidden ">
-    <div>
-      <h2 id="change-values-and-add-new-ones">Change values and add new ones</h2>
-<pre><code>&gt;&gt;&gt; apple[&#39;color&#39;] = &#39;yellow&#39;
-&gt;&gt;&gt; apple[&#39;origin&#39;] = &#39;Normandy&#39;
-&gt;&gt;&gt; f&quot;{apple[&#39;color&#39;]} apple came from {apple[&#39;origin&#39;]}&quot;
-&#39;yellow apple came from Normandy&#39;
 </code></pre>
     </div>
   </section>
@@ -1478,12 +1575,27 @@ True
   <section class="slide hidden ">
     <div>
       <h2 id="methods-of-set">Methods of set</h2>
-<pre><code>&gt;&gt;&gt; dir(es)
+<pre><code>&gt;&gt;&gt; dir(set)
 [&#39;__and__&#39;, &#39;__class__&#39;, &#39;__contains__&#39;, &#39;__delattr__&#39;, &#39;__dir__&#39;,
 &#39;add&#39;, &#39;clear&#39;, &#39;copy&#39;, &#39;difference&#39;, &#39;difference_update&#39;,
 &#39;discard&#39;, &#39;intersection&#39;, &#39;intersection_update&#39;, &#39;isdisjoint&#39;,
 &#39;issubset&#39;, &#39;issuperset&#39;, &#39;pop&#39;, &#39;remove&#39;, &#39;symmetric_difference&#39;,
 &#39;symmetric_difference_update&#39;, &#39;union&#39;, &#39;update&#39;]
+</code></pre><p><a href="https://docs.python.org/3.7/library/stdtypes.html#set">docs.python.org / Built-in Types #set</a></p>
+
+    </div>
+  </section>
+  <section class="slide hidden ">
+    <div>
+      <h2 id="methods-of-set">Methods of set</h2>
+<pre><code>&gt;&gt;&gt; help(set)
+ |  add(...)
+ |      Add an element to a set.
+ |      This has no effect if the element is already present.
+ |
+ |  clear(...)
+ |      Remove all elements from this set.
+
 </code></pre><p><a href="https://docs.python.org/3.7/library/stdtypes.html#set">docs.python.org / Built-in Types #set</a></p>
 
     </div>
@@ -1528,7 +1640,8 @@ TypeError: &#39;set&#39; object is not subscriptable
   <section class="slide hidden ">
     <div>
       <h2 id="range">range</h2>
-<p><strong>Range</strong> is the sequence of monotonically uniformly changing integers:</p>
+<p><strong>Range</strong> is the sequence of monotonically uniformly changing integers —
+<em>arithmetic progression:</em></p>
 <ul>
 <li>4, 5, 6, 7, 8, ...</li>
 <li>10, 9, 8, 7, 6, 5, 4, 3, 2, 1</li>

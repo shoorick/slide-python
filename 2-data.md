@@ -53,6 +53,8 @@ author:
 * [pythonfiddle.com](http://pythonfiddle.com/)
 -- black clear
 <img class="cover" src="images/repl-hello-world.png" alt="repl.it">
+-- black clear
+<img class="cover" src="images/repl-parts.png" alt="repl.it">
 --
 ## Syntax peculiarities
 

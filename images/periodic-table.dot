@@ -1,0 +1,78 @@
+digraph G {
+    node [ shape=box, style=filled, fillcolor=white, fontname="PT Mono", fontsize=16 ]
+
+    list [
+        shape=none
+        label=<<table border="0" cellspacing="0" cellpadding="5">
+            <tr>
+                <td border="1" bgcolor="#ffbbaa">H</td>
+                <td></td><td></td><td></td><td></td><td></td><td></td>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                <td border="1" bgcolor="#ffdcd3">(H)</td>
+                <td border="1" bgcolor="#ffbbaa">He</td>
+            </tr>
+            <tr>
+                <td border="1" bgcolor="#ffbbaa">Li</td>
+                <td border="1" bgcolor="#ffbbaa">Be</td>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                <td border="1" bgcolor="#fafaa2">B</td>
+                <td border="1" bgcolor="#fafaa2">C</td>
+                <td border="1" bgcolor="#fafaa2">N</td>
+                <td border="1" bgcolor="#fafaa2">O</td>
+                <td border="1" bgcolor="#fafaa2">F</td>
+                <td border="1" bgcolor="#fafaa2">Ne</td>
+            </tr>
+            <tr>
+                <td border="1" bgcolor="#ffbbaa">Na</td>
+                <td border="1" bgcolor="#ffbbaa">Mg</td>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                <td border="1" bgcolor="#fafaa2">Al</td>
+                <td border="1" bgcolor="#fafaa2">Si</td>
+                <td border="1" bgcolor="#fafaa2">P</td>
+                <td border="1" bgcolor="#fafaa2">S</td>
+                <td border="1" bgcolor="#fafaa2">Cl</td>
+                <td border="1" bgcolor="#fafaa2">Ar</td>
+            </tr>
+            <tr>
+                <td border="1" bgcolor="#ffbbaa">K</td>
+                <td border="1" bgcolor="#ffbbaa">Ca</td>
+                <td border="1" bgcolor="#c0daf5">Sc</td>
+                <td border="1" bgcolor="#c0daf5">Ti</td>
+                <td border="1" bgcolor="#c0daf5">V</td>
+                <td border="1" bgcolor="#c0daf5">Cr</td>
+                <td border="1" bgcolor="#c0daf5">Mn</td>
+                <td border="1" bgcolor="#c0daf5">Fe</td>
+                <td border="1" bgcolor="#c0daf5">Co</td>
+                <td border="1" bgcolor="#c0daf5">Ni</td>
+                <td border="1" bgcolor="#c0daf5">Cu</td>
+                <td border="1" bgcolor="#c0daf5">Zn</td>
+                <td border="1" bgcolor="#fafaa2">Ga</td>
+                <td border="1" bgcolor="#fafaa2">Ge</td>
+                <td border="1" bgcolor="#fafaa2">As</td>
+                <td border="1" bgcolor="#fafaa2">Se</td>
+                <td border="1" bgcolor="#fafaa2">Br</td>
+                <td border="1" bgcolor="#fafaa2">Kr</td>
+            </tr>
+            <tr>
+                <td border="1" bgcolor="#ffbbaa">Rb</td>
+                <td border="1" bgcolor="#ffbbaa">Sr</td>
+                <td border="1" bgcolor="#c0daf5">Y</td>
+                <td border="1" bgcolor="#c0daf5">Zr</td>
+                <td border="1" bgcolor="#c0daf5">Nb</td>
+                <td border="1" bgcolor="#c0daf5">Mo</td>
+                <td border="1" bgcolor="#c0daf5">Tc</td>
+                <td border="1" bgcolor="#c0daf5">Ru</td>
+                <td border="1" bgcolor="#c0daf5">Rh</td>
+                <td border="1" bgcolor="#c0daf5">Pd</td>
+                <td border="1" bgcolor="#c0daf5">Ag</td>
+                <td border="1" bgcolor="#c0daf5">Cd</td>
+                <td border="1" bgcolor="#fafaa2">In</td>
+                <td border="1" bgcolor="#fafaa2">Sn</td>
+                <td border="1" bgcolor="#fafaa2">Sb</td>
+                <td border="1" bgcolor="#fafaa2">Te</td>
+                <td border="1" bgcolor="#fafaa2">I</td>
+                <td border="1" bgcolor="#fafaa2">Xe</td>
+            </tr>
+        </table>>
+    ]
+}

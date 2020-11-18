@@ -57,6 +57,33 @@ author:
 -- black clear
 <img class="cover" src="images/repl-parts.png" alt="repl.it">
 --
+## Interactive mode
+<pre>
+<code><mark>&gt;&gt;&gt;</mark></code>
+<code>⮬ prompt</code>
+</pre>
+--
+## Interactive mode
+<pre>
+<code>&gt;&gt;&gt; <mark>42 + 24</mark></code>
+<code>our input ⮭</code>
+</pre>
+--
+## Interactive mode
+<pre>
+<code>&gt;&gt;&gt; 42 + 24</code>
+<code><mark>66</mark> ⬅ result</code>
+</pre>
+--
+## Oops
+<pre>
+<code>&gt;&gt;&gt; 42 + 'e'</code>
+<code class="mark">Traceback (most recent call last):</code>
+<code class="mark">  File "<stdin>", line 1, in &lt;module&gt;</code>
+<code class="mark">TypeError: unsupported operand type(s) for +: 'int' and 'str'</code>
+<code>⮬ error messages</code>
+</pre>
+--
 ## Syntax peculiarities
 
 No semicolon <mark>;</mark> after single statement
@@ -91,33 +118,6 @@ Colon and indent instead of curly braces for blocks
 
 <pre style="font-size:600%;margin-top:.5em">
 <code>A ≠ a</code>
-</pre>
---
-## Interactive mode
-<pre>
-<code><mark>&gt;&gt;&gt;</mark></code>
-<code>↑ prompt</code>
-</pre>
---
-## Interactive mode
-<pre>
-<code>&gt;&gt;&gt; <mark>42 + 24</mark></code>
-<code>our input ↑</code>
-</pre>
---
-## Interactive mode
-<pre>
-<code>&gt;&gt;&gt; 42 + 24</code>
-<code><mark>66</mark> ← result</code>
-</pre>
---
-## Oops
-<pre>
-<code>&gt;&gt;&gt; 42 + 'e'</code>
-<code class="mark">Traceback (most recent call last):</code>
-<code class="mark">  File "<stdin>", line 1, in &lt;module&gt;</code>
-<code class="mark">TypeError: unsupported operand type(s) for +: 'int' and 'str'</code>
-<code>↑ error messages</code>
 </pre>
 --
 <h2 class="shout">Variables</h2>

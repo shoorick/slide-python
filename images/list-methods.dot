@@ -20,10 +20,11 @@ digraph G {
         append [ fillcolor="#d0faa2" ]
         extend [ fillcolor="#d0faa2" ]
         insert [ fillcolor="#d0faa2" ]
+        del    [ fillcolor="#fae3a2" ]
         pop    [ fillcolor="#fae3a2" ]
         remove [ fillcolor="#fae3a2" ]
 
         { append extend } -> list:last -> pop
-        insert -> list:middle -> { remove pop }
+        insert -> list:middle -> { del remove pop }
     }
 }

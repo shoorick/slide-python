@@ -1353,24 +1353,27 @@ Help on class list in module __builtin__:
   <section class="slide hidden ">
     <div>
       <h2 id="-mark-class-green-add-mark-items-to-list"><mark class="green">Add</mark> items to <code>list</code></h2>
-<pre><code>&gt;&gt;&gt; abc = [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;]
-&gt;&gt;&gt; abc.append(&#39;e&#39;)
-&gt;&gt;&gt; abc.extend([&#39;f&#39;, &#39;g&#39;])
-&gt;&gt;&gt; abc.insert(3, &#39;d&#39;)
+<pre>
+<code>&gt;&gt;&gt; abc = ['a', 'b', 'c']
+&gt;&gt;&gt; abc.<mark class="green">append</mark>('e')
+&gt;&gt;&gt; abc.<mark class="green">extend</mark>(['f', 'g'])
+&gt;&gt;&gt; abc.<mark class="green">insert</mark>(3, 'd')
 &gt;&gt;&gt; abc
-[&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;, &#39;e&#39;, &#39;f&#39;, &#39;g&#39;]
+['a', 'b', 'c', 'd', 'e', 'f', 'g']
 </code></pre>
     </div>
   </section>
   <section class="slide hidden ">
     <div>
       <h2 id="-mark-class-orange-remove-mark-items-from-list"><mark class="orange">Remove</mark> items from <code>list</code></h2>
-<pre><code>&gt;&gt;&gt; abc = [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;, &#39;e&#39;, &#39;f&#39;, &#39;g&#39;]
-&gt;&gt;&gt; abc.pop(3)
-&#39;d&#39;
-&gt;&gt;&gt; abc.remove(&#39;e&#39;)
+<pre>
+<code>&gt;&gt;&gt; abc = ['a', 'b', 'c', 'd', 'e', 'f', 'g']
+&gt;&gt;&gt; abc.<mark class="orange">pop</mark>(3) <span class="comment"># return deleted item</span>
+'d'
+&gt;&gt;&gt; <mark class="orange">del</mark> abc[1] <span class="comment"># return nothing</span>
+&gt;&gt;&gt; abc.<mark class="orange">remove</mark>('e')
 &gt;&gt;&gt; abc
-[&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;f&#39;, &#39;g&#39;]
+['a', 'c', 'f', 'g']
 </code></pre>
     </div>
   </section>

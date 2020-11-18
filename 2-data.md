@@ -1182,24 +1182,25 @@ Help on class list in module __builtin__:
 ![List methods](images/list-methods.dot.svg)
 --
 ## <mark class="green">Add</mark> items to `list`
-```
->>> abc = ['a', 'b', 'c']
->>> abc.append('e')
->>> abc.extend(['f', 'g'])
->>> abc.insert(3, 'd')
->>> abc
+<pre>
+<code>&gt;&gt;&gt; abc = ['a', 'b', 'c']
+&gt;&gt;&gt; abc.<mark class="green">append</mark>('e')
+&gt;&gt;&gt; abc.<mark class="green">extend</mark>(['f', 'g'])
+&gt;&gt;&gt; abc.<mark class="green">insert</mark>(3, 'd')
+&gt;&gt;&gt; abc
 ['a', 'b', 'c', 'd', 'e', 'f', 'g']
-```
+</code></pre>
 --
 ## <mark class="orange">Remove</mark> items from `list`
-```
->>> abc = ['a', 'b', 'c', 'd', 'e', 'f', 'g']
->>> abc.pop(3)
+<pre>
+<code>&gt;&gt;&gt; abc = ['a', 'b', 'c', 'd', 'e', 'f', 'g']
+&gt;&gt;&gt; abc.<mark class="orange">pop</mark>(3) <span class="comment"># return deleted item</span>
 'd'
->>> abc.remove('e')
->>> abc
-['a', 'b', 'c', 'f', 'g']
-```
+&gt;&gt;&gt; <mark class="orange">del</mark> abc[1] <span class="comment"># return nothing</span>
+&gt;&gt;&gt; abc.<mark class="orange">remove</mark>('e')
+&gt;&gt;&gt; abc
+['a', 'c', 'f', 'g']
+</code></pre>
 ---
 ## tuple
 

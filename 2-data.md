@@ -148,6 +148,21 @@ name = 42
 <code>&gt;&gt;&gt; mice = cats = dogs = 3
 &gt;&gt;&gt; cats
 3
+</code></pre>
+
+</div><div>![name → value](images/var-multiple-3.dot.svg)</div>
+</div>
+
+--
+## Multiple assignment
+
+<div class="columns two">
+<div>
+
+<pre>
+<code>&gt;&gt;&gt; mice = cats = dogs = 3
+&gt;&gt;&gt; cats
+3
 &gt;&gt;&gt; cats = 15
 &gt;&gt;&gt; dogs
 3

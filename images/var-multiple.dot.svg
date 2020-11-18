@@ -18,7 +18,7 @@
 <!-- mice3 -->
 <g id="node2" class="node">
 <title>mice3</title>
-<polygon fill="none" stroke="#000000" points="186,-43 132,-43 132,0 186,0 186,-43"/>
+<polygon fill="#ffffff" stroke="#000000" points="186,-43 132,-43 132,0 186,0 186,-43"/>
 <text text-anchor="middle" x="159" y="-13.4" font-family="PT Mono" font-size="32.00" fill="#000000">3</text>
 </g>
 <!-- mice&#45;&gt;mice3 -->
@@ -36,7 +36,7 @@
 <!-- dogs3 -->
 <g id="node4" class="node">
 <title>dogs3</title>
-<polygon fill="none" stroke="#000000" points="186,-104 132,-104 132,-61 186,-61 186,-104"/>
+<polygon fill="#ffffff" stroke="#000000" points="186,-104 132,-104 132,-61 186,-61 186,-104"/>
 <text text-anchor="middle" x="159" y="-74.4" font-family="PT Mono" font-size="32.00" fill="#000000">3</text>
 </g>
 <!-- dogs&#45;&gt;dogs3 -->
@@ -49,7 +49,7 @@
 <!-- cats3 -->
 <g id="node6" class="node">
 <title>cats3</title>
-<polygon fill="none" stroke="#c0c0c0" points="186,-226 132,-226 132,-183 186,-183 186,-226"/>
+<polygon fill="#ffffff" stroke="#c0c0c0" points="186,-226 132,-226 132,-183 186,-183 186,-226"/>
 <text text-anchor="middle" x="159" y="-196.4" font-family="PT Mono" font-size="32.00" fill="#c0c0c0">3</text>
 </g>
 <!-- none&#45;&gt;cats3 -->
@@ -60,15 +60,15 @@
 <text text-anchor="middle" x="47.5" y="-135.4" font-family="PT Mono" font-size="32.00" fill="#000000">cats</text>
 </g>
 <!-- cats&#45;&gt;cats3 -->
-<!-- 15 -->
+<!-- cats15 -->
 <g id="node8" class="node">
-<title>15</title>
-<polygon fill="none" stroke="#000000" points="187,-165 131,-165 131,-122 187,-122 187,-165"/>
+<title>cats15</title>
+<polygon fill="#ffff00" stroke="#000000" points="187,-165 131,-165 131,-122 187,-122 187,-165"/>
 <text text-anchor="middle" x="159" y="-135.4" font-family="PT Mono" font-size="32.00" fill="#000000">15</text>
 </g>
-<!-- cats&#45;&gt;15 -->
+<!-- cats&#45;&gt;cats15 -->
 <g id="edge4" class="edge">
-<title>cats&#45;&gt;15</title>
+<title>cats&#45;&gt;cats15</title>
 <path fill="none" stroke="#000000" d="M95.1095,-143.5C103.6828,-143.5 112.5186,-143.5 120.7823,-143.5"/>
 <polygon fill="#000000" stroke="#000000" points="120.8808,-147.0001 130.8807,-143.5 120.8807,-140.0001 120.8808,-147.0001"/>
 </g>

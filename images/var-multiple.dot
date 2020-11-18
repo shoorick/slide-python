@@ -1,20 +1,21 @@
 digraph G {
     graph [ rankdir=LR ]
-    node  [ shape=box, fontname="PT Mono", fontsize=32 ]
+    node  [ shape=box, style=filled, fillcolor=white, fontname="PT Mono", fontsize=32 ]
 
-    mice  [ shape=cds, style=filled, fillcolor=wheat ]
+    mice  [ shape=cds, fillcolor=wheat ]
     mice3 [ label=3 ]
     mice -> mice3
 
-    dogs  [ shape=cds, style=filled, fillcolor=wheat ]
+    dogs  [ shape=cds, fillcolor=wheat ]
     dogs3 [ label=3 ]
     dogs -> dogs3
 
     none -> cats3 [ style=invis ]
     none [ style=invis ]
 
-    cats  [ shape=cds, style=filled, fillcolor=wheat ]
-    cats -> 15
+    cats  [ shape=cds, fillcolor=wheat ]
+    cats -> cats15
+    cats15  [ fillcolor="yellow", label="15" ]
 
     cats3 [ fontcolor=grey, color=grey, label="3" ]
     cats -> cats3 [ style=invis ]

@@ -121,7 +121,7 @@ Colon and indent instead of curly braces for blocks
 --
 ## Variables
 
-### Assigning
+### Assignment
 
 ```
 name = 'value'
@@ -139,16 +139,22 @@ name = 42
 ![name → value](images/var-name-42.dot.svg)
 
 --
-## Multiple assigning
+## Multiple assignment
 
-```
->>> mice = cats = dogs = 3
->>> cats
+<div class="columns two">
+<div>
+
+<pre>
+<code>&gt;&gt;&gt; mice = cats = dogs = 3
+&gt;&gt;&gt; cats
 3
->>> cats = 15
->>> dogs
+&gt;&gt;&gt; cats = 15
+&gt;&gt;&gt; dogs
 3
-```
+</code></pre>
+
+</div><div>![name → value](images/var-multiple.dot.svg)</div>
+</div>
 
 --
 

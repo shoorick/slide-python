@@ -10,6 +10,9 @@ digraph G {
     dogs3 [ label=3 ]
     dogs -> dogs3
 
+    none -> cats3 [ style=invis ]
+    none [ style=invis ]
+
     cats  [ shape=cds, style=filled, fillcolor=wheat ]
     cats -> 15
 

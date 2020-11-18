@@ -12,4 +12,8 @@ digraph G {
 
     cats  [ shape=cds, style=filled, fillcolor=wheat ]
     cats -> 3
+
+    none -> em [ style=invis ]
+    none  [ style=invis ]
+    em [ style=invis ]
 }

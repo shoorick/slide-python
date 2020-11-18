@@ -5,6 +5,7 @@ theme: /home/as/wrk/seminar/cleaver-ribbon
 github-theme: shoorick/cleaver-ribbon
 author:
   name: "Alexander Sapozhnikov, Tatyana Vasilieva"
+  github: shoorick
   company: "South Ural State University"
   twitter: "@shoorick77"
   url: "https://as.susu.ru"
@@ -998,7 +999,7 @@ List items can have various types
 ## Empty list
 
 ```
->>> []
+>>> empty = []
 ```
 --
 ## List items numbered from 0
@@ -1136,13 +1137,70 @@ Index of item is an **offset** from left edge of list
 --
 ## Access to single character
 
-![array](images/list-names-marked.dot.svg)
+![access](images/list-names-marked.dot.svg)
 
 ```
 >>> names[2][0]
 'C'
 ```
 --
+## Methods of `list`
+
+```
+>>> help(list)
+Help on class list in module __builtin__:
+...
+ |  append(...)
+ |      L.append(object) -- append object to end
+ |
+ |  count(...)
+```
+--
+## Methods of `list`
+<div class="two columns">
+  <div>
+    <ul>
+      <li>**append**(object)</li>
+      <li>**count**(value) → integer</li>
+      <li>**extend**(iterable)</li>
+      <li>**index**(value, [start, [stop]]) → integer</li>
+    </ul>
+  </div>
+  <div>
+    <ul>
+      <li>**insert**(index, object)</li>
+      <li>**pop**([index]) → item</li>
+      <li>**remove**(value)</li>
+      <li>**reverse**()</li>
+      <li>**sort**(cmp=None, key=None, reverse=False)</li>
+    </ul>
+  </div>
+</div>
+--
+## Methods of `list`
+
+![List methods](images/list-methods.dot.svg)
+--
+## <mark class="green">Add</mark> items to `list`
+```
+>>> abc = ['a', 'b', 'c']
+>>> abc.append('e')
+>>> abc.extend(['f', 'g'])
+>>> abc.insert(3, 'd')
+>>> abc
+['a', 'b', 'c', 'd', 'e', 'f', 'g']
+```
+--
+## <mark class="orange">Remove</mark> items from `list`
+```
+>>> abc = ['a', 'b', 'c', 'd', 'e', 'f', 'g']
+>>> abc.pop(3)
+'d'
+>>> abc.remove('e')
+>>> abc
+['a', 'b', 'c', 'f', 'g']
+```
+---
 ## tuple
 
 **Tuple** is read-only list

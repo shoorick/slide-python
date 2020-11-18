@@ -1,0 +1,29 @@
+digraph G {
+    node [ shape=box, style=filled, fillcolor=white, fontname="PT Mono", fontsize=32 ]
+
+    list [
+        shape=none
+        label=<<table border="0" cellspacing="0" cellpadding="5">
+            <tr>
+                <td port="first" border="1"> </td>
+                <td border="1"> </td>
+                <td port="middle" border="1"> </td>
+                <td border="1"> </td>
+                <td port="last" border="1">last</td>
+            </tr>
+        </table>>
+    ]
+
+    subgraph methods {
+        node [ style="rounded,filled" ]
+
+        append [ fillcolor="#d0faa2" ]
+        extend [ fillcolor="#d0faa2" ]
+        insert [ fillcolor="#d0faa2" ]
+        pop    [ fillcolor="#fae3a2" ]
+        remove [ fillcolor="#fae3a2" ]
+
+        { append extend } -> list:last -> pop
+        insert -> list:middle -> { remove pop }
+    }
+}

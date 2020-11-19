@@ -8,7 +8,7 @@ digraph G {
             <table border="0" cellspacing="0" cellpadding="5">
                 <tr><td port="begin" border="1" bgcolor="#d0faa2">begin</td></tr>
                 <tr><td port="p1" border="1"> </td></tr>
-                <tr><td port="middle" border="1" bgcolor="#fafaa2"> </td></tr>
+                <tr><td port="middle" border="1" bgcolor="#fafaa2">continue</td></tr>
                 <tr><td port="exit" border="1" bgcolor="#fae3a2"> </td></tr>
                 <tr><td port="p4" border="1"> </td></tr>
                 <tr><td port="end" border="1">end</td></tr>

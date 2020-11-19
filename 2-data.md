@@ -1605,7 +1605,7 @@ range(<mark>16</mark>, 20, <mark class="important">2</mark>)
   <li class="next">Use proper names for variables.</li>
   <li class="next">All variables are objects, all data types are classes.</li>
   <li class="next">Python has a lot of built-in and external data types.</li>
-  <li class="next">There ara implicit and explicit changes of data types.</li>
+  <li class="next">There are implicit and explicit changes of data types.</li>
 </ul>
 --
 ## Next part

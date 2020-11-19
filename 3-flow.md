@@ -326,3 +326,168 @@ Charlie</mark> has yellow cucumber
 <mark>2</mark> helium
 <mark>3</mark> lithium
 </code></pre>
+--
+## Iterate over dict — see its methods
+
+<pre>
+<code>&gt;&gt;&gt; fruits = {'apple': 'red', 'banana': 'yellow', 'cucumber': 'green'}
+&gt;&gt;&gt; fruits.<mark>items</mark>()
+dict_items([('apple', 'red'), ('banana', 'yellow'), ('cucumber', 'green')])
+&gt;&gt;&gt; fruits.<mark class="green">keys</mark>()
+dict_keys(['apple', 'banana', 'cucumber'])
+&gt;&gt;&gt; fruits.<mark class="orange">values</mark>()
+dict_values(['red', 'yellow', 'green'])
+</code></pre>
+--
+## Iterate over whole dict
+
+<pre>
+<code>&gt;&gt;&gt; for fruit, color in fruits.<mark>items</mark>():
+...     print(f'{fruit} is {color}')
+...
+apple is red
+banana is yellow
+cucumber is green
+</code></pre>
+--
+## Iterate over keys of dict
+
+<pre>
+<code>&gt;&gt;&gt; for fruit in fruits.<mark class="green">keys</mark>():
+...     print(fruits[fruit], fruit)
+...
+red apple
+yellow banana
+green cucumber
+</code></pre>
+--
+## while
+
+<pre>
+<code>while <mark>condition:</mark>
+    <span class="comment"># do something</span>
+</code></pre>
+--
+## while
+
+<pre>
+<code>&gt;&gt;&gt; rest = 3
+&gt;&gt;&gt; while <mark>rest &gt; 0</mark>:
+...     print(f'Rest is {rest}')
+...     rest -= 1
+...
+Rest is 3
+Rest is 2
+Rest is 1
+</code></pre>
+--
+## while
+
+<pre>
+<code>&gt;&gt;&gt; rest = 3
+&gt;&gt;&gt; while <mark>rest</mark>:
+...     print(f'Rest is {rest}')
+...     rest -= 1
+...
+Rest is 3
+Rest is 2
+Rest is 1
+</code></pre>
+--
+## while
+
+<pre>
+<code>&gt;&gt;&gt; rest = 3
+&gt;&gt;&gt; while rest:
+...     print(f'Rest is {rest}')
+...     rest <mark>-=</mark> 1
+</code></pre>
+--
+## Increment and decrement
+
+<pre><code>variable <mark class="green">+=</mark> delta  <span class="comment"># increase</span>
+variable <mark class="orange">-=</mark> delta  <span class="comment"># decrease</span>
+</code></pre>
+
+Unlike C, C++, Java, JavaScript, Perl, PHP, Ruby etc
+
+### Python has no `++` and `--` operators
+
+--
+## Python has no `++` and `--` operators
+<pre>
+<code>&gt;&gt;&gt; 3++2  <span class="comment"># 3 + +2</span>
+5
+&gt;&gt;&gt; 4--5 <span class="comment"># 4 − (−5) = 4 + 5</span>
+9
+</code></pre>
+--
+## Python has no `++` and `--` operators
+<pre>
+<code>&gt;&gt;&gt; 7++
+  File "<stdin>", line 1
+    7++
+      ^
+SyntaxError: invalid syntax
+</code></pre>
+--
+## Loop
+![Loop](images/loop.dot.svg)
+--
+## Skip rest of loop with `continue`
+<div class="two columns">
+  <div>
+<pre>
+<code>&gt;&gt;&gt; for i in range(1, 5):
+...     if i < 3: <mark>continue</mark>
+...     print(i)
+...
+3
+4</code></pre>
+  </div>
+  <div>
+    ![Loop](images/loop-continue.dot.svg)
+  </div>
+</div>
+--
+## Go away from loop with `break`
+<div class="two columns">
+  <div>
+<pre>
+<code>&gt;&gt;&gt; for i in range(1, 55):
+...     print(i)
+...     if i > 2: <mark class="orange">break</mark>
+...
+1
+2
+3</code></pre>
+  </div>
+  <div>
+    ![Loop](images/loop-break.dot.svg)
+  </div>
+</div>
+--
+## Python has no postconditional loop
+
+<pre><code>do:
+    <span class="comment"># do something</span>
+    until condition</code></pre>
+
+--
+## Python has <mark class="orange">no postconditional loop</mark>
+
+<img src="images/hatch-red-line.svg" alt="" style="float:left;margin-right:-180px">
+<pre><code>do:
+    <span class="comment"># do something</span>
+    until condition</code></pre>
+--
+## Use `break` to emulate it
+<pre>
+<code>&gt;&gt;&gt; while True: <span class="comment"># infinite loop</span>
+...     amount = input('How many? Or type q to quit ')
+...     if amount == 'q':
+...         <mark class="orange">break</mark>
+...
+How many? Or type q to quit 4
+How many? Or type q to quit q
+</code></pre>

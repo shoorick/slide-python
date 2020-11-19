@@ -1,6 +1,9 @@
 all:
 	for file in *.md; do cleaver $$file;  done
 
+index.html:  index.md
+	cleaver  index.md
+
 0-test.html: 0-test.md
 	cleaver  0-test.md
 

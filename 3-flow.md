@@ -524,7 +524,11 @@ SyntaxError: invalid syntax
 </code></pre>
 --
 ## Loop
+<div class="two columns">
+  <div></div>
+  <div>
 ![Loop](images/loop.dot.svg)
+</div></div>
 --
 ## Skip rest of loop with `continue`
 <div class="two columns">

@@ -1,0 +1,10 @@
+digraph G {
+    graph [ rankdir = LR, overlap=false ]
+    node [ shape=box, style=filled, fillcolor=white, fontname="PT Mono", fontsize=32 ]
+
+    loop [ shape="record", label="<begin> begin||<middle> |<exit>|<end> end"]
+
+    loop:middle:e -> loop:begin:e
+    loop:end    -> loop:begin
+    loop:exit   -> "go away"
+}

@@ -181,6 +181,98 @@ else:
 </div>
 </div>
 --
+## Error handling
+
+<pre><code>&gt;&gt;&gt; stuff = ['hydrogen', 'helium', 'lithium']
+&gt;&gt;&gt; <mark>number</mark> = input('Enter number of element ')
+Enter number of element <mark>42</mark>
+&gt;&gt;&gt; print(stuff[int(<mark>number</mark>)])
+<span class="error">Traceback (most recent call last):
+  File "&lt;stdin&gt;", line 1, in &lt;module&gt;
+<mark class="orange">IndexError</mark>: list index out of range</span>
+</code></pre>
+--
+## Handle exceptions with `try` statement
+
+<pre><code>&gt;&gt;&gt; <mark>try:</mark>
+...     print(stuff[int(number)])
+... <mark class="orange">except IndexError</mark>:
+...     print(f'Wrong index. Use number less than {len(stuff)}')
+...
+Wrong index. Use number less than 3
+</code></pre>
+--
+## What if `number == 'z'`?
+
+<pre><code>&gt;&gt;&gt; <mark>try:</mark>
+...     print(stuff[int(number)])
+... <mark class="orange">except IndexError</mark>:
+...     print(f'Wrong index. Use number less than {len(stuff)}')
+...
+<span class="error">Traceback (most recent call last):
+  File "<stdin>", line 2, in <module>
+<mark class="orange">ValueError</mark>: invalid literal for int() with base 10: 'z'</span>
+</code></pre>
+--
+## Add new exception handler
+
+<pre><code>&gt;&gt;&gt; <mark>try:</mark>
+...     print(stuff[int(number)])
+... <mark class="orange">except IndexError</mark>:
+...     print(f'Wrong index. Use number less than {len(stuff)}')
+... <mark class="orange">except ValueError</mark>:
+...     print(f'Index must be an integer number')
+</code></pre>
+--
+## Add `else` when there is no any exception
+<pre><code>&gt;&gt;&gt; <mark>try:</mark> <span class="comment"># number == 2</span>
+...     print(stuff[int(number)])
+... <span class="comment"># skipped</span>
+... <mark class="green">else</mark>:
+...     print('OK')
+...
+lithium
+OK
+</code></pre>
+--
+## `finally` is executing after all checks
+<div class="two columns">
+<div>
+<pre><code>... <span class="comment"># skipped</span>
+... <mark class="green">else</mark>:
+...     print('OK')
+... <mark class="blue">finally</mark>:
+...     print("That's all folks!")
+...</code></pre>
+</div><div>
+<h3>output:</h3>
+<pre><code>lithium
+OK
+That's all folks!
+</code></pre>
+</div></div>
+--
+## `finally` is executing after all checks
+<div class="two columns">
+<div>
+<pre><code><mark>try:</mark>
+...     print(stuff[int(number)])
+... <mark class="orange">except IndexError</mark>:
+...     print(f'Wrong index...
+... <span class="comment"># skipped</span>
+... <mark class="blue">finally</mark>:
+...     print("That's all folks!")</code></pre>
+</div><div>
+when `number` is wrong
+<h3>output:</h3>
+<pre><code>Wrong index. Use number less than 3
+That's all folks!
+</code></pre>
+</div></div>
+
+--
+<h2 class="shout">Loops</h2>
+--
 ## <mark>for</mark> loop
 
 <pre><code>

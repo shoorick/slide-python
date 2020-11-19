@@ -1543,6 +1543,42 @@ TypeError: &#39;tuple&#39; object does not support item assignment
   </section>
   <section class="slide ">
     <div>
+      <h2 id="get-nonexistent-value">Get nonexistent value</h2>
+<pre><code>&gt;&gt;&gt; apple[&#39;nonexistent&#39;]
+Traceback (most recent call last):
+  File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;
+KeyError: &#39;nonexistent&#39;
+</code></pre>
+    </div>
+  </section>
+  <section class="slide ">
+    <div>
+      <h2 id="get-nonexistent-value">Get nonexistent value</h2>
+<pre>
+<code>&gt;&gt;&gt; apple['nonexistent']
+Traceback (most recent call last):
+  File "&lt;stdin&gt;", line 1, in &lt;module&gt;
+KeyError: 'nonexistent'
+
+&gt;&gt;&gt; apple.<mark>get</mark>('nonexistent', 'none')
+'none'
+</code></pre>
+    </div>
+  </section>
+  <section class="slide ">
+    <div>
+      <h2 id="get-any-value-safely">Get any value safely</h2>
+<pre>
+<code>&gt;&gt;&gt; apple.get('nonexistent', <mark class="orange">'none'</mark>)
+<mark class="orange">'none'</mark>
+
+&gt;&gt;&gt; apple.get(<mark class="green">'color'</mark>, 'none')
+<mark class="green">'yellow'</mark>
+</code></pre>
+    </div>
+  </section>
+  <section class="slide ">
+    <div>
       <h2 id="make-an-empty-dict">Make an empty dict</h2>
 <pre>
 <code>&gt;&gt;&gt; empty = dict()  <span class="comment"># possible but ugly</span>

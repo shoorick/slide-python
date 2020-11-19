@@ -1354,7 +1354,37 @@ Use parentheses to make a tuple
 >>> f"{apple['color']} apple came from {apple['origin']}"
 'yellow apple came from Normandy'
 ```
+--
+## Get nonexistent value
 
+```
+>>> apple['nonexistent']
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+KeyError: 'nonexistent'
+```
+--
+## Get nonexistent value
+
+<pre>
+<code>&gt;&gt;&gt; apple['nonexistent']
+Traceback (most recent call last):
+  File "&lt;stdin&gt;", line 1, in &lt;module&gt;
+KeyError: 'nonexistent'
+
+&gt;&gt;&gt; apple.<mark>get</mark>('nonexistent', 'none')
+'none'
+</code></pre>
+--
+## Get any value safely
+
+<pre>
+<code>&gt;&gt;&gt; apple.get('nonexistent', <mark class="orange">'none'</mark>)
+<mark class="orange">'none'</mark>
+
+&gt;&gt;&gt; apple.get(<mark class="green">'color'</mark>, 'none')
+<mark class="green">'yellow'</mark>
+</code></pre>
 --
 ## Make an empty dict
 

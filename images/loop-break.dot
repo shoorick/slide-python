@@ -10,7 +10,7 @@ digraph G {
                 <tr><td port="p1" border="1"> </td></tr>
                 <tr><td port="middle" border="1" bgcolor="#fafaa2"> </td></tr>
                 <tr><td port="exit" border="1" bgcolor="#fae3a2">break</td></tr>
-                <tr><td port="p4" border="1"> </td></tr>
+                <tr><td port="p4" border="1">         </td></tr>
                 <tr><td port="end" border="1">end</td></tr>
             </table>
         >

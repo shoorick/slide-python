@@ -21,6 +21,10 @@ var {
     color: #999
 }
 
+.slide pre .error {
+    color: #900;
+}
+
 .slide mark.blue {
     background-color: var(--color-light-blue);
 }

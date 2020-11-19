@@ -1,19 +1,21 @@
-title: Data extraction with Python
+title: Data processing with Python
 output: 1-intro.html
 theme: /home/as/wrk/seminar/cleaver-ribbon
 author:
   name: "Alexander Sapozhnikov"
-  twitter: "@shoorick77"
+  was-twitter: "@shoorick77"
+  email: as@susu.ru
   url: "https://as.susu.ru"
---
-## Data extraction with Python
---
+-- title clear
+## Data processing with Python
 <figure>
     <img class="cover" src="images/baumpython-cropped.jpg" alt="Python">
     <figcaption class="copyright right white">
         © Mike Wesemann
     </figcaption>
 </figure>
+-- clear
+<h2 class="shout shrink">Part 1</h2>
 --
 <figure>
     <img class="cover" src="images/Python_logo_and_wordmark.svg.png" alt="Python">

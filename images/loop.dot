@@ -2,9 +2,21 @@ digraph G {
     graph [ rankdir = LR, overlap=false ]
     node [ shape=box, style=filled, fillcolor=white, fontname="PT Mono", fontsize=32 ]
 
-    loop [ shape="record", label="<begin> begin||<middle> |<exit>|<end> end"]
+    loop [
+        shape=none,
+        label=<
+            <table border="0" cellspacing="0" cellpadding="5">
+                <tr><td port="begin" border="1" bgcolor="#d0faa2">begin</td></tr>
+                <tr><td port="p1" border="1"> </td></tr>
+                <tr><td port="middle" border="1" bgcolor="#fafaa2"> </td></tr>
+                <tr><td port="exit" border="1" bgcolor="#fae3a2"> </td></tr>
+                <tr><td port="p4" border="1"> </td></tr>
+                <tr><td port="end" border="1">end</td></tr>
+            </table>
+        >
+    ]
 
     loop:middle:e -> loop:begin:e
     loop:end    -> loop:begin
-    loop:exit   -> "go away"
+    loop:exit   -> "away"
 }

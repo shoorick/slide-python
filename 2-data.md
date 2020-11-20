@@ -933,24 +933,21 @@ What about small Russian letter “ef”? Its hexadecimal code is 444.
 </pre>
 --
 ## Unicode characters
-```
->>> '\u444'
-  File "<stdin>", line 1
-SyntaxError: (unicode error) 'unicodeescape' codec can't decode bytes in position 0-4: truncated \uXXXX escape
->>> '\u0444'
+<pre><code>&gt;&gt;&gt; '\u444'
+<span class="error">SyntaxError: (unicode error) 'unicodeescape' codec
+can't decode bytes in position 0-4: truncated <mark>\uXXXX</mark> escape</span>
+&gt;&gt;&gt; '\u0444'
 'ф'
->>> '\x01f41b'
-'ὁb'
-```
+&gt;&gt;&gt; '\x01f41b'
+'ὁb'</code></pre>
 --
 ## Unicode characters above U+FFFF
-```
->>> '\U1f41b'
-  File "<stdin>", line 1
-SyntaxError: (unicode error) 'unicodeescape' codec can't decode bytes in position 0-6: truncated \UXXXXXXXX escape
->>> '\U0001f41b'
-'🐛'
-```
+<pre><code>&gt;&gt;&gt; '\U1f41b'
+<span class="error">  File "&lt;stdin&gt;", line 1
+SyntaxError: (unicode error) 'unicodeescape' codec
+can't decode bytes in position 0-6: truncated <mark>\UXXXXXXXX</mark> escape</span>
+&gt;&gt;&gt; '\U0001f41b'
+'🐛'</code></pre>
 --
 ## Unicode strings — u''
 
@@ -968,13 +965,12 @@ SyntaxError: (unicode error) 'unicodeescape' codec can't decode bytes in positio
 * <mark>ASCII only — Python 3</mark>
 * Same as generic string which treats as byte sequence — Python 2
 
-```
->>> b'Byte'
+<pre><code>&gt;&gt;&gt; b'Byte'
 b'Byte'
->>> b'Жи-ши'
-  File "<stdin>", line 1
-SyntaxError: bytes can only contain ASCII literal characters.
-```
+&gt;&gt;&gt; b'Жи-ши'
+<span class="error">  File "&lt;stdin&gt;", line 1
+SyntaxError: bytes can only contain ASCII literal characters.</span>
+</code></pre>
 --
 ## Escape backslash
 
@@ -1056,14 +1052,14 @@ Since 2015 — Python 3.6. See also [realpython.com/python-f-strings](https://re
 ```
 --
 ## Concatenate strings with +
-```
->>> 3 + ' is three'
-Traceback (most recent call last):
-  File "<stdin>", line 1, in <module>
-TypeError: unsupported operand type(s) for +: 'int' and 'str'
->>> str(3) + ' is three'
+
+<pre><code>&gt;&gt;&gt; 3 + ' is three'
+<span class="error">Traceback (most recent call last):
+  File "&lt;stdin&gt;", line 1, in &lt;module&gt;
+TypeError: unsupported operand type(s) for +: 'int' and 'str'</span>
+&gt;&gt;&gt; str(3) + ' is three'
 '3 is three'
-```
+</code></pre>
 --
 ## list
 

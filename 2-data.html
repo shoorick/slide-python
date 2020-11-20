@@ -1100,25 +1100,24 @@ False
   <section class="slide ">
     <div>
       <h2 id="unicode-characters">Unicode characters</h2>
-<pre><code>&gt;&gt;&gt; &#39;\u444&#39;
-  File &quot;&lt;stdin&gt;&quot;, line 1
-SyntaxError: (unicode error) &#39;unicodeescape&#39; codec can&#39;t decode bytes in position 0-4: truncated \uXXXX escape
-&gt;&gt;&gt; &#39;\u0444&#39;
-&#39;ф&#39;
-&gt;&gt;&gt; &#39;\x01f41b&#39;
-&#39;ὁb&#39;
-</code></pre>
+<pre><code>&gt;&gt;&gt; '\u444'
+<span class="error">SyntaxError: (unicode error) 'unicodeescape' codec
+can't decode bytes in position 0-4: truncated <mark>\uXXXX</mark> escape</span>
+&gt;&gt;&gt; '\u0444'
+'ф'
+&gt;&gt;&gt; '\x01f41b'
+'ὁb'</code></pre>
     </div>
   </section>
   <section class="slide ">
     <div>
       <h2 id="unicode-characters-above-u-ffff">Unicode characters above U+FFFF</h2>
-<pre><code>&gt;&gt;&gt; &#39;\U1f41b&#39;
-  File &quot;&lt;stdin&gt;&quot;, line 1
-SyntaxError: (unicode error) &#39;unicodeescape&#39; codec can&#39;t decode bytes in position 0-6: truncated \UXXXXXXXX escape
-&gt;&gt;&gt; &#39;\U0001f41b&#39;
-&#39;🐛&#39;
-</code></pre>
+<pre><code>&gt;&gt;&gt; '\U1f41b'
+<span class="error">  File "&lt;stdin&gt;", line 1
+SyntaxError: (unicode error) 'unicodeescape' codec
+can't decode bytes in position 0-6: truncated <mark>\UXXXXXXXX</mark> escape</span>
+&gt;&gt;&gt; '\U0001f41b'
+'🐛'</code></pre>
     </div>
   </section>
   <section class="slide ">
@@ -1141,11 +1140,11 @@ SyntaxError: (unicode error) &#39;unicodeescape&#39; codec can&#39;t decode byte
 <li><mark>ASCII only — Python 3</mark></li>
 <li>Same as generic string which treats as byte sequence — Python 2</li>
 </ul>
-<pre><code>&gt;&gt;&gt; b&#39;Byte&#39;
-b&#39;Byte&#39;
-&gt;&gt;&gt; b&#39;Жи-ши&#39;
-  File &quot;&lt;stdin&gt;&quot;, line 1
-SyntaxError: bytes can only contain ASCII literal characters.
+<pre><code>&gt;&gt;&gt; b'Byte'
+b'Byte'
+&gt;&gt;&gt; b'Жи-ши'
+<span class="error">  File "&lt;stdin&gt;", line 1
+SyntaxError: bytes can only contain ASCII literal characters.</span>
 </code></pre>
     </div>
   </section>
@@ -1232,12 +1231,12 @@ SyntaxError: bytes can only contain ASCII literal characters.
   <section class="slide ">
     <div>
       <h2 id="concatenate-strings-with-">Concatenate strings with +</h2>
-<pre><code>&gt;&gt;&gt; 3 + &#39; is three&#39;
-Traceback (most recent call last):
-  File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;
-TypeError: unsupported operand type(s) for +: &#39;int&#39; and &#39;str&#39;
-&gt;&gt;&gt; str(3) + &#39; is three&#39;
-&#39;3 is three&#39;
+<pre><code>&gt;&gt;&gt; 3 + ' is three'
+<span class="error">Traceback (most recent call last):
+  File "&lt;stdin&gt;", line 1, in &lt;module&gt;
+TypeError: unsupported operand type(s) for +: 'int' and 'str'</span>
+&gt;&gt;&gt; str(3) + ' is three'
+'3 is three'
 </code></pre>
     </div>
   </section>
@@ -1819,7 +1818,7 @@ range(<mark>16</mark>, 20, <mark class="important">2</mark>)
   <li class="next">Use proper names for variables.</li>
   <li class="next">All variables are objects, all data types are classes.</li>
   <li class="next">Python has a lot of built-in and external data types.</li>
-  <li class="next">There ara implicit and explicit changes of data types.</li>
+  <li class="next">There are implicit and explicit changes of data types.</li>
 </ul>
     </div>
   </section>

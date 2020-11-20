@@ -25,5 +25,8 @@ index.html:  index.md
 6-src.html:  6-src.md
 	cleaver  6-src.md
 
+7-graph.html: 7-graph.md
+	cleaver   7-graph.md
+
 watch:
 	cleaver watch 3-flow.md

@@ -22,5 +22,8 @@ index.html:  index.md
 5-data.html: 5-data.md
 	cleaver  5-data.md
 
+6-src.html:  6-src.md
+	cleaver  6-src.md
+
 watch:
 	cleaver watch 3-flow.md

@@ -371,14 +371,14 @@ Charlie</mark> has yellow cucumber
 
 --
 ## Example: chemical elements
-```
+```python
 >>> stuff = ['hydrogen', 'helium', 'lithium']
 ```
 
 ![name → value](images/periodic-table.dot.svg)
 --
 ## Classic way
-```
+```python
 >>> stuff = ['hydrogen', 'helium', 'lithium']
 >>> for i in range(len(stuff)):
 ...     print(i + 1, stuff[i])
@@ -390,7 +390,7 @@ Charlie</mark> has yellow cucumber
 --
 ## Use zip and range for numbering
 
-```
+```python
 >>> for number, name in zip(range(1, len(stuff) + 1), stuff):
 ...     print(number, name)
 ...
@@ -400,7 +400,7 @@ Charlie</mark> has yellow cucumber
 ```
 --
 ## enumerate
-```
+```python
 >>> for number, name in enumerate(stuff):
 ...     print(number, name)
 ...
@@ -508,21 +508,25 @@ Unlike C, C++, Java, JavaScript, Perl, PHP, Ruby etc
 
 --
 ## Python has no `++` and `--` operators
-<pre>
-<code>&gt;&gt;&gt; 3++2  <span class="comment"># 3 + +2</span>
+
+```python
+>>> 3++2  # 3 + +2
 5
-&gt;&gt;&gt; 4--5 <span class="comment"># 4 − (−5) = 4 + 5</span>
+>>> 4--5  # 4 − (−5) = 4 + 5
 9
-</code></pre>
+```
+
 --
 ## Python has no `++` and `--` operators
-<pre>
-<code>&gt;&gt;&gt; 7++
-  File "<stdin>", line 1
+
+```python
+>>> 7++
+  File "", line 1
     7++
       ^
 SyntaxError: invalid syntax
-</code></pre>
+```
+
 --
 ## Loop
 <div class="two columns">
@@ -566,17 +570,21 @@ SyntaxError: invalid syntax
 --
 ## Python has no postconditional loop
 
-<pre><code>do:
-    <span class="comment"># do something</span>
-    until condition</code></pre>
+```python
+do:
+    # do something
+    until condition
+```
 
 --
 ## Python has <mark class="orange">no postconditional loop</mark>
 
 <img src="images/hatch-red-line.svg" alt="" style="float:left;margin-right:-180px">
-<pre><code>do:
-    <span class="comment"># do something</span>
-    until condition</code></pre>
+```python
+do:
+    # do something
+    until condition
+```
 --
 ## Use `break` to emulate it
 <pre>

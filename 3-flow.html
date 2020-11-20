@@ -457,46 +457,50 @@ Charlie</mark> has yellow cucumber
   <section class="slide ">
     <div>
       <h2 id="example-chemical-elements">Example: chemical elements</h2>
-<pre><code>&gt;&gt;&gt; stuff = [&#39;hydrogen&#39;, &#39;helium&#39;, &#39;lithium&#39;]
-</code></pre><p><img src="images/periodic-table.dot.svg" alt="name → value"></p>
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>stuff = [<span class="hljs-string">'hydrogen'</span>, <span class="hljs-string">'helium'</span>, <span class="hljs-string">'lithium'</span>]
+</code></pre>
+<p><img src="images/periodic-table.dot.svg" alt="name → value"></p>
 
     </div>
   </section>
   <section class="slide ">
     <div>
       <h2 id="classic-way">Classic way</h2>
-<pre><code>&gt;&gt;&gt; stuff = [&#39;hydrogen&#39;, &#39;helium&#39;, &#39;lithium&#39;]
-&gt;&gt;&gt; for i in range(len(stuff)):
-...     print(i + 1, stuff[i])
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>stuff = [<span class="hljs-string">'hydrogen'</span>, <span class="hljs-string">'helium'</span>, <span class="hljs-string">'lithium'</span>]
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(len(stuff)):
+<span class="hljs-meta">... </span>    print(i + <span class="hljs-number">1</span>, stuff[i])
 ...
-1 hydrogen
-2 helium
-3 lithium
+<span class="hljs-number">1</span> hydrogen
+<span class="hljs-number">2</span> helium
+<span class="hljs-number">3</span> lithium
 </code></pre>
+
     </div>
   </section>
   <section class="slide ">
     <div>
       <h2 id="use-zip-and-range-for-numbering">Use zip and range for numbering</h2>
-<pre><code>&gt;&gt;&gt; for number, name in zip(range(1, len(stuff) + 1), stuff):
-...     print(number, name)
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">for</span> number, name <span class="hljs-keyword">in</span> zip(range(<span class="hljs-number">1</span>, len(stuff) + <span class="hljs-number">1</span>), stuff):
+<span class="hljs-meta">... </span>    print(number, name)
 ...
-1 hydrogen
-2 helium
-3 lithium
+<span class="hljs-number">1</span> hydrogen
+<span class="hljs-number">2</span> helium
+<span class="hljs-number">3</span> lithium
 </code></pre>
+
     </div>
   </section>
   <section class="slide ">
     <div>
       <h2 id="enumerate">enumerate</h2>
-<pre><code>&gt;&gt;&gt; for number, name in enumerate(stuff):
-...     print(number, name)
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">for</span> number, name <span class="hljs-keyword">in</span> enumerate(stuff):
+<span class="hljs-meta">... </span>    print(number, name)
 ...
-0 hydrogen
-1 helium
-2 lithium
+<span class="hljs-number">0</span> hydrogen
+<span class="hljs-number">1</span> helium
+<span class="hljs-number">2</span> lithium
 </code></pre>
+
     </div>
   </section>
   <section class="slide ">
@@ -617,24 +621,24 @@ variable <mark class="orange">-=</mark> delta  <span class="comment"># decrease<
   <section class="slide ">
     <div>
       <h2 id="python-has-no-and-operators">Python has no <code>++</code> and <code>--</code> operators</h2>
-<pre>
-<code>&gt;&gt;&gt; 3++2  <span class="comment"># 3 + +2</span>
-5
-&gt;&gt;&gt; 4--5 <span class="comment"># 4 − (−5) = 4 + 5</span>
-9
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-number">3</span>++<span class="hljs-number">2</span>  <span class="hljs-comment"># 3 + +2</span>
+<span class="hljs-number">5</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-number">4</span>-<span class="hljs-number">-5</span>  <span class="hljs-comment"># 4 − (−5) = 4 + 5</span>
+<span class="hljs-number">9</span>
 </code></pre>
+
     </div>
   </section>
   <section class="slide ">
     <div>
       <h2 id="python-has-no-and-operators">Python has no <code>++</code> and <code>--</code> operators</h2>
-<pre>
-<code>&gt;&gt;&gt; 7++
-  File "<stdin>", line 1
-    7++
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-number">7</span>++
+  File <span class="hljs-string">""</span>, line <span class="hljs-number">1</span>
+    <span class="hljs-number">7</span>++
       ^
 SyntaxError: invalid syntax
 </code></pre>
+
     </div>
   </section>
   <section class="slide ">
@@ -689,18 +693,22 @@ SyntaxError: invalid syntax
   <section class="slide ">
     <div>
       <h2 id="python-has-no-postconditional-loop">Python has no postconditional loop</h2>
-<pre><code>do:
-    <span class="comment"># do something</span>
-    until condition</code></pre>
+<pre><code class="lang-python">do:
+    <span class="hljs-comment"># do something</span>
+    until condition
+</code></pre>
+
     </div>
   </section>
   <section class="slide ">
     <div>
       <h2 id="python-has-mark-class-orange-no-postconditional-loop-mark-">Python has <mark class="orange">no postconditional loop</mark></h2>
 <p><img src="images/hatch-red-line.svg" alt="" style="float:left;margin-right:-180px"></p>
-<pre><code>do:
-    <span class="comment"># do something</span>
-    until condition</code></pre>
+<pre><code class="lang-python">do:
+    <span class="hljs-comment"># do something</span>
+    until condition
+</code></pre>
+
     </div>
   </section>
   <section class="slide ">

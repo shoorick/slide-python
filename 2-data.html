@@ -153,8 +153,9 @@
     <div>
       <h2 id="syntax-peculiarities">Syntax peculiarities</h2>
 <p>No semicolon <mark>;</mark> after single statement</p>
-<pre><code>counter = 42
+<pre><code class="lang-python">counter = <span class="hljs-number">42</span>
 </code></pre>
+
     </div>
   </section>
   <section class="slide ">
@@ -201,17 +202,19 @@
     <div>
       <h2 id="variables">Variables</h2>
 <h3 id="assignment">Assignment</h3>
-<pre><code>name = &#39;value&#39;
-</code></pre><p><img src="images/var-name-value.dot.svg" alt="name → value"></p>
+<pre><code class="lang-python">name = <span class="hljs-string">'value'</span>
+</code></pre>
+<p><img src="images/var-name-value.dot.svg" alt="name → value"></p>
 
     </div>
   </section>
   <section class="slide ">
     <div>
       <h2 id="assign-a-new-value">Assign a new value</h2>
-<pre><code>name = &#39;value&#39;
-name = 42
-</code></pre><p><img src="images/var-name-42.dot.svg" alt="name → value"></p>
+<pre><code class="lang-python">name = <span class="hljs-string">'value'</span>
+name = <span class="hljs-number">42</span>
+</code></pre>
+<p><img src="images/var-name-42.dot.svg" alt="name → value"></p>
 
     </div>
   </section>
@@ -270,8 +273,9 @@ cache invalidation and naming things.<br><br>
 <li>Digits (not in first position)</li>
 <li>Underscore <code>_</code></li>
 </ul>
-<pre><code>&gt;&gt;&gt; theSun_and_8_planets = &#39;solar&#39;
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>theSun_and_8_planets = <span class="hljs-string">'solar'</span>
 </code></pre>
+
     </div>
   </section>
   <section class="slide ">
@@ -310,12 +314,13 @@ cache invalidation and naming things.<br><br>
   <section class="slide ">
     <div>
       <h2 id="you-cannot-use-keyword-as-variable-name">You cannot use keyword as variable name</h2>
-<pre><code>&gt;&gt;&gt; global = &#39;World&#39;
-  File &quot;&lt;stdin&gt;&quot;, line 1
-    global = &#39;World&#39;
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">global</span> = <span class="hljs-string">'World'</span>
+  File <span class="hljs-string">"&lt;stdin&gt;"</span>, line <span class="hljs-number">1</span>
+    <span class="hljs-keyword">global</span> = <span class="hljs-string">'World'</span>
            ^
 SyntaxError: invalid syntax
 </code></pre>
+
     </div>
   </section>
   <section class="slide ">
@@ -350,38 +355,41 @@ True        def         if          raise
     <div>
       <h2 id="variable-naming">Variable naming</h2>
 <p>Python 3 allows to use some non-ASCII letters but <mark>it’s a wrong way</mark></p>
-<pre><code>&gt;&gt;&gt; Öl = &#39;Barrel.&#39;
-&gt;&gt;&gt; print(Öl * 3)
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>Öl = <span class="hljs-string">'Barrel.'</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>print(Öl * <span class="hljs-number">3</span>)
 Barrel.Barrel.Barrel.
-&gt;&gt;&gt; Ø = 0
-&gt;&gt;&gt; Ж = 8
-&gt;&gt;&gt; Зима = &#39;Winter&#39;
+<span class="hljs-meta">&gt;&gt;&gt; </span>Ø = <span class="hljs-number">0</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>Ж = <span class="hljs-number">8</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>Зима = <span class="hljs-string">'Winter'</span>
 </code></pre>
+
     </div>
   </section>
   <section class="slide ">
     <div>
       <h2 id="don-t-do-that">Don’t do that</h2>
-<pre><code>&gt;&gt;&gt; ქ = &#39;khar&#39;
-&gt;&gt;&gt; ձ = &#39;ja&#39;
-&gt;&gt;&gt; ж = &#39;zhe&#39;
-&gt;&gt;&gt; ξ = &#39;xi&#39;
-&gt;&gt;&gt; ש = &#39;shin&#39;
-&gt;&gt;&gt; ش = &#39;sheen&#39;
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>ქ = <span class="hljs-string">'khar'</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>ձ = <span class="hljs-string">'ja'</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>ж = <span class="hljs-string">'zhe'</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>ξ = <span class="hljs-string">'xi'</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>ש = <span class="hljs-string">'shin'</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>ش = <span class="hljs-string">'sheen'</span>
 </code></pre>
+
     </div>
   </section>
   <section class="slide ">
     <div>
       <h2 id="don-t-do-that">Don’t do that</h2>
-<pre><code>&gt;&gt;&gt; o = &#39;Latin&#39;
-&gt;&gt;&gt; ο = &#39;Greek&#39;
-&gt;&gt;&gt; о = &#39;Cyrillic&#39;
-&gt;&gt;&gt; օ = &#39;Armenian&#39;
-&gt;&gt;&gt; ჿ = &#39;Georgian&#39;
-&gt;&gt;&gt; print(o, ο, о, օ, ჿ)
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>o = <span class="hljs-string">'Latin'</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>ο = <span class="hljs-string">'Greek'</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>о = <span class="hljs-string">'Cyrillic'</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>օ = <span class="hljs-string">'Armenian'</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>ჿ = <span class="hljs-string">'Georgian'</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>print(o, ο, о, օ, ჿ)
 Latin Greek Cyrillic Armenian Georgian
 </code></pre>
+
     </div>
   </section>
   <section class="slide ">
@@ -408,23 +416,25 @@ SyntaxError: invalid character in identifier
   <section class="slide ">
     <div>
       <h2 id="process-and-output-variable">Process and output variable</h2>
-<pre><code>&gt;&gt;&gt; some = &#39;thing&#39;
-&gt;&gt;&gt; len(some)
-5
-&gt;&gt;&gt; print(some)
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>some = <span class="hljs-string">'thing'</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>len(some)
+<span class="hljs-number">5</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>print(some)
 thing
 </code></pre>
+
     </div>
   </section>
   <section class="slide ">
     <div>
       <h2 id="process-and-output-variable">Process and output variable</h2>
-<pre><code>&gt;&gt;&gt; print(some)
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>print(some)
 thing
-&gt;&gt;&gt; print(&#39;Any&#39; + some)
+<span class="hljs-meta">&gt;&gt;&gt; </span>print(<span class="hljs-string">'Any'</span> + some)
 Anything
 
 </code></pre>
+
     </div>
   </section>
   <section class="slide ">

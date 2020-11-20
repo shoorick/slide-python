@@ -89,7 +89,7 @@ author:
 
 No semicolon <mark>;</mark> after single statement
 
-```
+```python
 counter = 42
 ```
 --
@@ -127,7 +127,7 @@ Colon and indent instead of curly braces for blocks
 
 ### Assignment
 
-```
+```python
 name = 'value'
 ```
 
@@ -135,7 +135,7 @@ name = 'value'
 --
 ## Assign a new value
 
-```
+```python
 name = 'value'
 name = 42
 ```
@@ -193,7 +193,7 @@ Available characters are:
 * Digits (not in first position)
 * Underscore `_`
 
-```
+```python
 >>> theSun_and_8_planets = 'solar'
 ```
 --
@@ -227,7 +227,7 @@ for variables and functions
 --
 ## You cannot use keyword as variable name
 
-```
+```python
 >>> global = 'World'
   File "<stdin>", line 1
     global = 'World'
@@ -264,7 +264,7 @@ True        def         if          raise
 
 Python 3 allows to use some non-ASCII letters but <mark>it’s a wrong way</mark>
 
-```
+```python
 >>> Öl = 'Barrel.'
 >>> print(Öl * 3)
 Barrel.Barrel.Barrel.
@@ -276,7 +276,7 @@ Barrel.Barrel.Barrel.
 
 ## Don’t do that
 
-```
+```python
 >>> ქ = 'khar'
 >>> ձ = 'ja'
 >>> ж = 'zhe'
@@ -288,7 +288,7 @@ Barrel.Barrel.Barrel.
 
 ## Don’t do that
 
-```
+```python
 >>> o = 'Latin'
 >>> ο = 'Greek'
 >>> о = 'Cyrillic'
@@ -320,7 +320,7 @@ SyntaxError: invalid character in identifier
 --
 ## Process and output variable
 
-```
+```python
 >>> some = 'thing'
 >>> len(some)
 5
@@ -330,7 +330,7 @@ thing
 --
 ## Process and output variable
 
-```
+```python
 >>> print(some)
 thing
 >>> print('Any' + some)

@@ -18,7 +18,7 @@
 <!-- string -->
 <g id="node7" class="node">
 <title>string</title>
-<polygon fill="none" stroke="#000000" points="301,-61 113,-61 113,0 301,0 301,-61"/>
+<polygon fill="#ffff00" stroke="#000000" points="301,-61 113,-61 113,0 301,0 301,-61"/>
 <text text-anchor="middle" x="207" y="-18.6" font-family="PT Mono" font-size="48.00" fill="#000000">string</text>
 </g>
 <!-- s&#45;&gt;string -->

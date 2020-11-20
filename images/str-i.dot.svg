@@ -54,7 +54,7 @@
 <!-- i -->
 <g id="node4" class="node">
 <title>i</title>
-<polygon fill="none" stroke="#000000" points="270,-158 216,-158 216,-97 270,-97 270,-158"/>
+<polygon fill="#ffff00" stroke="#000000" points="270,-158 216,-158 216,-97 270,-97 270,-158"/>
 <text text-anchor="middle" x="243" y="-115.6" font-family="PT Mono" font-size="48.00" fill="#000000">i</text>
 </g>
 <!-- i&#45;&gt;string -->

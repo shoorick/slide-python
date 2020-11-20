@@ -740,11 +740,11 @@ Use name of type as function to convert data
 
 __string__ is the sequence of characters
 
-<img src="images/str.png" alt="string">
+![string](images/str.dot.svg)
 --
 ## Individual characters are accessible
 
-<img src="images/str-i.png" alt="string with highlighted i">
+![string with highlighted i](images/str-i.dot.svg)
 
 ```
 >>> 'string'[3]
@@ -753,7 +753,7 @@ __string__ is the sequence of characters
 --
 ## as well as whole string
 
-<img src="images/str-string.png" alt="highlighted string">
+![highlighted string](images/str-string.dot.svg)
 
 ```
 >>> 'string'.upper()
@@ -762,7 +762,7 @@ __string__ is the sequence of characters
 --
 ## String parts are strings too
 
-<img src="images/str-i.png" alt="string with highlighted i">
+![string with highlighted i](images/str-i.dot.svg)
 
 ```
 >>> 'string'[3].upper()

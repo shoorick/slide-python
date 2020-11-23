@@ -25,6 +25,7 @@ author:
 
 * Conditional statement
 * Loops and iterators
+* Code reuse: functions, modules, and libraries
 
 See also [docs.python.org / Tutorial / More Control Flow Tools](https://docs.python.org/3.7/tutorial/controlflow.html)
 --
@@ -596,3 +597,50 @@ do:
 How many? Or type q to quit 4
 How many? Or type q to quit q
 </code></pre>
+--
+<h2 class="shout">Code reuse</h2>
+--
+## Code reuse
+
+* Functions
+* Modules
+* Libraries
+--
+## Let’s sing a song
+
+* First verse
+* Refrain
+* Second verse
+* Refrain
+* Third verse
+* Refrain, refrain, refrain...
+
+--
+## Structure of the song
+
+* First verse
+* Refrain
+* Second verse
+* Refrain
+* Third verse
+* <mark>Refrain</mark>, <mark>refrain</mark>, <mark>refrain</mark> → _loop_
+--
+## Structure of the song
+
+* First verse
+* <mark>Refrain</mark>
+* Second verse
+* <mark>Refrain</mark>
+* Third verse
+* <mark>Refrain</mark>, <mark>refrain</mark>, <mark>refrain</mark>
+
+--
+## Structure of the song
+
+* First verse
+* <mark>Refrain</mark>
+* Second verse
+* <mark>Refrain</mark>
+* Third verse
+* <mark>Refrain</mark>, <mark class="orange">refrain (shifted pitch)</mark>, <mark class="green">refrain (silent)</mark>
+

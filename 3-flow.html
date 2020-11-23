@@ -50,11 +50,51 @@
   </section>
   <section class="slide ">
     <div>
+      <h2 id="let-s-imagine-a-song">Let’s imagine a song</h2>
+<ul>
+<li>Introduction</li>
+<li>First verse</li>
+<li>Refrain</li>
+<li>Second verse</li>
+<li>Refrain, refrain, refrain...</li>
+</ul>
+
+    </div>
+  </section>
+  <section class="slide ">
+    <div>
+      <h2 id="let-s-imagine-a-song">Let’s imagine a song</h2>
+<ul>
+<li><mark><strong>if</strong> pianist is here <strong>then</strong> play an introduction</mark></li>
+<li>First verse</li>
+<li>Refrain</li>
+<li>Second verse</li>
+<li>Refrain, refrain, refrain...</li>
+</ul>
+
+    </div>
+  </section>
+  <section class="slide ">
+    <div>
+      <h2 id="rewrite-in-python-like-pseudocode">Rewrite in Python-like pseudocode</h2>
+<ul>
+<li><strong>if</strong> <mark class="green">pianist is here</mark>
+<mark><strong>then</strong></mark> <mark class="orange">play an introduction</mark></li>
+</ul>
+<pre><code>   <span class="comment">↓ condition</span>
+<span class="hljs-keyword">if</span> <mark class="green">pianist is here</mark> <mark>:</mark>
+    <mark class="orange">play an introduction</mark>
+    <span class="comment">↑ action</span>
+</code></pre>
+    </div>
+  </section>
+  <section class="slide ">
+    <div>
       <h2 id="conditional-statement">Conditional statement</h2>
 <p>Colon and indent instead of curly braces for blocks</p>
 <pre>
-<code>if (x &lt; 5)<mark>:</mark>
-<mark>    </mark><span class="comment"># four spaces is recommended</span>
+<code><span class="hljs-keyword">if</span> (x &lt; <span class="hljs-number">5</span>)<mark>:</mark>
+<mark>    </mark><span class="hljs-comment"># four spaces indent is recommended</span>
 <mark>    </mark>print(x)</code>
 </pre>
     </div>
@@ -64,8 +104,8 @@
       <h2 id="conditional-statement">Conditional statement</h2>
 <p>Parentheses around condition aren’t necessary</p>
 <pre>
-<code>if <mark> </mark>x &lt; 5<mark> </mark>:
-    <span class="comment"># omit parentheses</span>
+<code><span class="hljs-keyword">if</span> <mark> </mark>x &lt; <span class="hljs-number">5</span><mark> </mark>:
+    <span class="hljs-comment"># omit parentheses</span>
     print(x)</code>
 </pre>
     </div>
@@ -75,20 +115,23 @@
       <h2 id="conditional-statement">Conditional statement</h2>
 <p>Parentheses around condition aren’t necessary</p>
 <pre>
-<code>if <mark>x &lt; 5</mark> and <mark>y &gt; 7</mark>:
-    <span class="comment"># omit parentheses when possible</span>
+<code><span class="hljs-keyword">if</span> <mark>x &lt; 5</mark> <span class="hljs-keyword">and</span> <mark>y &gt; 7</mark>:
+    <span class="hljs-comment"># omit parentheses when possible</span>
     print(x)</code>
 </pre>
+
+<p>See also <a href="https://docs.python.org/3.7/reference/expressions.html#operator-precedence">docs.python.org / Tutorial / Expressions # Operator precedence</a></p>
+
     </div>
   </section>
   <section class="slide ">
     <div>
       <h2 id="else">Else</h2>
 <pre>
-<code>if x &lt; 5:
+<code><span class="hljs-keyword">if</span> x &lt; <span class="hljs-number">5</span>:
     print(x)
 <mark>else:</mark>
-    <span class="comment"># otherwise</span>
+    <span class="hljs-comment"># otherwise</span>
     print(something_else)
 </code>
 </pre>
@@ -98,12 +141,12 @@
     <div>
       <h2 id="else-if-elif">else if → elif</h2>
 <pre>
-<code>if x &lt; 5:
-    print('Few')
-<mark class="green">elif</mark> x &gt; 9:
-    <span class="comment"># second condition</span>
-    print('Many')
-else:
+<code><span class="hljs-keyword">if</span> x &lt; <span class="hljs-number">5</span>:
+    print(<span class="hljs-string">'Few'</span>)
+<mark class="green">elif</mark> x &gt; <span class="hljs-number">9</span>:
+    <span class="hljs-comment"># second condition</span>
+    print(<span class="hljs-string">'Many'</span>)
+<span class="hljs-keyword">else</span>:
     print(something_else)
 </code>
 </pre>
@@ -113,12 +156,12 @@ else:
     <div>
       <h2 id="else-if-elif">else if → elif</h2>
 <pre>
-<code>if x &lt; 5<mark>:</mark>
-    print('Few')
-elif x &gt; 9<mark>:</mark>
-    <span class="comment"># second condition</span>
-    print('Much')
-else<mark>:</mark>
+<code><span class="hljs-keyword">if</span> x &lt; <span class="hljs-number">5</span><mark>:</mark>
+    print(<span class="hljs-string">'Few'</span>)
+<span class="hljs-keyword">elif</span> x &gt; <span class="hljs-number">9</span><mark>:</mark>
+    <span class="hljs-comment"># second condition</span>
+    print(<span class="hljs-string">'Many'</span>)
+<span class="hljs-keyword">else</span><mark>:</mark>
     print(something_else)
 </code>
 </pre>
@@ -130,13 +173,13 @@ else<mark>:</mark>
 <div class="two columns">
 <div>
 <pre>
-<code>if x &lt; 5<mark>:</mark>
-    print(&#39;Few&#39;)
-<mark class="green">elif</mark> x &gt; 9<mark>:</mark>
-    print(&#39;Much&#39;)
-<mark class="green">elif</mark> x &gt; 7<mark>:</mark>
-    print(&#39;Not so much&#39;)
-<mark class="green">elif</mark> z == 42<mark>:</mark>
+<code><span class="hljs-keyword">if</span> x &lt; <span class="hljs-number">5</span><mark>:</mark>
+    print(<span class="hljs-string">&#39;Few&#39;</span>)
+<mark class="green">elif</mark> x &gt; <span class="hljs-number">9</span><mark>:</mark>
+    print(<span class="hljs-string">&#39;Many&#39;</span>)
+<mark class="green">elif</mark> x &gt; <span class="hljs-number">7</span><mark>:</mark>
+    print(<span class="hljs-string">&#39;Not so many&#39;</span>)
+<mark class="green">elif</mark> z == <span class="hljs-number">42</span><mark>:</mark>
 </code>
 </pre>
 </div><div>
@@ -150,11 +193,11 @@ as many <code><mark class="green">elif</mark></code>s
     <div>
       <h2 id="-is-not-a-comparison-operator"><code>=</code> is not a comparison operator</h2>
 <pre>
-<code>&gt;&gt;&gt; if z <mark class="important">=</mark> 7:
-  File "<stdin>", line 1
+<code><span class="hljs-meta">&gt;&gt;&gt;</span> <span class="hljs-keyword">if</span> z <mark class="important">=</mark> 7:
+<span class="error">  File "&lt;stdin&gt;", line 1
     if z = 7:
          ^
-SyntaxError: invalid syntax
+SyntaxError: invalid syntax</span>
 </code>
 </pre>
     </div>
@@ -170,7 +213,7 @@ SyntaxError: invalid syntax
 
 <h3 id="comparison">Comparison</h3>
 <pre>
-<code>if z <mark class="green">==</mark> 42:
+<code><span class="hljs-keyword">if</span> z <mark class="green">==</mark> 42:
     <span class="comment">print(z)</span>
 </code>
 </pre>
@@ -744,27 +787,11 @@ How many? Or type q to quit q
   </section>
   <section class="slide ">
     <div>
-      <h2 id="let-s-sing-a-song">Let’s sing a song</h2>
-<ul>
-<li>First verse</li>
-<li>Refrain</li>
-<li>Second verse</li>
-<li>Refrain</li>
-<li>Third verse</li>
-<li>Refrain, refrain, refrain...</li>
-</ul>
-
-    </div>
-  </section>
-  <section class="slide ">
-    <div>
       <h2 id="structure-of-the-song">Structure of the song</h2>
 <ul>
 <li>First verse</li>
 <li>Refrain</li>
 <li>Second verse</li>
-<li>Refrain</li>
-<li>Third verse</li>
 <li><mark>Refrain</mark>, <mark>refrain</mark>, <mark>refrain</mark> → <em>loop</em></li>
 </ul>
 
@@ -791,8 +818,6 @@ How many? Or type q to quit q
 <li>First verse</li>
 <li><mark>Refrain</mark></li>
 <li>Second verse</li>
-<li><mark>Refrain</mark></li>
-<li>Third verse</li>
 <li><mark>Refrain</mark>, <mark class="orange">refrain (shifted pitch)</mark>, <mark class="green">refrain (silent)</mark></li>
 </ul>
 

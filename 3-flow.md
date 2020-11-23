@@ -29,13 +29,40 @@ author:
 
 See also [docs.python.org / Tutorial / More Control Flow Tools](https://docs.python.org/3.7/tutorial/controlflow.html)
 --
+## Let’s imagine a song
+
+* Introduction
+* First verse
+* Refrain
+* Second verse
+* Refrain, refrain, refrain...
+--
+## Let’s imagine a song
+
+* <mark>**if** pianist is here **then** play an introduction</mark>
+* First verse
+* Refrain
+* Second verse
+* Refrain, refrain, refrain...
+--
+## Rewrite in Python-like pseudocode
+
+* **if** <mark class="green">pianist is here</mark>
+<mark>**then**</mark> <mark class="orange">play an introduction</mark>
+
+<pre><code>   <span class="comment">↓ condition</span>
+<span class="hljs-keyword">if</span> <mark class="green">pianist is here</mark> <mark>:</mark>
+    <mark class="orange">play an introduction</mark>
+    <span class="comment">↑ action</span>
+</code></pre>
+--
 ## Conditional statement
 
 Colon and indent instead of curly braces for blocks
 
 <pre>
-<code>if (x &lt; 5)<mark>:</mark>
-<mark>    </mark><span class="comment"># four spaces is recommended</span>
+<code><span class="hljs-keyword">if</span> (x &lt; <span class="hljs-number">5</span>)<mark>:</mark>
+<mark>    </mark><span class="hljs-comment"># four spaces indent is recommended</span>
 <mark>    </mark>print(x)</code>
 </pre>
 --
@@ -44,8 +71,8 @@ Colon and indent instead of curly braces for blocks
 Parentheses around condition aren’t necessary
 
 <pre>
-<code>if <mark> </mark>x &lt; 5<mark> </mark>:
-    <span class="comment"># omit parentheses</span>
+<code><span class="hljs-keyword">if</span> <mark> </mark>x &lt; <span class="hljs-number">5</span><mark> </mark>:
+    <span class="hljs-comment"># omit parentheses</span>
     print(x)</code>
 </pre>
 --
@@ -54,19 +81,21 @@ Parentheses around condition aren’t necessary
 Parentheses around condition aren’t necessary
 
 <pre>
-<code>if <mark>x &lt; 5</mark> and <mark>y &gt; 7</mark>:
-    <span class="comment"># omit parentheses when possible</span>
+<code><span class="hljs-keyword">if</span> <mark>x &lt; 5</mark> <span class="hljs-keyword">and</span> <mark>y &gt; 7</mark>:
+    <span class="hljs-comment"># omit parentheses when possible</span>
     print(x)</code>
 </pre>
+
+See also [docs.python.org / Tutorial / Expressions # Operator precedence](https://docs.python.org/3.7/reference/expressions.html#operator-precedence)
 
 --
 ## Else
 
 <pre>
-<code>if x &lt; 5:
+<code><span class="hljs-keyword">if</span> x &lt; <span class="hljs-number">5</span>:
     print(x)
 <mark>else:</mark>
-    <span class="comment"># otherwise</span>
+    <span class="hljs-comment"># otherwise</span>
     print(something_else)
 </code>
 </pre>
@@ -74,12 +103,12 @@ Parentheses around condition aren’t necessary
 ## else if → elif
 
 <pre>
-<code>if x &lt; 5:
-    print('Few')
-<mark class="green">elif</mark> x &gt; 9:
-    <span class="comment"># second condition</span>
-    print('Many')
-else:
+<code><span class="hljs-keyword">if</span> x &lt; <span class="hljs-number">5</span>:
+    print(<span class="hljs-string">'Few'</span>)
+<mark class="green">elif</mark> x &gt; <span class="hljs-number">9</span>:
+    <span class="hljs-comment"># second condition</span>
+    print(<span class="hljs-string">'Many'</span>)
+<span class="hljs-keyword">else</span>:
     print(something_else)
 </code>
 </pre>
@@ -87,12 +116,12 @@ else:
 ## else if → elif
 
 <pre>
-<code>if x &lt; 5<mark>:</mark>
-    print('Few')
-elif x &gt; 9<mark>:</mark>
-    <span class="comment"># second condition</span>
-    print('Much')
-else<mark>:</mark>
+<code><span class="hljs-keyword">if</span> x &lt; <span class="hljs-number">5</span><mark>:</mark>
+    print(<span class="hljs-string">'Few'</span>)
+<span class="hljs-keyword">elif</span> x &gt; <span class="hljs-number">9</span><mark>:</mark>
+    <span class="hljs-comment"># second condition</span>
+    print(<span class="hljs-string">'Many'</span>)
+<span class="hljs-keyword">else</span><mark>:</mark>
     print(something_else)
 </code>
 </pre>
@@ -102,13 +131,13 @@ else<mark>:</mark>
 <div class="two columns">
 <div>
 <pre>
-<code>if x &lt; 5<mark>:</mark>
-    print('Few')
-<mark class="green">elif</mark> x &gt; 9<mark>:</mark>
-    print('Much')
-<mark class="green">elif</mark> x &gt; 7<mark>:</mark>
-    print('Not so much')
-<mark class="green">elif</mark> z == 42<mark>:</mark>
+<code><span class="hljs-keyword">if</span> x &lt; <span class="hljs-number">5</span><mark>:</mark>
+    print(<span class="hljs-string">'Few'</span>)
+<mark class="green">elif</mark> x &gt; <span class="hljs-number">9</span><mark>:</mark>
+    print(<span class="hljs-string">'Many'</span>)
+<mark class="green">elif</mark> x &gt; <span class="hljs-number">7</span><mark>:</mark>
+    print(<span class="hljs-string">'Not so many'</span>)
+<mark class="green">elif</mark> z == <span class="hljs-number">42</span><mark>:</mark>
 </code>
 </pre>
 </div><div>
@@ -120,11 +149,11 @@ as many <code><mark class="green">elif</mark></code>s
 ## `=` is not a comparison operator
 
 <pre>
-<code>&gt;&gt;&gt; if z <mark class="important">=</mark> 7:
-  File "<stdin>", line 1
+<code><span class="hljs-meta">&gt;&gt;&gt;</span> <span class="hljs-keyword">if</span> z <mark class="important">=</mark> 7:
+<span class="error">  File "&lt;stdin&gt;", line 1
     if z = 7:
          ^
-SyntaxError: invalid syntax
+SyntaxError: invalid syntax</span>
 </code>
 </pre>
 
@@ -140,7 +169,7 @@ SyntaxError: invalid syntax
 ### Comparison
 
 <pre>
-<code>if z <mark class="green">==</mark> 42:
+<code><span class="hljs-keyword">if</span> z <mark class="green">==</mark> 42:
     <span class="comment">print(z)</span>
 </code>
 </pre>
@@ -605,15 +634,6 @@ How many? Or type q to quit q
 * Functions
 * Modules
 * Libraries
---
-## Let’s sing a song
-
-* First verse
-* Refrain
-* Second verse
-* Refrain
-* Third verse
-* Refrain, refrain, refrain...
 
 --
 ## Structure of the song
@@ -621,8 +641,6 @@ How many? Or type q to quit q
 * First verse
 * Refrain
 * Second verse
-* Refrain
-* Third verse
 * <mark>Refrain</mark>, <mark>refrain</mark>, <mark>refrain</mark> → _loop_
 --
 ## Structure of the song
@@ -640,7 +658,5 @@ How many? Or type q to quit q
 * First verse
 * <mark>Refrain</mark>
 * Second verse
-* <mark>Refrain</mark>
-* Third verse
 * <mark>Refrain</mark>, <mark class="orange">refrain (shifted pitch)</mark>, <mark class="green">refrain (silent)</mark>
 

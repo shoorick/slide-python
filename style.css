@@ -29,7 +29,8 @@ var {
     background-color: var(--color-light-blue);
 }
 
-.slide mark.green {
+.slide mark.green,
+.slide code.green {
     background-color: var(--color-green);
 }
 
@@ -46,9 +47,9 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 .hljs {
   display: block;
   overflow-x: auto;
-  padding: 0.5em;
+/*  padding: 0.5em;
   color: #333;
-  background: #f8f8f8;
+  background: #f8f8f8;*/
 }
 
 .hljs-comment,
@@ -69,7 +70,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 .hljs-variable,
 .hljs-template-variable,
 .hljs-tag .hljs-attr {
-  color: #008080;
+  color: #087;
 }
 
 .hljs-string,
@@ -97,23 +98,23 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 .hljs-tag,
 .hljs-name,
 .hljs-attribute {
-  color: #000080;
+  color: #008;
   font-weight: normal;
 }
 
 .hljs-regexp,
 .hljs-link {
-  color: #009926;
+  color: #092;
 }
 
 .hljs-symbol,
 .hljs-bullet {
-  color: #990073;
+  color: #907;
 }
 
 .hljs-built_in,
 .hljs-builtin-name {
-  color: #0086b3;
+  color: #08b;
 }
 
 .hljs-meta {

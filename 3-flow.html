@@ -76,6 +76,16 @@
   </section>
   <section class="slide ">
     <div>
+      <h2 id="parse-first-line">Parse first line</h2>
+<ul>
+<li><strong>if</strong> <mark class="green">pianist is here</mark>
+<mark><strong>then</strong></mark> <mark class="orange">play an introduction</mark></li>
+</ul>
+
+    </div>
+  </section>
+  <section class="slide ">
+    <div>
       <h2 id="rewrite-in-python-like-pseudocode">Rewrite in Python-like pseudocode</h2>
 <ul>
 <li><strong>if</strong> <mark class="green">pianist is here</mark>
@@ -121,6 +131,33 @@
 </pre>
 
 <p>See also <a href="https://docs.python.org/3.7/reference/expressions.html#operator-precedence">docs.python.org / Tutorial / Expressions # Operator precedence</a></p>
+
+    </div>
+  </section>
+  <section class="slide ">
+    <div>
+      <h2 id="chained-comparison">Chained comparison</h2>
+<pre><code class="lang-python"><span class="hljs-comment"># instead of</span>
+<span class="hljs-keyword">if</span> temperature &gt; <span class="hljs-number">21</span> <span class="hljs-keyword">and</span> temperature &lt; <span class="hljs-number">26</span>:
+<span class="hljs-comment"># write</span>
+<span class="hljs-keyword">if</span> <span class="hljs-number">21</span> &lt; temperature &lt; <span class="hljs-number">26</span>:
+    <span class="hljs-string">'''
+    Comfortable
+    '''</span>
+</code></pre>
+
+    </div>
+  </section>
+  <section class="slide ">
+    <div>
+      <h2 id="chained-comparison">Chained comparison</h2>
+<pre><code class="lang-python"><span class="hljs-comment"># or even</span>
+<span class="hljs-keyword">if</span> <span class="hljs-number">21</span> &lt; outdoor_temperature &lt; indoor_temperature &lt; <span class="hljs-number">26</span>:
+    <span class="hljs-string">'''
+    Comfortable but external temperature
+    is a bit lower than internal one
+    '''</span>
+</code></pre>
 
     </div>
   </section>
@@ -184,7 +221,7 @@
 </pre>
 </div><div>
 <br><br>
-as many <code><mark class="green">elif</mark></code>s
+as many <code class="green">elif</code>s
 <br>as you wish
 </div></div>
     </div>

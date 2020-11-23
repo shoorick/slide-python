@@ -45,6 +45,12 @@ See also [docs.python.org / Tutorial / More Control Flow Tools](https://docs.pyt
 * Second verse
 * Refrain, refrain, refrain...
 --
+## Parse first line
+
+* **if** <mark class="green">pianist is here</mark>
+<mark>**then**</mark> <mark class="orange">play an introduction</mark>
+
+--
 ## Rewrite in Python-like pseudocode
 
 * **if** <mark class="green">pianist is here</mark>
@@ -87,7 +93,29 @@ Parentheses around condition aren’t necessary
 </pre>
 
 See also [docs.python.org / Tutorial / Expressions # Operator precedence](https://docs.python.org/3.7/reference/expressions.html#operator-precedence)
+--
+## Chained comparison
 
+```python
+# instead of
+if temperature > 21 and temperature < 26:
+# write
+if 21 < temperature < 26:
+    '''
+    Comfortable
+    '''
+```
+--
+## Chained comparison
+
+```python
+# or even
+if 21 < outdoor_temperature < indoor_temperature < 26:
+    '''
+    Comfortable but external temperature
+    is a bit lower than internal one
+    '''
+```
 --
 ## Else
 
@@ -142,7 +170,7 @@ See also [docs.python.org / Tutorial / Expressions # Operator precedence](https:
 </pre>
 </div><div>
 <br><br>
-as many <code><mark class="green">elif</mark></code>s
+as many <code class="green">elif</code>s
 <br>as you wish
 </div></div>
 --

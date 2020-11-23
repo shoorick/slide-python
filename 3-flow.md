@@ -693,9 +693,19 @@ How many? Or type q to quit q
 
 * Introduction
 * First verse
+* Refrain
+* Second verse
+* Refrain, refrain, refrain
+--
+## Structure of the song
+
+* Introduction
+* First verse
 * <mark>Refrain</mark>
 * Second verse
 * <mark>Refrain</mark>, <mark>refrain</mark>, <mark>refrain</mark>
+
+<img src="images/same-refrains.svg" alt="← the same refrains" class="place right">
 
 --
 ## Structure of the song
@@ -706,3 +716,4 @@ How many? Or type q to quit q
 * Second verse
 * <mark>Refrain</mark>, <mark class="orange">refrain (shifted pitch)</mark>, <mark class="green">refrain (silent)</mark>
 
+<img src="images/almost-same-refrains.svg" alt="← almost same refrains" class="place right">

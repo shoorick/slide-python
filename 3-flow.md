@@ -717,3 +717,34 @@ How many? Or type q to quit q
 * <mark>Refrain</mark>, <mark class="orange">refrain (shifted pitch)</mark>, <mark class="green">refrain (silent)</mark>
 
 <img src="images/almost-same-refrains.svg" alt="← almost same refrains" class="place right">
+--
+## `def`ine a function
+
+```python
+>>> def refrain(how):
+...     print('Chorus')
+...
+```
+--
+## `()` are required
+
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">refrain</span><mark><span class="hljs-params">()</span></mark>:</span>
+<span class="hljs-meta">... </span>    print(<span class="hljs-string">'Chorus'</span>)
+...
+</code></pre>
+--
+## Call function
+
+```python
+>>> refrain()
+Chorus
+```
+--
+## `()` are required
+
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>refrain<mark>()</mark>
+Chorus
+
+<span class="hljs-meta">&gt;&gt;&gt; </span>refrain  <span class="hljs-comment"># without parentheses</span>
+&lt;function refrain at <span class="hljs-number">0x7faf21a710d0</span>&gt;
+</code></pre>

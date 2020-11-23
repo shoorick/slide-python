@@ -57,8 +57,8 @@ See also [docs.python.org / Tutorial / More Control Flow Tools](https://docs.pyt
 <mark>**then**</mark> <mark class="orange">play an introduction</mark>
 
 <pre><code>   <span class="comment">↓ condition</span>
-<span class="hljs-keyword">if</span> <mark class="green">pianist is here</mark> <mark>:</mark>
-    <mark class="orange">play an introduction</mark>
+<span class="hljs-keyword">if</span> <mark class="green">pianist.is_here</mark> <mark>:</mark>
+    <mark class="orange">play_an_introduction()</mark>
     <span class="comment">↑ action</span>
 </code></pre>
 --
@@ -188,34 +188,30 @@ SyntaxError: invalid syntax</span>
 --
 ## `=` and `==`
 
-### Assignment
+<div class="two columns"><div>
+<h3>Assignment</h3>
 <pre>
 <code>z <mark class="orange">=</mark> 7
 </code>
 </pre>
-
-### Comparison
-
+</div><div>
+<h3>Comparison</h3>
 <pre>
-<code><span class="hljs-keyword">if</span> z <mark class="green">==</mark> 42:
+<code><span class="hljs-keyword">if</span> z <mark class="green">==</mark> <span class="hljs-number">42</span>:
     <span class="comment">print(z)</span>
 </code>
 </pre>
---
-## Loops
-  * for
-  * while
-  * with
+</div></div>
 --
 ## Assignment with if/else
 
 <div class="two columns">
 <div>
 &nbsp;
-<pre><code>if x &lt; 5:
-    <mark>z</mark> = 'Few'
-else:
-    <mark>z</mark> = 'Many'
+<pre><code><span class="hljs-keyword">if</span> x &lt; <span class="hljs-number">5</span>:
+    <mark>z</mark> = <span class="hljs-string">'Few'</span>
+<span class="hljs-keyword">else</span>:
+    <mark>z</mark> = <span class="hljs-string">'Many'</span>
 </code></pre></div>
 </div>
 --
@@ -226,26 +222,40 @@ else:
 
 **instead of**
 
-<pre><code>if x &lt; 5:
-    <mark>z</mark> = 'Few'
-else:
-    <mark>z</mark> = 'Many'
+<pre><code><span class="hljs-keyword">if</span> x &lt; <span class="hljs-number">5</span>:
+    <mark>z</mark> = <span class="hljs-string">'Few'</span>
+<span class="hljs-keyword">else</span>:
+    <mark>z</mark> = <span class="hljs-string">'Many'</span>
 </code></pre>
 </div><div>
 
 **write**
 
-<div><pre><code><mark>z</mark> = 'Few' if x < 5 else 'Many'</code>
+<div><pre><code><mark>z</mark> = <span class="hljs-string">'Few'</span> <span class="hljs-keyword">if</span> x &lt; <span class="hljs-number">5</span> <span class="hljs-keyword">else</span> <span class="hljs-string">'Many'</span></code>
 </pre>
 </div>
 </div>
+
+--
+## Let’s remember song example
+
+<pre><code><span class="hljs-keyword">if</span> <mark class="green">pianist.is_here</mark> <mark>:</mark>
+    <mark class="orange">play_an_introduction()</mark></code></pre>
+--
+## Try to play immediately!
+
+<pre><code>
+    play_an_introduction()
+
+<span class="error"><mark class="orange">SomeError</mark>: we have no pianist to play anything</span>
+</code></pre>
 --
 ## Error handling
 
-<pre><code>&gt;&gt;&gt; stuff = ['hydrogen', 'helium', 'lithium']
-&gt;&gt;&gt; <mark>number</mark> = input('Enter number of element ')
+<pre><code><span class="hljs-meta">&gt;&gt;&gt;</span> stuff = [<span class="hljs-string">'hydrogen'</span>, <span class="hljs-string">'helium'</span>, <span class="hljs-string">'lithium'</span>]
+<span class="hljs-meta">&gt;&gt;&gt;</span> <mark>number</mark> = input(<span class="hljs-string">'Enter number of element '</span>)
 Enter number of element <mark>42</mark>
-&gt;&gt;&gt; print(stuff[int(<mark>number</mark>)])
+<span class="hljs-meta">&gt;&gt;&gt;</span> print(stuff[int(<mark>number</mark>)])
 <span class="error">Traceback (most recent call last):
   File "&lt;stdin&gt;", line 1, in &lt;module&gt;
 <mark class="orange">IndexError</mark>: list index out of range</span>
@@ -253,21 +263,21 @@ Enter number of element <mark>42</mark>
 --
 ## Handle exceptions with `try` statement
 
-<pre><code>&gt;&gt;&gt; <mark>try:</mark>
-...     print(stuff[int(number)])
-... <mark class="orange">except IndexError</mark>:
-...     print(f'Wrong index. Use number less than {len(stuff)}')
-...
+<pre><code><span class="hljs-meta">&gt;&gt;&gt;</span> <mark>try:</mark>
+<span class="hljs-meta">...</span>     print(stuff[int(number)])
+<span class="hljs-meta">...</span> <mark class="orange">except IndexError</mark>:
+<span class="hljs-meta">...</span>     print(<span class="hljs-string">f'Wrong index. Use number less than {len(stuff)}'</span>)
+<span class="hljs-meta">...</span>
 Wrong index. Use number less than 3
 </code></pre>
 --
 ## What if `number == 'z'`?
 
-<pre><code>&gt;&gt;&gt; <mark>try:</mark>
-...     print(stuff[int(number)])
-... <mark class="orange">except IndexError</mark>:
-...     print(f'Wrong index. Use number less than {len(stuff)}')
-...
+<pre><code><span class="hljs-meta">&gt;&gt;&gt;</span> <mark>try:</mark>
+<span class="hljs-meta">...</span>     print(stuff[int(number)])
+<span class="hljs-meta">...</span> <mark class="orange">except IndexError</mark>:
+<span class="hljs-meta">...</span>     print(<span class="hljs-string">f'Wrong index. Use number less than {len(stuff)}'</span>)
+<span class="hljs-meta">...</span>
 <span class="error">Traceback (most recent call last):
   File "<stdin>", line 2, in <module>
 <mark class="orange">ValueError</mark>: invalid literal for int() with base 10: 'z'</span>
@@ -275,21 +285,21 @@ Wrong index. Use number less than 3
 --
 ## Add new exception handler
 
-<pre><code>&gt;&gt;&gt; <mark>try:</mark>
-...     print(stuff[int(number)])
-... <mark class="orange">except IndexError</mark>:
-...     print(f'Wrong index. Use number less than {len(stuff)}')
-... <mark class="orange">except ValueError</mark>:
-...     print(f'Index must be an integer number')
+<pre><code><span class="hljs-meta">&gt;&gt;&gt;</span> <mark>try:</mark>
+<span class="hljs-meta">...</span>     print(stuff[int(number)])
+<span class="hljs-meta">...</span> <mark class="orange">except IndexError</mark>:
+<span class="hljs-meta">...</span>     print(<span class="hljs-string">f'Wrong index. Use number less than {len(stuff)}'</span>)
+<span class="hljs-meta">...</span> <mark class="orange">except ValueError</mark>:
+<span class="hljs-meta">...</span>     print(<span class="hljs-string">f'Index must be an integer number'</span>)
 </code></pre>
 --
-## Add `else` when there is no any exception
-<pre><code>&gt;&gt;&gt; <mark>try:</mark> <span class="comment"># number == 2</span>
-...     print(stuff[int(number)])
-... <span class="comment"># skipped</span>
-... <mark class="green">else</mark>:
-...     print('OK')
-...
+## Add `else` when there is no exception
+<pre><code><span class="hljs-meta">&gt;&gt;&gt;</span> <mark>try:</mark> <span class="hljs-comment"># number == 2</span>
+<span class="hljs-meta">...</span>     print(stuff[int(number)])
+<span class="hljs-meta">...</span> <span class="hljs-comment"># skipped</span>
+<span class="hljs-meta">...</span> <mark class="green">else</mark>:
+<span class="hljs-meta">...</span>     print(<span class="hljs-string">'OK'</span>)
+<span class="hljs-meta">...</span>
 lithium
 OK
 </code></pre>
@@ -297,53 +307,68 @@ OK
 ## `finally` is executing after all checks
 <div class="two columns">
 <div>
-<pre><code>... <span class="comment"># skipped</span>
-... <mark class="green">else</mark>:
-...     print('OK')
-... <mark class="blue">finally</mark>:
-...     print("That's all folks!")
-...</code></pre>
+<pre><code><span class="hljs-meta">...</span> <span class="hljs-comment"># skipped</span>
+<span class="hljs-meta">...</span> <mark class="green">else</mark>:
+<span class="hljs-meta">...</span>     print(<span class="hljs-string">'OK'</span>)
+<span class="hljs-meta">...</span> <mark class="blue">finally</mark>:
+<span class="hljs-meta">...</span>     print(<span class="hljs-string">"That's all, folks!"</span>)
+<span class="hljs-meta">...</span></code></pre>
 </div><div>
 <h3>output:</h3>
 <pre><code>lithium
 OK
-That's all folks!
+That's all, folks!
 </code></pre>
 </div></div>
 --
 ## `finally` is executing after all checks
 <div class="two columns">
 <div>
-<pre><code><mark>try:</mark>
-...     print(stuff[int(number)])
-... <mark class="orange">except IndexError</mark>:
-...     print(f'Wrong index...
-... <span class="comment"># skipped</span>
-... <mark class="blue">finally</mark>:
-...     print("That's all folks!")</code></pre>
+<pre><code><span class="hljs-meta">&gt;&gt;&gt;</span> <mark>try:</mark>
+<span class="hljs-meta">...</span>     print(stuff[int(number)])
+<span class="hljs-meta">...</span> <mark class="orange">except IndexError</mark>:
+<span class="hljs-meta">...</span>     print(<span class="hljs-string">f'Wrong index...</span>
+<span class="hljs-meta">...</span> <span class="hljs-comment"># skipped</span>
+<span class="hljs-meta">...</span> <mark class="blue">finally</mark>:
+<span class="hljs-meta">...</span>     print(<span class="hljs-string">"That's all, folks!"</span>)</code></pre>
 </div><div>
 when `number` is wrong
 <h3>output:</h3>
 <pre><code>Wrong index. Use number less than 3
-That's all folks!
+That's all, folks!
 </code></pre>
 </div></div>
-
 --
 <h2 class="shout">Loops</h2>
 --
-## <mark>for</mark> loop
+## Structure of the song
+
+* Introduction
+* First verse
+* Refrain
+* Second verse
+* <mark>Refrain</mark>, <mark>refrain</mark>, <mark>refrain</mark> → _loop_
+
+<img src="images/loop.svg" alt="loop" class="place right" style="margin-right:20px">
+
+--
+## Loops
+  * for
+  * while
+  * with
+--
+## `for` loop
 
 <pre><code>
-for <mark class="orange">item</mark> in <mark class="green">sequence</mark>:
-    <span class="comment"># do something</span>
+<span class="hljs-keyword">for</span> <mark class="orange">item</mark> <span class="hljs-keyword">in</span> <mark class="green">sequence</mark>:
+    <span class="hljs-comment"># do something</span>
 </code></pre>
 --
 ## Iterate through list
 
 <pre><code>
-people = ['Alice', 'Bob', 'Charlie']
-for <mark class="orange">person</mark> in <mark class="green">people</mark>:
+people = [<span class="hljs-string">'Alice'</span>, <span class="hljs-string">'Bob'</span>, <span class="hljs-string">'Charlie'</span>]
+<span class="hljs-keyword">for</span> <mark class="orange">person</mark> <span class="hljs-keyword">in</span> <mark class="green">people</mark>:
     print(person)
 </code></pre>
 --
@@ -351,28 +376,28 @@ for <mark class="orange">person</mark> in <mark class="green">people</mark>:
 
 <pre><code>
 teen = range(13, 20)
-for <mark class="orange">age</mark> in <mark class="green">teen</mark>:
-    print(f'Age is {age}')
+<span class="hljs-keyword">for</span> <mark class="orange">age</mark> <span class="hljs-keyword">in</span> <mark class="green">teen</mark>:
+    print(<span class="hljs-string">f'Age is {age}'</span>)
 </code></pre>
 --
 ## Iterate over range
 
 <pre><code>
 teen = range(13, 20)
-for <mark class="orange">age</mark> in <mark class="green">teen</mark>:
-    print(f'Age is {age}')
+<span class="hljs-keyword">for</span> <mark class="orange">age</mark> <span class="hljs-keyword">in</span> <mark class="green">teen</mark>:
+    print(<span class="hljs-string">f'Age is {age}'</span>)
 
-for <mark class="orange">i</mark> in <mark class="green">range(10)</mark>:
-    do_something() <span class="comment"># ten times</span>
+<span class="hljs-keyword">for</span> <mark class="orange">i</mark> <span class="hljs-keyword">in</span> <mark class="green">range(10)</mark>:
+    do_something() <span class="hljs-comment"># ten times</span>
 </code></pre>
 --
 ## Counter name
 
 `i`, `j`, `k` (and `x`, `y`, `z`) are good names for counter variables
 <pre><code>
-for <mark class="orange">x</mark> in width:
-    for <mark>y</mark> in height:
-        for <mark class="green">z</mark> in depth:
+<span class="hljs-keyword">for</span> <mark class="orange">x</mark> <span class="hljs-keyword">in</span> width:
+    <span class="hljs-keyword">for</span> <mark>y</mark> <span class="hljs-keyword">in</span> height:
+        <span class="hljs-keyword">for</span> <mark class="green">z</mark> <span class="hljs-keyword">in</span> depth:
             do_something(<mark class="orange">x</mark>, <mark>y</mark>, <mark class="green">z</mark>)
 </code></pre>
 --
@@ -411,9 +436,9 @@ fruits = ['apple', 'banana', <mark class="blue">'cucumber'</mark>]
 ## zip
 
 <pre>
-<code>&gt;&gt;&gt; for <mark class="orange">color</mark>, <mark>name</mark>, <mark class="green">fruit</mark> in zip(<mark class="orange">colors</mark>, <mark>people</mark>, <mark class="green">fruits</mark>):
-...     print(f'{<mark>name</mark>} has {<mark class="orange">color</mark>} {<mark class="green">fruit</mark>}')
-...
+<code><span class="hljs-meta">&gt;&gt;&gt;</span> <span class="hljs-keyword">for</span> <mark class="orange">color</mark>, <mark>name</mark>, <mark class="green">fruit</mark> in zip(<mark class="orange">colors</mark>, <mark>people</mark>, <mark class="green">fruits</mark>):
+<span class="hljs-meta">...</span>     print(<span class="hljs-string">f'{<mark>name</mark>} has {<mark class="orange">color</mark>} {<mark class="green">fruit</mark>}'</span>)
+<span class="hljs-meta">...</span>
 Alice has red apple
 <mark>Bob</mark> has <mark class="orange">orange</mark> <mark class="green">banana</mark>
 Charlie</mark> has yellow cucumber
@@ -470,9 +495,9 @@ Charlie</mark> has yellow cucumber
 ## enumerate
 
 <pre>
-<code>&gt;&gt;&gt; for number, name in enumerate(stuff, <mark>start=1</mark>):
-...     print(number, name)
-...
+<code><span class="hljs-meta">&gt;&gt;&gt;</span> for number, name in enumerate(stuff, <mark>start=1</mark>):
+<span class="hljs-meta">...</span>     print(number, name)
+<span class="hljs-meta">...</span>
 <mark>1</mark> hydrogen
 <mark>2</mark> helium
 <mark>3</mark> lithium
@@ -481,21 +506,21 @@ Charlie</mark> has yellow cucumber
 ## Iterate over dict — see its methods
 
 <pre>
-<code>&gt;&gt;&gt; fruits = {'apple': 'red', 'banana': 'yellow', 'cucumber': 'green'}
-&gt;&gt;&gt; fruits.<mark>items</mark>()
+<code><span class="hljs-meta">&gt;&gt;&gt;</span> fruits = {'apple': 'red', 'banana': 'yellow', 'cucumber': 'green'}
+<span class="hljs-meta">&gt;&gt;&gt;</span> fruits.<mark>items</mark>()
 dict_items([('apple', 'red'), ('banana', 'yellow'), ('cucumber', 'green')])
-&gt;&gt;&gt; fruits.<mark class="green">keys</mark>()
+<span class="hljs-meta">&gt;&gt;&gt;</span> fruits.<mark class="green">keys</mark>()
 dict_keys(['apple', 'banana', 'cucumber'])
-&gt;&gt;&gt; fruits.<mark class="orange">values</mark>()
+<span class="hljs-meta">&gt;&gt;&gt;</span> fruits.<mark class="orange">values</mark>()
 dict_values(['red', 'yellow', 'green'])
 </code></pre>
 --
 ## Iterate over whole dict
 
 <pre>
-<code>&gt;&gt;&gt; for fruit, color in fruits.<mark>items</mark>():
-...     print(f'{fruit} is {color}')
-...
+<code><span class="hljs-meta">&gt;&gt;&gt;</span> for fruit, color in fruits.<mark>items</mark>():
+<span class="hljs-meta">...</span>     print(f'{fruit} is {color}')
+<span class="hljs-meta">...</span>
 apple is red
 banana is yellow
 cucumber is green
@@ -504,9 +529,9 @@ cucumber is green
 ## Iterate over keys of dict
 
 <pre>
-<code>&gt;&gt;&gt; for fruit in fruits.<mark class="green">keys</mark>():
-...     print(fruits[fruit], fruit)
-...
+<code><span class="hljs-meta">&gt;&gt;&gt;</span> for fruit in fruits.<mark class="green">keys</mark>():
+<span class="hljs-meta">...</span>     print(fruits[fruit], fruit)
+<span class="hljs-meta">...</span>
 red apple
 yellow banana
 green cucumber
@@ -522,11 +547,11 @@ green cucumber
 ## while
 
 <pre>
-<code>&gt;&gt;&gt; rest = 3
-&gt;&gt;&gt; while <mark>rest &gt; 0</mark>:
-...     print(f'Rest is {rest}')
-...     rest -= 1
-...
+<code><span class="hljs-meta">&gt;&gt;&gt;</span> rest = 3
+<span class="hljs-meta">&gt;&gt;&gt;</span> while <mark>rest &gt; 0</mark>:
+<span class="hljs-meta">...</span>     print(f'Rest is {rest}')
+<span class="hljs-meta">...</span>     rest -= 1
+<span class="hljs-meta">...</span>
 Rest is 3
 Rest is 2
 Rest is 1
@@ -535,11 +560,11 @@ Rest is 1
 ## while
 
 <pre>
-<code>&gt;&gt;&gt; rest = 3
-&gt;&gt;&gt; while <mark>rest</mark>:
-...     print(f'Rest is {rest}')
-...     rest -= 1
-...
+<code><span class="hljs-meta">&gt;&gt;&gt;</span> rest = 3
+<span class="hljs-meta">&gt;&gt;&gt;</span> while <mark>rest</mark>:
+<span class="hljs-meta">...</span>     print(f'Rest is {rest}')
+<span class="hljs-meta">...</span>     rest -= 1
+<span class="hljs-meta">...</span>
 Rest is 3
 Rest is 2
 Rest is 1
@@ -548,16 +573,16 @@ Rest is 1
 ## while
 
 <pre>
-<code>&gt;&gt;&gt; rest = 3
-&gt;&gt;&gt; while rest:
-...     print(f'Rest is {rest}')
-...     rest <mark>-=</mark> 1
+<code><span class="hljs-meta">&gt;&gt;&gt;</span> rest = 3
+<span class="hljs-meta">&gt;&gt;&gt;</span> while rest:
+<span class="hljs-meta">...</span>     print(f'Rest is {rest}')
+<span class="hljs-meta">...</span>     rest <mark>-=</mark> 1
 </code></pre>
 --
 ## Increment and decrement
 
-<pre><code>variable <mark class="green">+=</mark> delta  <span class="comment"># increase</span>
-variable <mark class="orange">-=</mark> delta  <span class="comment"># decrease</span>
+<pre><code>variable <mark class="green">+=</mark> delta  <span class="hljs-comment"># increase</span>
+variable <mark class="orange">-=</mark> delta  <span class="hljs-comment"># decrease</span>
 </code></pre>
 
 Unlike C, C++, Java, JavaScript, Perl, PHP, Ruby etc
@@ -597,10 +622,10 @@ SyntaxError: invalid syntax
 <div class="two columns">
   <div>
 <pre>
-<code>&gt;&gt;&gt; for i in range(1, 5):
-...     if i < 3: <mark>continue</mark>
-...     print(i)
-...
+<code><span class="hljs-meta">&gt;&gt;&gt;</span> for i in range(1, 5):
+<span class="hljs-meta">...</span>     if i < 3: <mark>continue</mark>
+<span class="hljs-meta">...</span>     print(i)
+<span class="hljs-meta">...</span>
 3
 4</code></pre>
   </div>
@@ -613,10 +638,10 @@ SyntaxError: invalid syntax
 <div class="two columns">
   <div>
 <pre>
-<code>&gt;&gt;&gt; for i in range(1, 55):
-...     print(i)
-...     if i > 2: <mark class="orange">break</mark>
-...
+<code><span class="hljs-meta">&gt;&gt;&gt;</span> for i in range(1, 55):
+<span class="hljs-meta">...</span>     print(i)
+<span class="hljs-meta">...</span>     if i > 2: <mark class="orange">break</mark>
+<span class="hljs-meta">...</span>
 1
 2
 3</code></pre>
@@ -646,11 +671,11 @@ do:
 --
 ## Use `break` to emulate it
 <pre>
-<code>&gt;&gt;&gt; while True: <span class="comment"># infinite loop</span>
-...     amount = input('How many? Or type q to quit ')
-...     if amount == 'q':
-...         <mark class="orange">break</mark>
-...
+<code><span class="hljs-meta">&gt;&gt;&gt;</span> while True: <span class="comment"># infinite loop</span>
+<span class="hljs-meta">...</span>     amount = input('How many? Or type q to quit ')
+<span class="hljs-meta">...</span>     if amount == 'q':
+<span class="hljs-meta">...</span>         <mark class="orange">break</mark>
+<span class="hljs-meta">...</span>
 How many? Or type q to quit 4
 How many? Or type q to quit q
 </code></pre>
@@ -666,23 +691,16 @@ How many? Or type q to quit q
 --
 ## Structure of the song
 
-* First verse
-* Refrain
-* Second verse
-* <mark>Refrain</mark>, <mark>refrain</mark>, <mark>refrain</mark> → _loop_
---
-## Structure of the song
-
+* Introduction
 * First verse
 * <mark>Refrain</mark>
 * Second verse
-* <mark>Refrain</mark>
-* Third verse
 * <mark>Refrain</mark>, <mark>refrain</mark>, <mark>refrain</mark>
 
 --
 ## Structure of the song
 
+* Introduction
 * First verse
 * <mark>Refrain</mark>
 * Second verse

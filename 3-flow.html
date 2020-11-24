@@ -504,6 +504,20 @@ teen = range(13, 20)
   </section>
   <section class="slide ">
     <div>
+      <h2 id="nested-loops">Nested loops</h2>
+<p>Put a loop inside another one</p>
+<p><pre><code>
+<span class="hljs-keyword">for</span> <mark class="orange">x</mark> <span class="hljs-keyword">in</span> width:
+    <span class="hljs-keyword">for</span> <mark>y</mark> <span class="hljs-keyword">in</span> height:
+        <span class="hljs-keyword">for</span> <mark class="green">z</mark> <span class="hljs-keyword">in</span> depth:
+            do_something(<mark class="orange">x</mark>, <mark>y</mark>, <mark class="green">z</mark>)
+</code></pre>
+<img src="images/nested-loops.svg" alt="loop arrows" class="place left bottom"></p>
+
+    </div>
+  </section>
+  <section class="slide ">
+    <div>
       <h2 id="how-to-iterate-over-several-sequences-simultaneously-">How to iterate over several sequences simultaneously?</h2>
 <pre><code>
 <mark class="orange">colors</mark> = ['red',   'orange', 'yellow'  ]

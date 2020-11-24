@@ -401,6 +401,17 @@ teen = range(13, 20)
             do_something(<mark class="orange">x</mark>, <mark>y</mark>, <mark class="green">z</mark>)
 </code></pre>
 --
+## Nested loops
+
+Put a loop inside another one
+<pre><code>
+<span class="hljs-keyword">for</span> <mark class="orange">x</mark> <span class="hljs-keyword">in</span> width:
+    <span class="hljs-keyword">for</span> <mark>y</mark> <span class="hljs-keyword">in</span> height:
+        <span class="hljs-keyword">for</span> <mark class="green">z</mark> <span class="hljs-keyword">in</span> depth:
+            do_something(<mark class="orange">x</mark>, <mark>y</mark>, <mark class="green">z</mark>)
+</code></pre>
+<img src="images/nested-loops.svg" alt="loop arrows" class="place left bottom">
+--
 ## How to iterate over several sequences simultaneously?
 
 <pre><code>

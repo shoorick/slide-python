@@ -574,17 +574,17 @@ green cucumber
 ## while
 
 <pre>
-<code>while <mark>condition:</mark>
-    <span class="comment"># do something</span>
+<code><span class="hljs-keyword">while</span> <mark>condition:</mark>
+    <span class="hljs-comment"># do something</span>
 </code></pre>
 --
 ## while
 
 <pre>
-<code><span class="hljs-meta">&gt;&gt;&gt;</span> rest = 3
-<span class="hljs-meta">&gt;&gt;&gt;</span> while <mark>rest &gt; 0</mark>:
-<span class="hljs-meta">...</span>     print(f'Rest is {rest}')
-<span class="hljs-meta">...</span>     rest -= 1
+<code><span class="hljs-meta">&gt;&gt;&gt;</span> rest = <span class="hljs-number">3</span>
+<span class="hljs-meta">&gt;&gt;&gt;</span> <span class="hljs-keyword">while</span> <mark>rest &gt; 0</mark>:
+<span class="hljs-meta">...</span>     print(<span class="hljs-string">f'Rest is {rest}'</span>)
+<span class="hljs-meta">...</span>     rest -= <span class="hljs-number">1</span>
 <span class="hljs-meta">...</span>
 Rest is 3
 Rest is 2
@@ -594,10 +594,10 @@ Rest is 1
 ## while
 
 <pre>
-<code><span class="hljs-meta">&gt;&gt;&gt;</span> rest = 3
-<span class="hljs-meta">&gt;&gt;&gt;</span> while <mark>rest</mark>:
-<span class="hljs-meta">...</span>     print(f'Rest is {rest}')
-<span class="hljs-meta">...</span>     rest -= 1
+<code><span class="hljs-meta">&gt;&gt;&gt;</span> rest = <span class="hljs-number">3</span>
+<span class="hljs-meta">&gt;&gt;&gt;</span> <span class="hljs-keyword">while</span> <mark>rest</mark>:
+<span class="hljs-meta">...</span>     print(<span class="hljs-string">f'Rest is {rest}'</span>)
+<span class="hljs-meta">...</span>     rest -= <span class="hljs-number">1</span>
 <span class="hljs-meta">...</span>
 Rest is 3
 Rest is 2
@@ -607,10 +607,10 @@ Rest is 1
 ## while
 
 <pre>
-<code><span class="hljs-meta">&gt;&gt;&gt;</span> rest = 3
-<span class="hljs-meta">&gt;&gt;&gt;</span> while rest:
-<span class="hljs-meta">...</span>     print(f'Rest is {rest}')
-<span class="hljs-meta">...</span>     rest <mark>-=</mark> 1
+<code><span class="hljs-meta">&gt;&gt;&gt;</span> rest = <span class="hljs-number">3</span>
+<span class="hljs-meta">&gt;&gt;&gt;</span> <span class="hljs-keyword">while</span> rest:
+<span class="hljs-meta">...</span>     print(<span class="hljs-string">f'Rest is {rest}'</span>)
+<span class="hljs-meta">...</span>     rest <mark>-=</mark> <span class="hljs-number">1</span>
 </code></pre>
 --
 ## Increment and decrement

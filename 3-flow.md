@@ -696,12 +696,13 @@ do:
 --
 ## Python has <mark class="orange">no postconditional loop</mark>
 
-<img src="images/hatch-red-line.svg" alt="" style="float:left;margin-right:-180px">
 ```python
 do:
     # do something
     until condition
 ```
+<img src="images/3-line-crosshatch.svg" alt="×" class="place left bottom next">
+
 --
 ## Use `break` to emulate it
 <pre>

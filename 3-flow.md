@@ -705,7 +705,7 @@ How many? Or type q to quit q
 * Second verse
 * <mark>Refrain</mark>, <mark>refrain</mark>, <mark>refrain</mark>
 
-<img src="images/same-refrains.svg" alt="← the same refrains" class="place right">
+<img src="images/same-refrains.svg" alt="← the same refrains" class="place right next">
 
 --
 ## Structure of the song
@@ -717,6 +717,56 @@ How many? Or type q to quit q
 * <mark>Refrain</mark>, <mark class="orange">refrain (shifted pitch)</mark>, <mark class="green">refrain (silent)</mark>
 
 <img src="images/almost-same-refrains.svg" alt="← almost same refrains" class="place right">
+--
+## Structure of the song
+
+<div class="two columns">
+<div>
+<ul>
+<li>Introduction</li>
+<li>First verse</li>
+<li><mark>Refrain</mark></li>
+<li>Second verse</li>
+<li><mark>Refrain</mark></li>
+<li><mark class="orange">Refrain (shifted pitch)</mark></li>
+<li><mark class="green">Refrain (silent)</mark></li>
+</ul>
+</div><div>
+
+<p>**Refrain** is part of code</p>
+<p>Such parts named</p>
+<ul>
+<li>subroutine</li>
+<li>procedure</li>
+<li><mark>function</mark></li>
+</ul>
+
+</div></div>
+--
+## Let’s separate <mark>refrain</mark>
+
+<div class="two columns">
+<div>
+<ul>
+<li>Introduction</li>
+<li>First verse</li>
+<li><mark>Refrain</mark></li>
+<li>Second verse</li>
+<li><mark>Refrain</mark></li>
+<li><mark class="orange">Refrain (shifted pitch)</mark></li>
+<li><mark class="green">Refrain (silent)</mark></li>
+</ul>
+</div><div>
+
+<p>&nbsp;</p>
+<p>**Refrain** is part of code</p>
+<ul>
+<li>function</li>
+</ul>
+
+</div></div>
+
+<img src="images/function-highlight.svg" alt="→" class="place right next">
 --
 ## `def`ine a function
 
@@ -748,3 +798,12 @@ Chorus
 <span class="hljs-meta">&gt;&gt;&gt; </span>refrain  <span class="hljs-comment"># without parentheses</span>
 &lt;function refrain at <span class="hljs-number">0x7faf21a710d0</span>&gt;
 </code></pre>
+--
+## Function can take an agruments
+
+```python
+>>> refrain()
+Chorus
+
+>>> duration = sing('Quick brown fox jumps')
+```

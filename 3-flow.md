@@ -980,6 +980,36 @@ TypeError: sing() takes 0 positional arguments but 1 was given</span>
 
 --
 ## Use double asterisk `**` to expand dict
-<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>sing(<mark>**</mark>sos)
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>sing(<mark class="green">**</mark>sos)
 We sing a song named S. O. S. in key A moll using tempo Allegro
 </code></pre>
+--
+## Cannot use `**` outside argument list
+
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>**sos
+<span class="error">  File "&lt;stdin&gt;", line 1
+    **sos
+     ^
+SyntaxError: invalid syntax</span>
+</code></pre>
+
+--
+## Unknown names causes errors
+
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>print(**sos)
+<span class="error">Traceback (most recent call last):
+  File &lt;stdin&gt;", line 1, in &lt;module&gt;
+TypeError: 'name' is an invalid keyword argument for print()</span>
+<span class="next"><span class="hljs-meta">&gt;&gt;&gt; </span>args = {<span class="hljs-string">'sep'</span>: <span class="hljs-string">'/'</span>, <span class="hljs-string">'end'</span>: <span class="hljs-string">'!\n'</span>}
+<span class="hljs-meta">&gt;&gt;&gt; </span>print(<span class="hljs-string">'Some'</span>, <span class="hljs-string">'sequence'</span>, <span class="hljs-string">'here'</span>, **args)
+Some/sequence/here!</span></code></pre>
+
+--
+## Use `*` and `**` together
+
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>args = {<span class="hljs-string">'sep'</span>: <span class="hljs-string">'/'</span>, <span class="hljs-string">'end'</span>: <span class="hljs-string">'!\n'</span>}
+<span class="hljs-meta">&gt;&gt;&gt; </span>stuff = [<span class="hljs-string">'H'</span>, <span class="hljs-string">'He'</span>, <span class="hljs-string">'Li'</span>, <span class="hljs-string">'Be'</span>, <span class="hljs-string">'B'</span>]
+<span class="next"><span class="hljs-meta">&gt;&gt;&gt; </span>print(stuff, **args)
+[<span class="hljs-string">'H'</span>, <span class="hljs-string">'He'</span>, <span class="hljs-string">'Li'</span>, <span class="hljs-string">'Be'</span>, <span class="hljs-string">'B'</span>]!</span>
+<span class="next"><span class="hljs-meta">&gt;&gt;&gt; </span>print(<mark>*</mark>stuff, <mark class="green">**</mark>args)
+H/He/Li/Be/B!</span></code></pre>

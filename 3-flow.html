@@ -1198,9 +1198,43 @@ TypeError: sing() takes 0 positional arguments but 1 was given</span>
   <section class="slide ">
     <div>
       <h2 id="use-double-asterisk-to-expand-dict">Use double asterisk <code>**</code> to expand dict</h2>
-<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>sing(<mark>**</mark>sos)
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>sing(<mark class="green">**</mark>sos)
 We sing a song named S. O. S. in key A moll using tempo Allegro
 </code></pre>
+    </div>
+  </section>
+  <section class="slide ">
+    <div>
+      <h2 id="cannot-use-outside-argument-list">Cannot use <code>**</code> outside argument list</h2>
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>**sos
+<span class="error">  File "&lt;stdin&gt;", line 1
+    **sos
+     ^
+SyntaxError: invalid syntax</span>
+</code></pre>
+    </div>
+  </section>
+  <section class="slide ">
+    <div>
+      <h2 id="unknown-names-causes-errors">Unknown names causes errors</h2>
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>print(**sos)
+<span class="error">Traceback (most recent call last):
+  File &lt;stdin&gt;", line 1, in &lt;module&gt;
+TypeError: 'name' is an invalid keyword argument for print()</span>
+<span class="next"><span class="hljs-meta">&gt;&gt;&gt; </span>args = {<span class="hljs-string">'sep'</span>: <span class="hljs-string">'/'</span>, <span class="hljs-string">'end'</span>: <span class="hljs-string">'!\n'</span>}
+<span class="hljs-meta">&gt;&gt;&gt; </span>print(<span class="hljs-string">'Some'</span>, <span class="hljs-string">'sequence'</span>, <span class="hljs-string">'here'</span>, **args)
+Some/sequence/here!</span></code></pre>
+    </div>
+  </section>
+  <section class="slide ">
+    <div>
+      <h2 id="use-and-together">Use <code>*</code> and <code>**</code> together</h2>
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>args = {<span class="hljs-string">'sep'</span>: <span class="hljs-string">'/'</span>, <span class="hljs-string">'end'</span>: <span class="hljs-string">'!\n'</span>}
+<span class="hljs-meta">&gt;&gt;&gt; </span>stuff = [<span class="hljs-string">'H'</span>, <span class="hljs-string">'He'</span>, <span class="hljs-string">'Li'</span>, <span class="hljs-string">'Be'</span>, <span class="hljs-string">'B'</span>]
+<span class="next"><span class="hljs-meta">&gt;&gt;&gt; </span>print(stuff, **args)
+[<span class="hljs-string">'H'</span>, <span class="hljs-string">'He'</span>, <span class="hljs-string">'Li'</span>, <span class="hljs-string">'Be'</span>, <span class="hljs-string">'B'</span>]!</span>
+<span class="next"><span class="hljs-meta">&gt;&gt;&gt; </span>print(<mark>*</mark>stuff, <mark class="green">**</mark>args)
+H/He/Li/Be/B!</span></code></pre>
     </div>
   </section>
   <section class="slide author-slide">

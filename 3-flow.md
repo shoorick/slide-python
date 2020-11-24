@@ -547,6 +547,19 @@ dict_items(<mark class="orange">[</mark> <mark class="green">(</mark>'apple', 'r
 <mark class="orange">List</mark> of <mark class="green">tuples</mark>
 
 --
+## Iterate over whole dict
+
+<pre>
+<code><span class="hljs-meta">&gt;&gt;&gt;</span> <span class="hljs-keyword">for</span> fruit, color <span class="hljs-keyword">in</span> fruits.<mark>items</mark>():
+<span class="hljs-meta">...</span>     print(<span class="hljs-string">f'{fruit} is {color}'</span>)
+<span class="hljs-meta">...</span>
+apple is red
+banana is yellow
+cucumber is green
+</code></pre>
+
+<img src="images/loop-dict-items.svg" alt="tuple" class="place left bottom next">
+--
 ## Iterate over keys of dict
 
 <pre>

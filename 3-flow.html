@@ -1007,7 +1007,7 @@ SyntaxError: invalid syntax
       <h2 id="-are-required"><code>()</code> are required</h2>
 <pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">refrain</span><mark><span class="hljs-params">()</span></mark>:</span>
 <span class="hljs-meta">... </span>    print(<span class="hljs-string">'Chorus'</span>)
-...
+<span class="hljs-meta">... </span>
 </code></pre>
     </div>
   </section>
@@ -1033,13 +1033,174 @@ Chorus
   </section>
   <section class="slide ">
     <div>
-      <h2 id="function-can-take-an-agruments">Function can take an agruments</h2>
+      <h2 id="postpone-implementation-with-pass">Postpone implementation with <code>pass</code></h2>
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">do_nothing</span><span class="hljs-params">()</span>:</span>
+<span class="hljs-meta">... </span>    <span class="hljs-keyword">pass</span>
+...
+<span class="hljs-meta">&gt;&gt;&gt; </span>do_nothing()
+</code></pre>
+
+    </div>
+  </section>
+  <section class="slide ">
+    <div>
+      <h2 id="function-can-take-an-arguments">Function can take an arguments</h2>
 <pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>refrain()
 Chorus
 
 <span class="hljs-meta">&gt;&gt;&gt; </span>duration = sing(<span class="hljs-string">'Quick brown fox jumps'</span>)
 </code></pre>
+<h3 class="next">and return values</h3>
+    </div>
+  </section>
+  <section class="slide ">
+    <div>
+      <h2 id="let-s-define-function-and-call-it">Let’s define function and call it</h2>
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">refrain</span><span class="hljs-params">(text, count)</span>:</span>
+<span class="hljs-meta">... </span>    print(str(text) * int(count))
+<span class="hljs-meta">... </span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>refrain(<span class="hljs-string">'Yeah! '</span>, <span class="hljs-number">3</span>)
+Yeah! Yeah! Yeah!
+</code></pre>
+    </div>
+  </section>
+  <section class="slide ">
+    <div>
+      <h2 id="does-type-conversion-work-">Does type conversion work?</h2>
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">refrain</span><span class="hljs-params">(text, count)</span>:</span>
+<span class="hljs-meta">... </span>    print(<mark>str</mark>(text) * <mark>int</mark>(count))
+<span class="hljs-meta">... </span>
+<span class="next"><span class="hljs-meta">&gt;&gt;&gt; </span>refrain(<span class="hljs-number">42</span>, <span class="hljs-number">3</span>)
+<span class="hljs-number">424242</span></span>
+<span class="next"><span class="hljs-meta">&gt;&gt;&gt; </span>refrain(<span class="hljs-number">42</span>, <span class="hljs-string">'7'</span>)
+<span class="hljs-number">42424242424242</span></span>
+</code></pre>
+    </div>
+  </section>
+  <section class="slide ">
+    <div>
+      <h2 id="named-arguments-can-arrive-in-any-order">Named arguments can arrive in any order</h2>
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">refrain</span><span class="hljs-params">(<mark class="green">text</mark>, <mark class="orange">count</mark>)</span>:</span>
+<span class="hljs-meta">... </span>    print(str(text) * int(count))
+<span class="hljs-meta">... </span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>refrain(<mark class="orange">count</mark>=<span class="hljs-number">5</span>, <mark class="green">text</mark>=<span class="hljs-string">'Five! '</span>)
+Five! Five! Five! Five! Five!
+</code></pre>
+    </div>
+  </section>
+  <section class="slide ">
+    <div>
+      <h2 id="variable-number-of-positional-arguments">Variable number of positional arguments</h2>
+<div class="two columns">
+<div>
+<strong>Define function</strong>
+<pre><code class="lang-python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">production</span><span class="hljs-params">(*args)</span>:</span>
+    result = <span class="hljs-number">1</span>
+    <span class="hljs-keyword">for</span> number <span class="hljs-keyword">in</span> args:
+        result *= number
+    <span class="hljs-keyword">return</span> result
+</code></pre>
+</div><div class="next">
+<strong>Call it</strong>
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>production(<span class="hljs-number">6</span>, <span class="hljs-number">7</span>)
+<span class="hljs-number">42</span>
+<span class="next"><span class="hljs-meta">&gt;&gt;&gt; </span>production(<span class="hljs-number">3</span>, <span class="hljs-number">5</span>, <span class="hljs-number">7</span>)
+<span class="hljs-number">105</span></span>
+<span class="next"><span class="hljs-meta">&gt;&gt;&gt; </span>production(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>)
+<span class="hljs-number">120</span></span>
+</code></pre>
+</div></div>
+    </div>
+  </section>
+  <section class="slide ">
+    <div>
+      <h2 id="what-about-not-a-numbers-">What about not a numbers?</h2>
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>production(<span class="hljs-string">'🐍'</span>, <span class="hljs-number">2</span>, <span class="hljs-number">10</span>)
+<span class="hljs-string">'🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍'</span>
+<span class="next"><span class="hljs-meta">&gt;&gt;&gt; </span>production(range(<span class="hljs-number">1</span>, <span class="hljs-number">70</span>))
+<span class="error">Traceback (most recent call last):
+  File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;
+  File &quot;&lt;stdin&gt;&quot;, line 7, in production
+TypeError: unsupported operand type(s) for *=: &#39;int&#39; and &#39;range&#39;</span></span>
+</code></pre>
+    </div>
+  </section>
+  <section class="slide ">
+    <div>
+      <h2 id="expand-arguments-with-asterisk-">Expand arguments with asterisk <code>*</code></h2>
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>production(range(<span class="hljs-number">1</span>, <span class="hljs-number">7</span>))
+<span class="error">... TypeError: unsupported operand type(s) for *=:
+&#39;int&#39; and &#39;range&#39;</span>
+<span class="next"><span class="hljs-meta">&gt;&gt;&gt; </span>production(list(range(<span class="hljs-number">1</span>, <span class="hljs-number">7</span>)))
+[<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>]</span>
+<span class="next"><span class="hljs-meta">&gt;&gt;&gt; </span>production(<mark>*</mark>range(<span class="hljs-number">1</span>, <span class="hljs-number">7</span>))
+<span class="hljs-number">720</span> <span class="hljs-comment">#  = 1 × 2 × 3 × 4 × 5 × 6 = 6!</span></span></code></pre>
+    </div>
+  </section>
+  <section class="slide ">
+    <div>
+      <h2 id="expand-arguments-with-asterisk-">Expand arguments with asterisk <code>*</code></h2>
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>production(<mark>*</mark>range(<span class="hljs-number">1</span>, <span class="hljs-number">7</span>))
+<span class="hljs-number">720</span> <span class="hljs-comment">#  = 1 × 2 × 3 × 4 × 5 × 6 = 6!</span>
+</code></pre>
+    </div>
+  </section>
+  <section class="slide ">
+    <div>
+      <h2 id="cannot-use-outside-argument-list">Cannot use <code>*</code> outside argument list</h2>
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>*range(<span class="hljs-number">1</span>, <span class="hljs-number">7</span>)
+<span class="error">  File "&lt;stdin&gt;", line 1
+SyntaxError: can't use starred expression here</span>
+<span class="next"><span class="hljs-meta">&gt;&gt;&gt; </span>print(*range(<span class="hljs-number">1</span>, <span class="hljs-number">7</span>))
+1 2 3 4 5 6</span>
+</code></pre>
+    </div>
+  </section>
+  <section class="slide ">
+    <div>
+      <h2 id="-works-with-various-iterators"><code>*</code> works with various iterators</h2>
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>print(*range(<span class="hljs-number">1</span>, <span class="hljs-number">7</span>))
+<span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">3</span> <span class="hljs-number">4</span> <span class="hljs-number">5</span> <span class="hljs-number">6</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>print(*zip([<span class="hljs-string">'apple'</span>, <span class="hljs-string">'banana'</span>], [<span class="hljs-string">'red'</span>, <span class="hljs-string">'yellow'</span>]))
+(<span class="hljs-string">'apple'</span>, <span class="hljs-string">'red'</span>) (<span class="hljs-string">'banana'</span>, <span class="hljs-string">'yellow'</span>)
+<span class="hljs-meta">&gt;&gt;&gt; </span>print(*enumerate([<span class="hljs-string">'H'</span>, <span class="hljs-string">'He'</span>, <span class="hljs-string">'Li'</span>, <span class="hljs-string">'Be'</span>, <span class="hljs-string">'B'</span>], start=<span class="hljs-number">1</span>))
+(<span class="hljs-number">1</span>, <span class="hljs-string">'H'</span>) (<span class="hljs-number">2</span>, <span class="hljs-string">'He'</span>) (<span class="hljs-number">3</span>, <span class="hljs-string">'Li'</span>) (<span class="hljs-number">4</span>, <span class="hljs-string">'Be'</span>) (<span class="hljs-number">5</span>, <span class="hljs-string">'B'</span>)
+</code></pre>
 
+    </div>
+  </section>
+  <section class="slide ">
+    <div>
+      <h2 id="keyword-arguments">Keyword arguments</h2>
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">sing</span><span class="hljs-params">(**kwargs)</span>:</span>
+<span class="hljs-meta">... </span>    print(<span class="hljs-string">f'We sing a song named <span class="hljs-subst">{kwargs[<span class="hljs-string">"name"</span>]}</span> '</span>
+<span class="hljs-meta">... </span>        + <span class="hljs-string">f'in key <span class="hljs-subst">{kwargs[<span class="hljs-string">"key"</span>]}</span> using tempo '</span>
+<span class="hljs-meta">... </span>        + kwargs[<span class="hljs-string">"tempo"</span>])
+...
+<span class="hljs-meta">&gt;&gt;&gt; </span>sing(name=<span class="hljs-string">'Yesterday'</span>, tempo=<span class="hljs-string">'96 bpm'</span>, key=<span class="hljs-string">'F dur'</span>)
+We sing a song named Yesterday <span class="hljs-keyword">in</span> key F dur using tempo <span class="hljs-number">96</span> bpm
+</code></pre>
+
+    </div>
+  </section>
+  <section class="slide ">
+    <div>
+      <h2 id="let-s-try-to-use-dict-as-arguments">Let’s try to use dict as arguments</h2>
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>sos = {<span class="hljs-string">'name'</span>: <span class="hljs-string">'S. O. S.'</span>, <span class="hljs-string">'key'</span>: <span class="hljs-string">'A moll'</span>,
+<span class="hljs-meta">... </span>       <span class="hljs-string">'tempo'</span>: <span class="hljs-string">'Allegro'</span>}
+<span class="hljs-meta">&gt;&gt;&gt; </span>sing(sos)
+<span class="error">Traceback (most recent call last):
+  File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;
+TypeError: sing() takes 0 positional arguments but 1 was given</span>
+</code></pre>
+    </div>
+  </section>
+  <section class="slide ">
+    <div>
+      <h2 id="use-double-asterisk-to-expand-dict">Use double asterisk <code>**</code> to expand dict</h2>
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>sing(<mark>**</mark>sos)
+We sing a song named S. O. S. in key A moll using tempo Allegro
+</code></pre>
     </div>
   </section>
   <section class="slide author-slide">

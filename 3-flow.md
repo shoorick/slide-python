@@ -815,7 +815,7 @@ do:
 
 <pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">refrain</span><mark><span class="hljs-params">()</span></mark>:</span>
 <span class="hljs-meta">... </span>    print(<span class="hljs-string">'Chorus'</span>)
-...
+<span class="hljs-meta">... </span>
 </code></pre>
 --
 ## Call function
@@ -834,7 +834,16 @@ Chorus
 &lt;function refrain at <span class="hljs-number">0x7faf21a710d0</span>&gt;
 </code></pre>
 --
-## Function can take an agruments
+## Postpone implementation with `pass`
+
+```python
+>>> def do_nothing():
+...     pass
+...
+>>> do_nothing()
+```
+--
+## Function can take an arguments
 
 ```python
 >>> refrain()
@@ -842,3 +851,135 @@ Chorus
 
 >>> duration = sing('Quick brown fox jumps')
 ```
+<h3 class="next">and return values</h3>
+--
+## Let’s define function and call it
+
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">refrain</span><span class="hljs-params">(text, count)</span>:</span>
+<span class="hljs-meta">... </span>    print(str(text) * int(count))
+<span class="hljs-meta">... </span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>refrain(<span class="hljs-string">'Yeah! '</span>, <span class="hljs-number">3</span>)
+Yeah! Yeah! Yeah!
+</code></pre>
+--
+## Does type conversion work?
+
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">refrain</span><span class="hljs-params">(text, count)</span>:</span>
+<span class="hljs-meta">... </span>    print(<mark>str</mark>(text) * <mark>int</mark>(count))
+<span class="hljs-meta">... </span>
+<span class="next"><span class="hljs-meta">&gt;&gt;&gt; </span>refrain(<span class="hljs-number">42</span>, <span class="hljs-number">3</span>)
+<span class="hljs-number">424242</span></span>
+<span class="next"><span class="hljs-meta">&gt;&gt;&gt; </span>refrain(<span class="hljs-number">42</span>, <span class="hljs-string">'7'</span>)
+<span class="hljs-number">42424242424242</span></span>
+</code></pre>
+
+--
+## Named arguments can arrive in any order
+
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">refrain</span><span class="hljs-params">(<mark class="green">text</mark>, <mark class="orange">count</mark>)</span>:</span>
+<span class="hljs-meta">... </span>    print(str(text) * int(count))
+<span class="hljs-meta">... </span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>refrain(<mark class="orange">count</mark>=<span class="hljs-number">5</span>, <mark class="green">text</mark>=<span class="hljs-string">'Five! '</span>)
+Five! Five! Five! Five! Five!
+</code></pre>
+
+--
+## Variable number of positional arguments
+
+<div class="two columns">
+<div>
+**Define function**
+<pre><code class="lang-python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">production</span><span class="hljs-params">(\*args)</span>:</span>
+    result = <span class="hljs-number">1</span>
+    <span class="hljs-keyword">for</span> number <span class="hljs-keyword">in</span> args:
+        result \*= number
+    <span class="hljs-keyword">return</span> result
+</code></pre>
+</div><div class="next">
+**Call it**
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>production(<span class="hljs-number">6</span>, <span class="hljs-number">7</span>)
+<span class="hljs-number">42</span>
+<span class="next"><span class="hljs-meta">&gt;&gt;&gt; </span>production(<span class="hljs-number">3</span>, <span class="hljs-number">5</span>, <span class="hljs-number">7</span>)
+<span class="hljs-number">105</span></span>
+<span class="next"><span class="hljs-meta">&gt;&gt;&gt; </span>production(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>)
+<span class="hljs-number">120</span></span>
+</code></pre>
+</div></div>
+
+--
+## What about not a numbers?
+
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>production(<span class="hljs-string">'🐍'</span>, <span class="hljs-number">2</span>, <span class="hljs-number">10</span>)
+<span class="hljs-string">'🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍'</span>
+<span class="next"><span class="hljs-meta">&gt;&gt;&gt; </span>production(range(<span class="hljs-number">1</span>, <span class="hljs-number">70</span>))
+<span class="error">Traceback (most recent call last):
+  File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;
+  File &quot;&lt;stdin&gt;&quot;, line 7, in production
+TypeError: unsupported operand type(s) for *=: &#39;int&#39; and &#39;range&#39;</span></span>
+</code></pre>
+
+--
+## Expand arguments with asterisk `*`
+
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>production(range(<span class="hljs-number">1</span>, <span class="hljs-number">7</span>))
+<span class="error">... TypeError: unsupported operand type(s) for *=:
+&#39;int&#39; and &#39;range&#39;</span>
+<span class="next"><span class="hljs-meta">&gt;&gt;&gt; </span>production(list(range(<span class="hljs-number">1</span>, <span class="hljs-number">7</span>)))
+[<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>]</span>
+<span class="next"><span class="hljs-meta">&gt;&gt;&gt; </span>production(<mark>*</mark>range(<span class="hljs-number">1</span>, <span class="hljs-number">7</span>))
+<span class="hljs-number">720</span> <span class="hljs-comment">#  = 1 × 2 × 3 × 4 × 5 × 6 = 6!</span></span></code></pre>
+
+--
+## Expand arguments with asterisk `*`
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>production(<mark>*</mark>range(<span class="hljs-number">1</span>, <span class="hljs-number">7</span>))
+<span class="hljs-number">720</span> <span class="hljs-comment">#  = 1 × 2 × 3 × 4 × 5 × 6 = 6!</span>
+</code></pre>
+--
+## Cannot use `*` outside argument list
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>*range(<span class="hljs-number">1</span>, <span class="hljs-number">7</span>)
+<span class="error">  File "&lt;stdin&gt;", line 1
+SyntaxError: can't use starred expression here</span>
+<span class="next"><span class="hljs-meta">&gt;&gt;&gt; </span>print(*range(<span class="hljs-number">1</span>, <span class="hljs-number">7</span>))
+1 2 3 4 5 6</span>
+</code></pre>
+--
+## `*` works with various iterators
+
+```python
+>>> print(*range(1, 7))
+1 2 3 4 5 6
+>>> print(*zip(['apple', 'banana'], ['red', 'yellow']))
+('apple', 'red') ('banana', 'yellow')
+>>> print(*enumerate(['H', 'He', 'Li', 'Be', 'B'], start=1))
+(1, 'H') (2, 'He') (3, 'Li') (4, 'Be') (5, 'B')
+```
+
+--
+## Keyword arguments
+
+```python
+>>> def sing(**kwargs):
+...     print(f'We sing a song named {kwargs["name"]} '
+...         + f'in key {kwargs["key"]} using tempo '
+...         + kwargs["tempo"])
+...
+>>> sing(name='Yesterday', tempo='96 bpm', key='F dur')
+We sing a song named Yesterday in key F dur using tempo 96 bpm
+```
+
+--
+## Let’s try to use dict as arguments
+
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>sos = {<span class="hljs-string">'name'</span>: <span class="hljs-string">'S. O. S.'</span>, <span class="hljs-string">'key'</span>: <span class="hljs-string">'A moll'</span>,
+<span class="hljs-meta">... </span>       <span class="hljs-string">'tempo'</span>: <span class="hljs-string">'Allegro'</span>}
+<span class="hljs-meta">&gt;&gt;&gt; </span>sing(sos)
+<span class="error">Traceback (most recent call last):
+  File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;
+TypeError: sing() takes 0 positional arguments but 1 was given</span>
+</code></pre>
+
+--
+## Use double asterisk `**` to expand dict
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>sing(<mark>**</mark>sos)
+We sing a song named S. O. S. in key A moll using tempo Allegro
+</code></pre>

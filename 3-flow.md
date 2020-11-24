@@ -705,14 +705,14 @@ do:
 
 --
 ## Use `break` to emulate it
-<pre>
-<code><span class="hljs-meta">&gt;&gt;&gt;</span> while True: <span class="comment"># infinite loop</span>
-<span class="hljs-meta">...</span>     amount = input('How many? Or type q to quit ')
-<span class="hljs-meta">...</span>     if amount == 'q':
+
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">while</span> <span class="hljs-keyword">True</span>: <span class="hljs-comment"># infinite loop</span>
+<span class="hljs-meta">... </span>    amount = input(<span class="hljs-string">'How many? Or type q to quit '</span>)
+<span class="hljs-meta">... </span>    <span class="hljs-keyword">if</span> amount == <span class="hljs-string">'q'</span>:
 <span class="hljs-meta">...</span>         <mark class="orange">break</mark>
 <span class="hljs-meta">...</span>
-How many? Or type q to quit 4
-How many? Or type q to quit q
+<span class="next">How many? Or type q to quit <mark>4</mark></next>
+<span class="next">How many? Or type q to quit <mark class="orange">q</mark class="orange"></span>
 </code></pre>
 --
 <h2 class="shout">Code reuse</h2>

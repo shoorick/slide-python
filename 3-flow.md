@@ -447,7 +447,7 @@ fruits = ['apple', 'banana', <mark class="blue">'cucumber'</mark>]
 ## zip
 
 <pre>
-<code><span class="hljs-meta">&gt;&gt;&gt;</span> <span class="hljs-keyword">for</span> <mark class="orange">color</mark>, <mark>name</mark>, <mark class="green">fruit</mark> in zip(<mark class="orange">colors</mark>, <mark>people</mark>, <mark class="green">fruits</mark>):
+<code><span class="hljs-meta">&gt;&gt;&gt;</span> <span class="hljs-keyword">for</span> <mark class="orange">color</mark>, <mark>name</mark>, <mark class="green">fruit</mark> <span class="hljs-keyword">in</span> zip(<mark class="orange">colors</mark>, <mark>people</mark>, <mark class="green">fruits</mark>):
 <span class="hljs-meta">...</span>     print(<span class="hljs-string">f'{<mark>name</mark>} has {<mark class="orange">color</mark>} {<mark class="green">fruit</mark>}'</span>)
 <span class="hljs-meta">...</span>
 Alice has red apple
@@ -506,7 +506,7 @@ Charlie</mark> has yellow cucumber
 ## enumerate
 
 <pre>
-<code><span class="hljs-meta">&gt;&gt;&gt;</span> for number, name in enumerate(stuff, <mark>start=1</mark>):
+<code><span class="hljs-meta">&gt;&gt;&gt;</span> <span class="hljs-keyword">for</span> number, name <span class="hljs-keyword">in</span> enumerate(stuff, <mark>start=1</mark>):
 <span class="hljs-meta">...</span>     print(number, name)
 <span class="hljs-meta">...</span>
 <mark>1</mark> hydrogen
@@ -514,10 +514,20 @@ Charlie</mark> has yellow cucumber
 <mark>3</mark> lithium
 </code></pre>
 --
+## Iterate over dict
+
+<pre>
+<code><span class="hljs-meta">&gt;&gt;&gt;</span> fruits = {
+    <span class="hljs-string">'apple'</span>: <span class="hljs-string">'red'</span>,
+    <span class="hljs-string">'banana'</span>: <span class="hljs-string">'yellow'</span>,
+    <span class="hljs-string">'cucumber'</span>: <span class="hljs-string">'green'</span>,
+}
+</code></pre>
+--
 ## Iterate over dict — see its methods
 
 <pre>
-<code><span class="hljs-meta">&gt;&gt;&gt;</span> fruits = {'apple': 'red', 'banana': 'yellow', 'cucumber': 'green'}
+<code><span class="hljs-meta">&gt;&gt;&gt;</span> fruits = {<span class="hljs-string">'apple'</span>: <span class="hljs-string">'red'</span>, <span class="hljs-string">'banana'</span>: <span class="hljs-string">'yellow'</span>, <span class="hljs-string">'cucumber'</span>: <span class="hljs-string">'green'</span>}
 <span class="hljs-meta">&gt;&gt;&gt;</span> fruits.<mark>items</mark>()
 dict_items([('apple', 'red'), ('banana', 'yellow'), ('cucumber', 'green')])
 <span class="hljs-meta">&gt;&gt;&gt;</span> fruits.<mark class="green">keys</mark>()
@@ -526,21 +536,21 @@ dict_keys(['apple', 'banana', 'cucumber'])
 dict_values(['red', 'yellow', 'green'])
 </code></pre>
 --
-## Iterate over whole dict
+## Iterate over dict — see its methods
 
 <pre>
-<code><span class="hljs-meta">&gt;&gt;&gt;</span> for fruit, color in fruits.<mark>items</mark>():
-<span class="hljs-meta">...</span>     print(f'{fruit} is {color}')
-<span class="hljs-meta">...</span>
-apple is red
-banana is yellow
-cucumber is green
+<code><span class="hljs-meta">&gt;&gt;&gt;</span> fruits = {<span class="hljs-string">'apple'</span>: <span class="hljs-string">'red'</span>, <span class="hljs-string">'banana'</span>: <span class="hljs-string">'yellow'</span>, <span class="hljs-string">'cucumber'</span>: <span class="hljs-string">'green'</span>}
+<span class="hljs-meta">&gt;&gt;&gt;</span> fruits.<mark>items</mark>()
+dict_items(<mark class="orange">[</mark> <mark class="green">(</mark>'apple', 'red'<mark class="green">)</mark>, <mark class="green">(</mark>'banana', 'yellow'<mark class="green">)</mark>, <mark class="green">(</mark>'cucumber', 'green'<mark class="green">)</mark>] <mark class="orange">]</mark> )
 </code></pre>
+
+<mark class="orange">List</mark> of <mark class="green">tuples</mark>
+
 --
 ## Iterate over keys of dict
 
 <pre>
-<code><span class="hljs-meta">&gt;&gt;&gt;</span> for fruit in fruits.<mark class="green">keys</mark>():
+<code><span class="hljs-meta">&gt;&gt;&gt;</span> <span class="hljs-keyword">for</span> fruit <span class="hljs-keyword">in</span> fruits.<mark class="green">keys</mark>():
 <span class="hljs-meta">...</span>     print(fruits[fruit], fruit)
 <span class="hljs-meta">...</span>
 red apple
@@ -633,7 +643,7 @@ SyntaxError: invalid syntax
 <div class="two columns">
   <div>
 <pre>
-<code><span class="hljs-meta">&gt;&gt;&gt;</span> for i in range(1, 5):
+<code><span class="hljs-meta">&gt;&gt;&gt;</span> <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(1, 5):
 <span class="hljs-meta">...</span>     if i < 3: <mark>continue</mark>
 <span class="hljs-meta">...</span>     print(i)
 <span class="hljs-meta">...</span>
@@ -649,7 +659,7 @@ SyntaxError: invalid syntax
 <div class="two columns">
   <div>
 <pre>
-<code><span class="hljs-meta">&gt;&gt;&gt;</span> for i in range(1, 55):
+<code><span class="hljs-meta">&gt;&gt;&gt;</span> <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(1, 55):
 <span class="hljs-meta">...</span>     print(i)
 <span class="hljs-meta">...</span>     if i > 2: <mark class="orange">break</mark>
 <span class="hljs-meta">...</span>

@@ -1147,21 +1147,21 @@ datetime.date(2020, 11, 22)
 --
 ## Use aliases for module and object names
 
-```python
->>> from datetime import date as d
->>> d.fromtimestamp(1555444333)
-datetime.date(2019, 4, 17)
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">from</span> datetime <span class="hljs-keyword">import</span> date <span class="hljs-keyword">as</span> <mark>d</mark>
+<span class="hljs-meta">&gt;&gt;&gt; </span><mark>d</mark>.fromtimestamp(<span class="hljs-number">1555444333</span>)
+datetime.date(<span class="hljs-number">2019</span>, <span class="hljs-number">4</span>, <span class="hljs-number">17</span>)
 
->>> import math as m
->>> m.sqrt(65536)
-256.0
-```
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">import</span> math <span class="hljs-keyword">as</span> <mark class="green">m</mark>
+<span class="hljs-meta">&gt;&gt;&gt; </span><mark class="green">m</mark>.sqrt(<span class="hljs-number">65536</span>)  <span class="hljs-comment"># square root</span>
+<span class="hljs-number">256.0</span>
+</code></pre>
+
 --
 ## Standard library
 
 ### [docs.python.org / The Python Standard Library](https://docs.python.org/3.7/library/)
 
-More than 200 modules which are already installed and ready to use
+More than 200 modules which are already installed and _usually_ ready to use
 
 --
 ## Look for module from standard library

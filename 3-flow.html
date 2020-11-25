@@ -1381,22 +1381,21 @@ datetime.date(<span class="hljs-number">2020</span>, <span class="hljs-number">1
   <section class="slide ">
     <div>
       <h2 id="use-aliases-for-module-and-object-names">Use aliases for module and object names</h2>
-<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">from</span> datetime <span class="hljs-keyword">import</span> date <span class="hljs-keyword">as</span> d
-<span class="hljs-meta">&gt;&gt;&gt; </span>d.fromtimestamp(<span class="hljs-number">1555444333</span>)
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">from</span> datetime <span class="hljs-keyword">import</span> date <span class="hljs-keyword">as</span> <mark>d</mark>
+<span class="hljs-meta">&gt;&gt;&gt; </span><mark>d</mark>.fromtimestamp(<span class="hljs-number">1555444333</span>)
 datetime.date(<span class="hljs-number">2019</span>, <span class="hljs-number">4</span>, <span class="hljs-number">17</span>)
 
-<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">import</span> math <span class="hljs-keyword">as</span> m
-<span class="hljs-meta">&gt;&gt;&gt; </span>m.sqrt(<span class="hljs-number">65536</span>)
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">import</span> math <span class="hljs-keyword">as</span> <mark class="green">m</mark>
+<span class="hljs-meta">&gt;&gt;&gt; </span><mark class="green">m</mark>.sqrt(<span class="hljs-number">65536</span>)  <span class="hljs-comment"># square root</span>
 <span class="hljs-number">256.0</span>
 </code></pre>
-
     </div>
   </section>
   <section class="slide ">
     <div>
       <h2 id="standard-library">Standard library</h2>
 <h3 id="docs-python-org-the-python-standard-library"><a href="https://docs.python.org/3.7/library/">docs.python.org / The Python Standard Library</a></h3>
-<p>More than 200 modules which are already installed and ready to use</p>
+<p>More than 200 modules which are already installed and <em>usually</em> ready to use</p>
 
     </div>
   </section>

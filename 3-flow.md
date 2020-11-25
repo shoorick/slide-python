@@ -685,7 +685,7 @@ SyntaxError: invalid syntax
   </div>
 </div>
 --
-## Python has no postconditional loop
+## What about postconditional loop?
 
 ```python
 do:
@@ -1014,3 +1014,39 @@ Some/sequence/here!</span></code></pre>
 [<span class="hljs-string">'H'</span>, <span class="hljs-string">'He'</span>, <span class="hljs-string">'Li'</span>, <span class="hljs-string">'Be'</span>, <span class="hljs-string">'B'</span>]!</span>
 <span class="next"><span class="hljs-meta">&gt;&gt;&gt; </span>print(<mark>*</mark>stuff, <mark class="green">**</mark>args)
 H/He/Li/Be/B!</span></code></pre>
+
+--
+## Long files are inconvenient
+
+
+```python
+def do_something():
+    # something
+
+def do_something_else():
+    # something else
+
+result = do_something() + do_something_else()
+```
+
+--
+## Move functions to separate file
+
+<div class="two columns"><div class="bordered orange">
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> something
+
+result \
+    = something.do() \
+    + something.do_more()
+
+print(result) <span class="hljs-comment"># 1042</span>
+</code></pre>
+</div><div class="bordered green next">
+<pre><code class="lang-python"><span class="hljs-comment"># something.py</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">do</span><span class="hljs-params">()</span>:</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-number">1000</span>
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">do_more</span><span class="hljs-params">()</span>:</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-number">42</span>
+</code></pre></div></div>
+

@@ -38,6 +38,22 @@ var {
     background-color: var(--color-orange);
 }
 
+
+div.bordered {
+    border: 5px solid var(--color-grey);
+    border-radius: 25px;
+    padding: 0 10px;
+    margin: 0 -10px;
+}
+
+div.bordered.green {
+    border-color: var(--color-green);
+}
+
+div.bordered.orange {
+    border-color: var(--color-orange);
+}
+
 /*
 
 github.com style (c) Vasily Polovnyov <vast@whiteants.net>

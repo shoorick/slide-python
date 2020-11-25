@@ -1276,6 +1276,40 @@ print(result) <span class="hljs-comment"># 1042</span>
   </section>
   <section class="slide ">
     <div>
+      <h2 id="side-effect-of-import">Side effect of <code>import</code></h2>
+<div class="two columns"><div class="bordered orange next">
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> something
+
+<span class="hljs-comment next"># unexpected
+# Oops!</span>
+</code></pre>
+</div><div class="bordered green">
+<pre><code class="lang-python"><span class="hljs-comment"># something.py</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">do</span><span class="hljs-params">()</span>:</span>
+    <span class="hljs-comment"># skipped</span>
+
+print(<span class="hljs-string">&#39;Oops!&#39;</span>)
+</code></pre></div></div>
+    </div>
+  </section>
+  <section class="slide ">
+    <div>
+      <h2 id="prevent-unexpected-code-execution">Prevent unexpected code execution</h2>
+<div class="two columns"><div class="bordered orange next">
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> something
+
+<span class="hljs-comment"># without any surprize</span></code></pre></div><div class="bordered green">
+<pre><code class="lang-python"><span class="hljs-comment"># something.py</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">do</span><span class="hljs-params">()</span>:</span>
+    <span class="hljs-comment"># skipped</span>
+
+<span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&#39;__main__&#39;</span>:
+    print(<span class="hljs-string">&#39;Oops!&#39;</span>)
+</code></pre></div></div>
+    </div>
+  </section>
+  <section class="slide ">
+    <div>
       <h2 id="use-short-alias">Use short alias</h2>
 <div class="two columns"><div class="bordered orange">
 <pre><code class="lang-python"><span class="hljs-keyword">import</span> something <span class="hljs-keyword">as</span> s

@@ -1051,6 +1051,38 @@ print(result) <span class="hljs-comment"># 1042</span>
 </code></pre><img src="images/import-arrow.svg" alt="→" class="place center next"></div></div>
 
 --
+## Side effect of `import`
+
+<div class="two columns"><div class="bordered orange next">
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> something
+
+<span class="hljs-comment next"># unexpected
+# Oops!</span>
+</code></pre>
+</div><div class="bordered green">
+<pre><code class="lang-python"><span class="hljs-comment"># something.py</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">do</span><span class="hljs-params">()</span>:</span>
+    <span class="hljs-comment"># skipped</span>
+
+print(<span class="hljs-string">'Oops!'</span>)
+</code></pre></div></div>
+
+--
+## Prevent unexpected code execution
+
+<div class="two columns"><div class="bordered orange next">
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> something
+
+<span class="hljs-comment"># without any surprize</span></code></pre></div><div class="bordered green">
+<pre><code class="lang-python"><span class="hljs-comment"># something.py</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">do</span><span class="hljs-params">()</span>:</span>
+    <span class="hljs-comment"># skipped</span>
+
+<span class="hljs-keyword">if</span> \__name__ == <span class="hljs-string">'\__main__'</span>:
+    print(<span class="hljs-string">'Oops!'</span>)
+</code></pre></div></div>
+
+--
 ## Use short alias
 
 <div class="two columns"><div class="bordered orange">

@@ -1274,6 +1274,175 @@ print(result) <span class="hljs-comment"># 1042</span>
 </code></pre><img src="images/import-arrow.svg" alt="→" class="place center next"></div></div>
     </div>
   </section>
+  <section class="slide ">
+    <div>
+      <h2 id="use-short-alias">Use short alias</h2>
+<div class="two columns"><div class="bordered orange">
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> something <span class="hljs-keyword">as</span> s
+
+result \
+    = s.do() \
+    + s.do_more()
+
+print(result) <span class="hljs-comment"># 1042</span>
+</code></pre>
+</div><div class="bordered green">
+<pre><code class="lang-python"><span class="hljs-comment"># something.py</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">do</span><span class="hljs-params">()</span>:</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-number">1000</span>
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">do_more</span><span class="hljs-params">()</span>:</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-number">42</span>
+</code></pre><img src="images/import-as-arrow.svg" alt="→" class="place center"></div></div>
+    </div>
+  </section>
+  <section class="slide ">
+    <div>
+      <h2 id="list-imported-items-after-import">List imported items after <code>import</code></h2>
+<pre><code class="lang-python"><span class="hljs-comment">#    import something</span>
+<span class="hljs-keyword">from</span> something <span class="hljs-keyword">import</span> do, do_more
+
+result = do() + do_more()
+
+print(result)
+</code></pre>
+
+    </div>
+  </section>
+  <section class="slide ">
+    <div>
+      <h2 id="dir-lists-methods-of-imported-module"><code>dir</code> lists methods of imported module</h2>
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">import</span> something
+<span class="hljs-meta">&gt;&gt;&gt; </span>dir(something)
+[<span class="hljs-string">'__builtins__'</span>, <span class="hljs-string">'__cached__'</span>, <span class="hljs-string">'__doc__'</span>, <span class="hljs-string">'__file__'</span>,
+ <span class="hljs-string">'__loader__'</span>, <span class="hljs-string">'__name__'</span>, <span class="hljs-string">'__package__'</span>, <span class="hljs-string">'__spec__'</span>,
+ <span class="hljs-string">'do'</span>, <span class="hljs-string">'do_more'</span>]
+</code></pre>
+
+    </div>
+  </section>
+  <section class="slide ">
+    <div>
+      <h2 id="specify-alias-of-imported-module-in-dir">Specify alias of imported module in <code>dir</code></h2>
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">import</span> <mark class="orange">something</mark> <span class="hljs-keyword">as</span> <mark class="green">s</mark>
+<span class="hljs-meta">&gt;&gt;&gt; </span>dir(<mark class="orange">something</mark>)
+<span class="error">Traceback (most recent call last):
+  File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;
+NameError: name &#39;something&#39; is not defined</span>
+<span class="next"><span class="hljs-meta">&gt;&gt;&gt; </span>dir(<mark class="green">s</mark>)
+[<span class="hljs-string">'__builtins__'</span>, <span class="hljs-string">'__cached__'</span>, <span class="hljs-string">'__doc__'</span>, <span class="hljs-string">'__file__'</span>, <span class="hljs-string">'__loader__'</span>, <span class="hljs-string">'__name__'</span>, <span class="hljs-string">'__package__'</span>, <span class="hljs-string">'__spec__'</span>, <span class="hljs-string">'do'</span>, <span class="hljs-string">'do_more'</span>]</span>
+</code></pre>
+    </div>
+  </section>
+  <section class="slide ">
+    <div>
+      <h2 id="import-modules-from-libraries-the-same-way">Import modules from libraries the same way</h2>
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">from</span> datetime <span class="hljs-keyword">import</span> date
+<span class="hljs-meta">&gt;&gt;&gt; </span>date.today()
+datetime.date(<span class="hljs-number">2020</span>, <span class="hljs-number">11</span>, <span class="hljs-number">22</span>)
+</code></pre>
+
+    </div>
+  </section>
+  <section class="slide ">
+    <div>
+      <h2 id="use-aliases-for-module-and-object-names">Use aliases for module and object names</h2>
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">from</span> datetime <span class="hljs-keyword">import</span> date <span class="hljs-keyword">as</span> d
+<span class="hljs-meta">&gt;&gt;&gt; </span>d.fromtimestamp(<span class="hljs-number">1555444333</span>)
+datetime.date(<span class="hljs-number">2019</span>, <span class="hljs-number">4</span>, <span class="hljs-number">17</span>)
+
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">import</span> math <span class="hljs-keyword">as</span> m
+<span class="hljs-meta">&gt;&gt;&gt; </span>m.sqrt(<span class="hljs-number">65536</span>)
+<span class="hljs-number">256.0</span>
+</code></pre>
+
+    </div>
+  </section>
+  <section class="slide ">
+    <div>
+      <h2 id="standard-library">Standard library</h2>
+<h3 id="docs-python-org-the-python-standard-library"><a href="https://docs.python.org/3.7/library/">docs.python.org / The Python Standard Library</a></h3>
+<p>More than 200 modules which are already installed and ready to use</p>
+
+    </div>
+  </section>
+  <section class="slide ">
+    <div>
+      <h2 id="look-for-module-from-standard-library">Look for module from standard library</h2>
+<blockquote>
+<p>Each module also comes with a one-line summary of what it does; to list the
+modules whose name or summary contain a given string such as &quot;spam&quot;, type
+&quot;modules spam&quot;.</p>
+</blockquote>
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>help(<span class="hljs-string">'modules graph'</span>)
+</code></pre>
+
+    </div>
+  </section>
+  <section class="slide ">
+    <div>
+      <h2 id="look-for-module-from-standard-library">Look for module from standard library</h2>
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>help(<span class="hljs-string">'modules graph'</span>)
+</code></pre>
+<pre><code>Here is a list of modules whose name or summary contains &#39;graph&#39;.
+If there are any, enter a module name to get more help.
+
+secrets - Generate cryptographically strong pseudo-random numbers suitable for
+turtle - Turtle graphics is a popular way for introducing programming to
+Crypto - Python Cryptography Toolkit
+</code></pre>
+    </div>
+  </section>
+  <section class="slide ">
+    <div>
+      <h2 id="use-more-precise-search-query">Use more precise search query</h2>
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>help(<span class="hljs-string">'modules statistic'</span>)
+</code></pre>
+<pre><code>Here is a list of modules whose name or summary contains &#39;statistic&#39;.
+If there are any, enter a module name to get more help.
+
+statistics - Basic statistics module.
+</code></pre>
+    </div>
+  </section>
+  <section class="slide ">
+    <div>
+      <h2 id="get-help-on-a-module">Get <code>help</code> on a module</h2>
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">import</span>(statistics)
+<span class="hljs-meta">&gt;&gt;&gt; </span>help(statistics)
+</code></pre>
+<pre><code>Help on module statistics:
+
+NAME
+    statistics - Basic statistics module.
+...
+</code></pre>
+    </div>
+  </section>
+  <section class="slide ">
+    <div>
+      <h2 id="how-to-use-modules-br-outside-of-standard-library">How to use modules<br>outside of Standard library</h2>
+<p><a href="https://docs.python.org/3.7/installing">docs.python.org / Installing Python Modules</a></p>
+<p>Install <em>MODULENAME</em> system-wide for Debian GNU/Linux and its derivatives
+(Ubuntu, Mint)</p>
+<pre><code class="lang-bash">sudo apt install python3-MODULENAME
+</code></pre>
+
+    </div>
+  </section>
+  <section class="slide ">
+    <div>
+      <h2 id="there-are-many-ways-to-do-it">There are many ways to do it</h2>
+<p>Install local copy of modules</p>
+<pre><code class="lang-bash">sudo apt install python3-venv
+python3 -m venv venv
+. venv/bin/activate
+pip install MODULENAME
+</code></pre>
+<p>Read the documentation for <strong>your</strong> system.</p>
+
+    </div>
+  </section>
   <section class="slide author-slide">
     <div>
       <div class="author">

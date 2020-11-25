@@ -1050,3 +1050,161 @@ print(result) <span class="hljs-comment"># 1042</span>
     <span class="hljs-keyword">return</span> <span class="hljs-number">42</span>
 </code></pre><img src="images/import-arrow.svg" alt="→" class="place center next"></div></div>
 
+--
+## Use short alias
+
+<div class="two columns"><div class="bordered orange">
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> something <span class="hljs-keyword">as</span> s
+
+result \
+    = s.do() \
+    + s.do_more()
+
+print(result) <span class="hljs-comment"># 1042</span>
+</code></pre>
+</div><div class="bordered green">
+<pre><code class="lang-python"><span class="hljs-comment"># something.py</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">do</span><span class="hljs-params">()</span>:</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-number">1000</span>
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">do_more</span><span class="hljs-params">()</span>:</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-number">42</span>
+</code></pre><img src="images/import-as-arrow.svg" alt="→" class="place center"></div></div>
+
+--
+## List imported items after `import`
+
+```python
+#    import something
+from something import do, do_more
+
+result = do() + do_more()
+
+print(result)
+```
+
+--
+## `dir` lists methods of imported module
+
+```python
+>>> import something
+>>> dir(something)
+['__builtins__', '__cached__', '__doc__', '__file__',
+ '__loader__', '__name__', '__package__', '__spec__',
+ 'do', 'do_more']
+```
+--
+## Specify alias of imported module in `dir`
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">import</span> <mark class="orange">something</mark> <span class="hljs-keyword">as</span> <mark class="green">s</mark>
+<span class="hljs-meta">&gt;&gt;&gt; </span>dir(<mark class="orange">something</mark>)
+<span class="error">Traceback (most recent call last):
+  File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;
+NameError: name &#39;something&#39; is not defined</span>
+<span class="next"><span class="hljs-meta">&gt;&gt;&gt; </span>dir(<mark class="green">s</mark>)
+[<span class="hljs-string">'__builtins__'</span>, <span class="hljs-string">'__cached__'</span>, <span class="hljs-string">'__doc__'</span>, <span class="hljs-string">'__file__'</span>, <span class="hljs-string">'__loader__'</span>, <span class="hljs-string">'__name__'</span>, <span class="hljs-string">'__package__'</span>, <span class="hljs-string">'__spec__'</span>, <span class="hljs-string">'do'</span>, <span class="hljs-string">'do_more'</span>]</span>
+</code></pre>
+
+--
+## Import modules from libraries the same way
+
+```python
+>>> from datetime import date
+>>> date.today()
+datetime.date(2020, 11, 22)
+```
+--
+## Use aliases for module and object names
+
+```python
+>>> from datetime import date as d
+>>> d.fromtimestamp(1555444333)
+datetime.date(2019, 4, 17)
+
+>>> import math as m
+>>> m.sqrt(65536)
+256.0
+```
+--
+## Standard library
+
+### [docs.python.org / The Python Standard Library](https://docs.python.org/3.7/library/)
+
+More than 200 modules which are already installed and ready to use
+
+--
+## Look for module from standard library
+
+> Each module also comes with a one-line summary of what it does; to list the
+modules whose name or summary contain a given string such as "spam", type
+"modules spam".
+
+```python
+>>> help('modules graph')
+```
+
+--
+## Look for module from standard library
+
+```python
+>>> help('modules graph')
+```
+```
+Here is a list of modules whose name or summary contains 'graph'.
+If there are any, enter a module name to get more help.
+
+secrets - Generate cryptographically strong pseudo-random numbers suitable for
+turtle - Turtle graphics is a popular way for introducing programming to
+Crypto - Python Cryptography Toolkit
+```
+
+--
+## Use more precise search query
+
+```python
+>>> help('modules statistic')
+```
+```
+Here is a list of modules whose name or summary contains 'statistic'.
+If there are any, enter a module name to get more help.
+
+statistics - Basic statistics module.
+```
+--
+## Get `help` on a module
+
+
+```python
+>>> import(statistics)
+>>> help(statistics)
+```
+```
+Help on module statistics:
+
+NAME
+    statistics - Basic statistics module.
+...
+```
+--
+## How to use modules<br>outside of Standard library
+
+[docs.python.org / Installing Python Modules](https://docs.python.org/3.7/installing)
+
+Install _MODULENAME_ system-wide for Debian GNU/Linux and its derivatives
+(Ubuntu, Mint)
+
+```bash
+sudo apt install python3-MODULENAME
+```
+--
+## There are many ways to do it
+
+Install local copy of modules
+
+```bash
+sudo apt install python3-venv
+python3 -m venv venv
+. venv/bin/activate
+pip install MODULENAME
+```
+
+Read the documentation for **your** system.

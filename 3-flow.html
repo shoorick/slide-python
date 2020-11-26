@@ -1401,6 +1401,35 @@ datetime.date(<span class="hljs-number">2019</span>, <span class="hljs-number">4
   </section>
   <section class="slide ">
     <div>
+      <h2 id="local-modules-are-preferred">Local modules are preferred</h2>
+<div class="two columns"><div class="bordered orange">
+<pre><code class="lang-python"><span class="hljs-comment"># import-re.py</span>
+<span class="hljs-keyword">import</span> re
+
+print(<span class="hljs-string">&#39;Who is there?&#39;</span>)
+m = re.match(<span class="hljs-string">r&#39;\w&#39;</span>, <span class="hljs-string">&#39;S&#39;</span>)
+</code></pre></div><div class="bordered green">
+<pre><code class="lang-python"><span class="hljs-comment"># re.py</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">some</span><span class="hljs-params">()</span>:</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-string">&#39;thing&#39;</span>
+
+print(<span class="hljs-string">&#39;Local re module&#39;</span>)
+</code></pre></div></div>
+    </div>
+  </section>
+  <section class="slide ">
+    <div>
+      <h2 id="python3-import-re-py"><code>python3 import-re.py</code></h2>
+<pre><code>Local re module
+Who is there?
+<span class="error">Traceback (most recent call last):
+  File &quot;import-re.py&quot;, line 4, in &lt;module&gt;
+    m = re.match(r&#39;\w&#39;, &#39;S&#39;)
+AttributeError: module &#39;re&#39; has no attribute &#39;match&#39;</span></code></pre>
+    </div>
+  </section>
+  <section class="slide ">
+    <div>
       <h2 id="look-for-module-from-standard-library">Look for module from standard library</h2>
 <blockquote>
 <p>Each module also comes with a one-line summary of what it does; to list the

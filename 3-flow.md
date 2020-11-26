@@ -1164,6 +1164,31 @@ datetime.date(<span class="hljs-number">2019</span>, <span class="hljs-number">4
 More than 200 modules which are already installed and _usually_ ready to use
 
 --
+## Local modules are preferred
+
+<div class="two columns"><div class="bordered orange">
+<pre><code class="lang-python"><span class="hljs-comment"># import-re.py</span>
+<span class="hljs-keyword">import</span> re
+
+print(<span class="hljs-string">'Who is there?'</span>)
+m = re.match(<span class="hljs-string">r'\w'</span>, <span class="hljs-string">'S'</span>)
+</code></pre></div><div class="bordered green">
+<pre><code class="lang-python"><span class="hljs-comment"># re.py</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">some</span><span class="hljs-params">()</span>:</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-string">'thing'</span>
+
+print(<span class="hljs-string">'Local re module'</span>)
+</code></pre></div></div>
+--
+## `python3 import-re.py`
+
+<pre><code>Local re module
+Who is there?
+<span class="error">Traceback (most recent call last):
+  File &quot;import-re.py&quot;, line 4, in &lt;module&gt;
+    m = re.match(r&#39;\w&#39;, &#39;S&#39;)
+AttributeError: module &#39;re&#39; has no attribute &#39;match&#39;</span></code></pre>
+--
 ## Look for module from standard library
 
 > Each module also comes with a one-line summary of what it does; to list the

@@ -128,7 +128,7 @@ if 21 < outdoor_temperature < indoor_temperature < 26:
 </code>
 </pre>
 --
-## else if → elif
+## else if → `elif`
 
 <pre>
 <code><span class="hljs-keyword">if</span> x &lt; <span class="hljs-number">5</span>:
@@ -141,7 +141,7 @@ if 21 < outdoor_temperature < indoor_temperature < 26:
 </code>
 </pre>
 --
-## else if → elif
+## else if → `elif`
 
 <pre>
 <code><span class="hljs-keyword">if</span> x &lt; <span class="hljs-number">5</span><mark>:</mark>
@@ -154,7 +154,7 @@ if 21 < outdoor_temperature < indoor_temperature < 26:
 </code>
 </pre>
 --
-## else if → elif
+## else if → `elif`
 
 <div class="two columns">
 <div>
@@ -168,9 +168,10 @@ if 21 < outdoor_temperature < indoor_temperature < 26:
 <mark class="green">elif</mark> z == <span class="hljs-number">42</span><mark>:</mark>
 </code>
 </pre>
-</div><div>
-<br><br>
-as many <code class="green">elif</code>s
+</div><div class="next">
+There is <mark class="orange">no `switch` operator</mark>
+<br>so use
+<br>as many <code class="green">elif</code>s
 <br>as you wish
 </div></div>
 --
@@ -339,6 +340,69 @@ That's all, folks!
 </code></pre>
 </div></div>
 --
+## `with`
+
+```python
+with open('/etc/timezone', 'r') as f:
+    for line in f:
+        print(line)
+# same as
+f = open('/etc/timezone', 'r')
+for line in f:
+        print(line)
+```
+--
+## `with` implicitly calls methods
+```python
+#    __enter__
+with open('/etc/timezone', 'r') as f:
+    for line in f:
+        print(line)
+# __exit__
+```
+--
+```python
+class Writer:
+    def __init__(self, file_name):
+        self.file_name = file_name;
+    def __enter__(self):
+        self.file = open(self.file_name, 'w')
+        return self.file;
+    def __exit__(self, exc_type, exc_value, traceback):
+        self.file.close()
+```
+--
+<div class="two columns">
+<div class="bordered orange next">
+<pre><code class="lang-python"><span class="hljs-keyword">with</span> Writer(<span class="hljs-string">'file.txt'</span>) <span class="hljs-keyword">as</span> f:
+    f.write(<span class="hljs-string">'hello world'</span>)
+</code></pre></div><div class="bordered green">
+<pre><code class="lang-python"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Writer</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">\__init__</span><span class="hljs-params">(self, file_name)</span>:</span>
+        self.file_name = file_name;
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">\__enter__</span><span class="hljs-params">(self)</span>:</span>
+        self.file = open(self.file_name, <span class="hljs-string">'w'</span>)
+        <span class="hljs-keyword">return</span> self.file;
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">\__exit__</span><span class="hljs-params">(self, exc_type, exc_value, traceback)</span>:</span>
+        self.file.close()
+</code></pre></div></div>
+--
+<div class="two columns">
+<div class="bordered orange">
+<pre><code class="lang-python"><span class="hljs-keyword">with</span> Writer(<span class="hljs-string">'file.txt'</span>) <span class="hljs-keyword">as</span> <mark class="green">f</mark>:
+    f.write(<span class="hljs-string">'hello world'</span>)
+<mark class="orange"># Writer.\__exit__</mark>
+</code></pre></div><div class="bordered green">
+<pre><code class="lang-python"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Writer</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">\__init__</span><span class="hljs-params">(self, file_name)</span>:</span>
+        self.file_name = file_name;
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title"><mark class="green">\__enter__</mark></span><span class="hljs-params">(self)</span>:</span>
+        self.file = open(self.file_name, <span class="hljs-string">'w'</span>)
+        <span class="hljs-keyword">return</span> <mark class="green">self.file</mark>;
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title"><mark class="orange">\__exit__</mark></span><span class="hljs-params">(self, exc_type, exc_value, traceback)</span>:</span>
+        self.file.close()
+</code></pre></div></div>
+--
 <h2 class="shout">Loops</h2>
 --
 ## Structure of the song
@@ -355,7 +419,6 @@ That's all, folks!
 ## Loops
   * for
   * while
-  * with
 --
 ## `for` loop
 

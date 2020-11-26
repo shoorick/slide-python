@@ -176,7 +176,7 @@
   </section>
   <section class="slide ">
     <div>
-      <h2 id="else-if-elif">else if → elif</h2>
+      <h2 id="else-if-elif">else if → <code>elif</code></h2>
 <pre>
 <code><span class="hljs-keyword">if</span> x &lt; <span class="hljs-number">5</span>:
     print(<span class="hljs-string">'Few'</span>)
@@ -191,7 +191,7 @@
   </section>
   <section class="slide ">
     <div>
-      <h2 id="else-if-elif">else if → elif</h2>
+      <h2 id="else-if-elif">else if → <code>elif</code></h2>
 <pre>
 <code><span class="hljs-keyword">if</span> x &lt; <span class="hljs-number">5</span><mark>:</mark>
     print(<span class="hljs-string">'Few'</span>)
@@ -206,7 +206,7 @@
   </section>
   <section class="slide ">
     <div>
-      <h2 id="else-if-elif">else if → elif</h2>
+      <h2 id="else-if-elif">else if → <code>elif</code></h2>
 <div class="two columns">
 <div>
 <pre>
@@ -219,9 +219,10 @@
 <mark class="green">elif</mark> z == <span class="hljs-number">42</span><mark>:</mark>
 </code>
 </pre>
-</div><div>
-<br><br>
-as many <code class="green">elif</code>s
+</div><div class="next">
+There is <mark class="orange">no <code>switch</code> operator</mark>
+<br>so use
+<br>as many <code class="green">elif</code>s
 <br>as you wish
 </div></div>
     </div>
@@ -420,6 +421,83 @@ That&#39;s all, folks!
   </section>
   <section class="slide ">
     <div>
+      <h2 id="with"><code>with</code></h2>
+<pre><code class="lang-python"><span class="hljs-keyword">with</span> open(<span class="hljs-string">'/etc/timezone'</span>, <span class="hljs-string">'r'</span>) <span class="hljs-keyword">as</span> f:
+    <span class="hljs-keyword">for</span> line <span class="hljs-keyword">in</span> f:
+        print(line)
+<span class="hljs-comment"># same as</span>
+f = open(<span class="hljs-string">'/etc/timezone'</span>, <span class="hljs-string">'r'</span>)
+<span class="hljs-keyword">for</span> line <span class="hljs-keyword">in</span> f:
+        print(line)
+</code></pre>
+
+    </div>
+  </section>
+  <section class="slide ">
+    <div>
+      <h2 id="with-implicitly-calls-methods"><code>with</code> implicitly calls methods</h2>
+<pre><code class="lang-python"><span class="hljs-comment">#    __enter__</span>
+<span class="hljs-keyword">with</span> open(<span class="hljs-string">'/etc/timezone'</span>, <span class="hljs-string">'r'</span>) <span class="hljs-keyword">as</span> f:
+    <span class="hljs-keyword">for</span> line <span class="hljs-keyword">in</span> f:
+        print(line)
+<span class="hljs-comment"># __exit__</span>
+</code></pre>
+
+    </div>
+  </section>
+  <section class="slide ">
+    <div>
+      <pre><code class="lang-python"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Writer</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, file_name)</span>:</span>
+        self.file_name = file_name;
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__enter__</span><span class="hljs-params">(self)</span>:</span>
+        self.file = open(self.file_name, <span class="hljs-string">'w'</span>)
+        <span class="hljs-keyword">return</span> self.file;
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__exit__</span><span class="hljs-params">(self, exc_type, exc_value, traceback)</span>:</span>
+        self.file.close()
+</code></pre>
+
+    </div>
+  </section>
+  <section class="slide ">
+    <div>
+      <div class="two columns">
+<div class="bordered orange next">
+<pre><code class="lang-python"><span class="hljs-keyword">with</span> Writer(<span class="hljs-string">&#39;file.txt&#39;</span>) <span class="hljs-keyword">as</span> f:
+    f.write(<span class="hljs-string">&#39;hello world&#39;</span>)
+</code></pre></div><div class="bordered green">
+<pre><code class="lang-python"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Writer</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, file_name)</span>:</span>
+        self.file_name = file_name;
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__enter__</span><span class="hljs-params">(self)</span>:</span>
+        self.file = open(self.file_name, <span class="hljs-string">&#39;w&#39;</span>)
+        <span class="hljs-keyword">return</span> self.file;
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__exit__</span><span class="hljs-params">(self, exc_type, exc_value, traceback)</span>:</span>
+        self.file.close()
+</code></pre></div></div>
+    </div>
+  </section>
+  <section class="slide ">
+    <div>
+      <div class="two columns">
+<div class="bordered orange">
+<pre><code class="lang-python"><span class="hljs-keyword">with</span> Writer(<span class="hljs-string">&#39;file.txt&#39;</span>) <span class="hljs-keyword">as</span> <mark class="green">f</mark>:
+    f.write(<span class="hljs-string">&#39;hello world&#39;</span>)
+<mark class="orange"># Writer.__exit__</mark>
+</code></pre></div><div class="bordered green">
+<pre><code class="lang-python"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Writer</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, file_name)</span>:</span>
+        self.file_name = file_name;
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title"><mark class="green">__enter__</mark></span><span class="hljs-params">(self)</span>:</span>
+        self.file = open(self.file_name, <span class="hljs-string">&#39;w&#39;</span>)
+        <span class="hljs-keyword">return</span> <mark class="green">self.file</mark>;
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title"><mark class="orange">__exit__</mark></span><span class="hljs-params">(self, exc_type, exc_value, traceback)</span>:</span>
+        self.file.close()
+</code></pre></div></div>
+    </div>
+  </section>
+  <section class="slide ">
+    <div>
       <h2 class="shout">Loops</h2>
     </div>
   </section>
@@ -443,7 +521,6 @@ That&#39;s all, folks!
 <ul>
 <li>for</li>
 <li>while</li>
-<li>with</li>
 </ul>
 
     </div>
